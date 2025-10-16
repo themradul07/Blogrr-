@@ -1,0 +1,999 @@
+
+> front@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.182.197.213:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in 2s
+ ✓ Ready in 9.9s
+ ○ Compiling / ...
+ ✓ Compiled / in 22.7s
+ GET / 200 in 25965ms
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1238252579694977 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1648190451157334 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=2508027544023638 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8930625091236718 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=6384690661686176 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=543817118771924 500
+ ○ Compiling /_not-found/page ...
+ ✓ Compiled /_not-found/page in 2.1s
+ GET /null 404 in 2847ms
+ ○ Compiling /user/posts ...
+ ✓ Compiled /user/posts in 2s
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 3010ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+ GET / 200 in 613ms
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8930625091236718 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=6384690661686176 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=2508027544023638 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1648190451157334 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1238252579694977 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=543817118771924 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=6440587910080144 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=3196554626299110 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8813788660512371 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=5517815308286146 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=5491109188254840 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=4174753531955703 500
+ GET /?page=27 200 in 530ms
+ ○ Compiling /blog/[slug]/[id] ...
+ ✓ Compiled /blog/[slug]/[id] in 2.6s
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:18:33)
+  16 |
+  17 | const Postpage = async ({params}: Props) => {
+> 18 |     const postId = await params.id;
+     |                                 ^
+  19 |     const post = await fetchPostsById(+postId);
+  20 |     const session = await getSession();
+  21 |
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 313,
+    title: 'xybbz',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760521149860',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /blog/xybbz/313 200 in 10787ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:18:33)
+  16 |
+  17 | const Postpage = async ({params}: Props) => {
+> 18 |     const postId = await params.id;
+     |                                 ^
+  19 |     const post = await fetchPostsById(+postId);
+  20 |     const session = await getSession();
+  21 |
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 313,
+    title: 'xybbz',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760521149860',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /blog/xybbz/313 200 in 1159ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:18:33)
+  16 |
+  17 | const Postpage = async ({params}: Props) => {
+> 18 |     const postId = await params.id;
+     |                                 ^
+  19 |     const post = await fetchPostsById(+postId);
+  20 |     const session = await getSession();
+  21 |
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 313,
+    title: 'xybbz',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760521149860',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /blog/xybbz/313 200 in 913ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:18:33)
+  16 |
+  17 | const Postpage = async ({params}: Props) => {
+> 18 |     const postId = await params.id;
+     |                                 ^
+  19 |     const post = await fetchPostsById(+postId);
+  20 |     const session = await getSession();
+  21 |
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 313,
+    title: 'xybbz',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760521149860',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /blog/xybbz/313 200 in 751ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:18:33)
+  16 |
+  17 | const Postpage = async ({params}: Props) => {
+> 18 |     const postId = await params.id;
+     |                                 ^
+  19 |     const post = await fetchPostsById(+postId);
+  20 |     const session = await getSession();
+  21 |
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 313,
+    title: 'xybbz',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760521149860',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /blog/xybbz/313 200 in 914ms
+ POST /blog/xybbz/313 200 in 704ms
+ POST /blog/xybbz/313 200 in 589ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1121ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+ ○ Compiling /user/posts/(.)[id]/delete ...
+ ✓ Compiled /user/posts/(.)[id]/delete in 1580ms
+ GET /user/posts/312/delete 200 in 3689ms
+ GET /user/posts/312/delete 200 in 645ms
+ GET /user/posts/312/posts/312/delete 404 in 393ms
+ GET /user/posts/312/posts/312/delete 404 in 685ms
+ GET /user/posts/312/posts/312/null 404 in 590ms
+ ○ Compiling /user/posts/[id]/delete ...
+ ✓ Compiled /user/posts/[id]/delete in 1568ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 4393ms
+ GET /user/posts/312/null 404 in 717ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 726ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+ GET /user/posts/312/delete 200 in 574ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 959ms
+ ○ Compiling /favicon.ico ...
+ GET /user/posts/312/null 404 in 1087ms
+ ✓ Compiled /favicon.ico in 1760ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 2518ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 791ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+ ✓ Compiled in 1461ms
+ ✓ Compiled /user/posts in 239ms
+ ⨯ [Error: The default export is not a React Component in "/user/posts/page"]
+ ⨯ [Error: The default export is not a React Component in "/user/posts/page"] {
+  page: '/user/posts'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled in 2.8s
+ ✓ Compiled /_error in 3.5s
+ GET /user/posts 500 in 6186ms
+ ✓ Compiled /user/posts in 213ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1099ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 455ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 447ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 2999ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+ GET /user/null 404 in 658ms
+ GET /user/posts/311/delete 200 in 606ms
+ ✓ Compiled in 246ms
+ ✓ Compiled in 255ms
+ ✓ Compiled /user/posts/(.)[id]/delete in 191ms
+ GET /user/posts/311/delete 200 in 889ms
+ ✓ Compiled in 194ms
+ ✓ Compiled in 190ms
+ ✓ Compiled in 173ms
+ GET /user/posts/311/delete 404 in 549ms
+ ✓ Compiled /user/posts/[id]/delete in 263ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 311,
+    title: 'xyz - updated the post',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519719324',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/311/delete 200 in 2112ms
+ GET /user/posts/311/null 404 in 268ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 421ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+ ✓ Compiled /user/posts/(.)[id]/delete in 210ms
+ GET /user/posts/312/delete 200 in 1330ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 1115ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1364ms
+ GET /user/posts/312/null 404 in 1506ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 1627ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1695ms
+ GET /user/posts/312/null 404 in 1690ms
+ ✓ Compiled in 181ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 854ms
+ ✓ Compiled /user/posts in 190ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1138ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 1038ms
+ GET /user/posts/312/null 404 in 669ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+/no-image.png
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 923ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 315,
+    title: 'hhhhhh wlfweljrew werweljrwelkjwejlhjkh',
+    thumbnail: '/no-image.png',
+    content: 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
+    createdAt: '1760522169654',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object], [Object] ]
+  }
+}
+ GET /user/posts/315/delete 200 in 1069ms
+ GET /user/posts/315/null 404 in 587ms
+this is the recieved post id 315
+ POST /user/posts/315/delete 200 in 545ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 855ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921 received null
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 312,
+    title: 'xybbzjgjhgjhg',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760580647921',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519964299',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/312/delete 200 in 1183ms
+ GET /user/posts/312/null 404 in 971ms
+this is the recieved post id 312
+ POST /user/posts/312/delete 200 in 453ms
+this is the recieved post id 312
+Graphql errors: [
+  {
+    message: 'Unauthorized',
+    locations: [ [Object] ],
+    path: [ 'deletePost' ],
+    extensions: {
+      code: 'UNAUTHENTICATED',
+      stacktrace: [Array],
+      originalError: [Object]
+    }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:52:15)
+    at async deletePost (src\lib\actions\postActions.ts:130:18)
+    at async formAction (src\app\user\posts\[id]\delete\page.tsx:21:9)
+  50 |     if(result.errors){
+  51 |         console.error("Graphql errors:", result.errors);
+> 52 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  53 |    
+  54 |     }
+  55 |     
+ ⨯ TypeError: Cannot read properties of undefined (reading 'deletePost')
+    at deletePost (src\lib\actions\postActions.ts:134:17)
+    at async formAction (src\app\user\posts\[id]\delete\page.tsx:21:9)
+  132 |     });
+  133 |
+> 134 |     return data.deletePost;
+      |                 ^
+  135 | } {
+  digest: '911958102'
+}
+ POST /user/posts/312/delete 500 in 2899ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 2773ms
+ GET /user/null 404 in 652ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 318,
+    title: "was preloaded using link preload but not used within a few seconds from the window's lo",
+    thumbnail: '',
+    content: "was preloaded using link preload but not used within a few seconds from the window's lowas preloaded using link preload but not used within a few seconds from the window's lo",
+    createdAt: '1760522871529',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/318/delete 200 in 1265ms
+ GET /user/posts/318/null 404 in 744ms
+this is the recieved post id 318
+ POST /user/posts/318/delete 200 in 407ms
+ ✓ Compiled middleware in 20ms
+ GET /favicon.ico 200 in 461ms
+ GET /user/posts/318/delete 404 in 400ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 855ms
+ GET /user/posts/318/null 404 in 822ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1897ms
+ GET /user/null 404 in 751ms
+ GET /user/posts/317/delete 404 in 806ms
+ GET /user/posts/317/null 404 in 756ms
+ ✓ Compiled in 207ms
+ GET /user/posts/317/delete 404 in 442ms
+ GET /user/posts/317/delete 404 in 443ms
+ GET /user/posts/317/null 404 in 504ms
+ ✓ Compiled in 206ms
+ GET /user/posts/317/delete 404 in 451ms
+ GET /user/posts/317/delete 404 in 464ms
+ GET /user/posts/317/null 404 in 408ms
+ ✓ Compiled middleware in 7ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 2512ms
+ ✓ Compiled in 381ms
+ ✓ Compiled /user/posts/[id]/delete in 400ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 3162ms
+ GET /user/posts/317/delete 200 in 3555ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 348ms
+ GET /user/posts/317/null 404 in 334ms
+ ✓ Compiled in 212ms
+ ✓ Compiled /user/posts/[id]/delete in 161ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 749ms
+ ✓ Compiled in 203ms
+ ✓ Compiled /user/posts/[id]/delete in 133ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 835ms
+ ✓ Compiled in 146ms
+ GET /user/posts/317/delete 404 in 383ms
+ ✓ Compiled /user/posts/[id]/delete in 170ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 1807ms
+ GET /user/posts/317/null 404 in 335ms
+ ✓ Compiled in 135ms
+ ✓ Compiled /user/posts/[id]/delete in 141ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 924ms
+ ✓ Compiled in 192ms
+ ✓ Compiled /user/posts/[id]/delete in 150ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 791ms
+ ✓ Compiled in 247ms
+ ✓ Compiled /user/posts/[id]/delete in 172ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 821ms
+ ✓ Compiled /user/posts in 125ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 886ms
+ GET /user/null 404 in 779ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 1797ms
+ GET /user/posts/317/null 404 in 813ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1751ms
+ GET /user/null 404 in 773ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1773ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 750ms
+ GET /user/null 404 in 628ms
+ ✓ Compiled in 363ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 504ms
+ ✓ Compiled /user/posts/[id]/delete in 204ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 317,
+    title: 'defghi efghijkl mnopqrst uvwxzy',
+    thumbnail: '',
+    content: 'defghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzydefghi efghijkl mnopqrst uvwxzy',
+    createdAt: '1760522752574',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/317/delete 200 in 2008ms
+ GET /user/posts/317/null 404 in 726ms
+this is the recieved post id 317
+ POST /user/posts/317/delete 200 in 434ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1129ms
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+ GET /user/null 404 in 629ms
+ ○ Compiling /user/posts/[id]/update ...
+ ✓ Compiled /user/posts/[id]/update in 2.8s
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 316,
+    title: 'Sonner testing',
+    thumbnail: '',
+    content: 'we are testing the sonner',
+    createdAt: '1760522241455',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/316/update 200 in 4893ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 316,
+    title: 'Sonner testing',
+    thumbnail: '',
+    content: 'we are testing the sonner',
+    createdAt: '1760522241455',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/316/update 200 in 940ms
+this value og thumbnail incase of undefinfed File {
+  size: 0,
+  type: 'application/octet-stream',
+  name: 'undefined',
+  lastModified: 1760612270963
+}
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:37:21)
+    at async updatePost (src\lib\actions\postActions.ts:111:18)
+  35 |    try {
+  36 |     const session = await getSession();
+> 37 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  38 |         method:"POST",
+  39 |         headers:{
+  40 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ POST /user/posts/316/update 200 in 1466ms
+this value og thumbnail incase of undefinfed File {
+  size: 0,
+  type: 'application/octet-stream',
+  name: 'undefined',
+  lastModified: 1760612291544
+}
+ POST /user/posts/316/update 200 in 391ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 1486ms
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FSIGNATURE.png_1760580569268&w=1080&q=75 500 in 1283ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FSIGNATURE.png_1760580569268&w=1080&q=75 500 in 1203ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FWIN_20240427_22_23_27_Pro.jpg_1760580612739&w=1080&q=75 500 in 1429ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FWIN_20240427_22_23_27_Pro.jpg_1760580612739&w=1080&q=75 500 in 1381ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2Fhero.png_1760526909476&w=1080&q=75 500 in 1362ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2Fhero.png_1760526909476&w=1080&q=75 500 in 1224ms
+ GET /user/null 404 in 1103ms
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 316,
+    title: 'Sonner testing -upated Now',
+    thumbnail: '',
+    content: 'we are testing the sonner',
+    createdAt: '1760522241455',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object], [Object] ]
+  }
+}
+ GET /user/posts/316/update 200 in 639ms
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FSIGNATURE.png_1760580569268&w=1080&q=75 500 in 605ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FSIGNATURE.png_1760580569268&w=1080&q=75 500 in 538ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2Fhero.png_1760526909476&w=1080&q=75 500 in 701ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2Fhero.png_1760526909476&w=1080&q=75 500 in 539ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FWIN_20240427_22_23_27_Pro.jpg_1760580612739&w=1080&q=75 500 in 711ms
+ GET /_next/image?url=https%3A%2F%2Fgylfmipoifgusmmbxqre.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fthumbnail%2FWIN_20240427_22_23_27_Pro.jpg_1760580612739&w=1080&q=75 500 in 591ms
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: getaddrinfo ENOTFOUND gylfmipoifgusmmbxqre.supabase.co] {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'gylfmipoifgusmmbxqre.supabase.co'
+  }
+}
+this is the raw data which is fetchedd {
+  getPostbyId: {
+    id: 311,
+    title: 'xyz - updated the post',
+    thumbnail: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739',
+    content: 'doofhsodihfsodf fsdfhsoidfhsd fsdfohsdofidsf',
+    createdAt: '1760519719324',
+    published: true,
+    author: { name: 'Mradul Gandhi' },
+    tags: [ [Object] ]
+  }
+}
+ GET /user/posts/311/delete 200 in 1301ms
+ GET /user/posts/311/null 404 in 920ms
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/WIN_20240427_22_23_27_Pro.jpg_1760580612739
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/SIGNATURE.png_1760580569268
+
+
+https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/hero.png_1760526909476
+ GET /user/posts 200 in 802ms
+ GET / 200 in 1249ms
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=2508027544023638 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1238252579694977 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8930625091236718 500
+ GET / 200 in 1233ms
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=6384690661686176 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8930625091236718 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=543817118771924 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=2508027544023638 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1648190451157334 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1238252579694977 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8813788660512371 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=4174753531955703 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=3196554626299110 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=6440587910080144 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=5517815308286146 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=5491109188254840 500
+ ○ Compiling /api/auth/signout ...
+ ✓ Compiled /api/auth/signout in 2.9s
+ GET /api/auth/signout 307 in 3556ms
+ GET / 200 in 923ms
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1648190451157334 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=1238252579694977 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=6384690661686176 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=2508027544023638 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=8930625091236718 500
+ ⨯ upstream image response failed for https://loremflickr.com/320/240?lock=543817118771924 500
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 1545ms
+ GET /auth/signin 200 in 1962ms
+ ✓ Compiled middleware in 4ms
+ ✓ Compiled in 2s
+ GET /auth/signin 200 in 811ms
+ GET /auth/signin 200 in 448ms
+ ✓ Compiled in 1990ms
+ ○ Compiling /check ...
+ ✓ Compiled /check in 5s
+ ⨯ ./apps/front/src/app/check/page.tsx:1:11
+Parsing ecmascript source code failed
+[0m[31m[1m>[22m[39m[90m 1 |[39m [33m<[39m[33m![39m[33mDOCTYPE[39m html[33m>[39m
+ [90m   |[39m           [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [33m<[39m[33mhtml[39m lang[33m=[39m[32m"en"[39m[33m>[39m[33m<[39m[33mhead[39m[33m>[39m
+ [90m 3 |[39m [33m<[39m[33mmeta[39m charset[33m=[39m[32m"utf-8"[39m[33m/[39m[33m>[39m
+ [90m 4 |[39m [33m<[39m[33mmeta[39m content[33m=[39m[32m"width=device-width, initial-scale=1.0"[39m name[33m=[39m[32m"viewport"[39m[33m/[39m[33m>[39m[0m
+
+Expected ';', '}' or <eof>
+
+
+ GET /check 500 in 7557ms
+ GET /favicon.ico 500 in 1015ms
+ ✓ Compiled in 219ms
+ ✓ Compiled /check in 207ms
+ ⨯ [Error: The default export is not a React Component in "/check/page"]

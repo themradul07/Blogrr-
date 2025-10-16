@@ -1,0 +1,7 @@
+2025-10-16T01:06:40.788287Z  WARN turborepo_filewatch: failed to wait for initial filesystem cookie: filewatching failed to start: failed to write cookie to D:\Projects\BlogProject\.turbo\cookies\.turbo-cookie: failed to create file `D:\Projects\BlogProject\.turbo\cookies\.turbo-cookie`
+2025-10-16T01:06:40.893856Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
+2025-10-16T01:06:40.972927Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
+2025-10-16T06:38:48.563377Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
+2025-10-16T06:38:49.080417Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
+2025-10-16T09:52:42.522555Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
+2025-10-16T09:52:42.673174Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
