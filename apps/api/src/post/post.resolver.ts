@@ -7,25 +7,51 @@ import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth/jwt-auth.guard';
 import { skip } from 'rxjs';
 import { DEFAULT_PAGE_SIZE } from 'src/constants';
+import { PaginationInput } from './dto/pagination.input';
 
 @Resolver(() => Post)
 export class PostResolver {
   constructor(private readonly postService: PostService) { }
 
-  // @UseGuards(JwtAuthGuard)
+  
   @Query(() => [Post], { name: 'posts' })
-  findAll(@Context() context,
+  findAll(
     @Args('skip', { nullable: true }) skip?: number,
     @Args('take', { nullable: true }) take?: number
   ) {
-    const user = context.req.user;
+    
     return this.postService.findAll({ skip, take });
   }
+
+  // @Query(() => [Post])
+  // async etAllPosts(
+  //   @Args('pagination', { type: () => PaginationInput, nullable: true })
+  //   pagination?: PaginationInput,
+  //   @Args('search', { type: () => String, nullable: true })
+  //   search?: string,
+  //   @Args('tags', { type: () => [String], nullable: true })
+  //   tags?: string[],
+  // ) {
+  //   return this.postService.getAllPosts({ pagination, search, tags });
+  // }
+
+  @Query(()=>[Post])
+  async getAllPosts(
+    @Args('pagination' , {type: ()=>PaginationInput , nullable:true}) pagination?:PaginationInput,
+    @Args('search', {type: ()=>String ,nullable:true} ) search?:string,
+    @Args('tags', {type: ()=>[String] ,nullable: true}) tags?: string[],
+  ){
+
+    return this.postService.getAllPosts({pagination , search, tags});
+
+  }
+
 
   @Query(() => Int, { name: "postCount" })
   count() {
     return this.postService.count();
   }
+
 
 
   @Query(() => Post)
@@ -82,11 +108,24 @@ export class PostResolver {
   @Mutation(() => Boolean)
   deletePost(
     @Context() context,
-    @Args('postId', {type : ()=> Int}) postId: number,
+    @Args('postId', { type: () => Int }) postId: number,
   ) {
 
     const userId = context.req.user.id;
     return this.postService.delete({ userId, postId });
   }
+
+  @Query(() => [Post])
+  getReleatedPost(
+    @Args('postId', { type: () => Int }) postId: number,
+  ) {
+    return this.postService.getRelatedPosts(postId);
+  }
+
+  
+
+
+
+
 
 }

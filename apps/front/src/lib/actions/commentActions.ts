@@ -3,73 +3,91 @@
 import { print } from "graphql"
 import { authfetchGraphql, fetchGraphql } from "../fetchGraphQL"
 import { CREATE_COMMENT_MUTATION, GET_POST_COMMENTS } from "../gqlQueries"
-import { CommentEntity } from "../types/modelTypes"
 import { CreateCommentFormState } from "../types/formState"
 import { CommentFormSchema } from "../zodSchema/commentFormSchema"
-import { tr } from "zod/v4/locales"
+
+function handleError(context: string, error: unknown) {
+  console.error(`❌ Error in ${context}:`, error)
+  if (error instanceof Error) return { error: error.message }
+  return { error: "An unexpected error occurred." }
+}
 
 export async function getPostComments({
-    postId,
-    skip,
-    take
-}:{
-    postId: number,
-    skip: number,
-    take: number,
-}){
-
+  postId,
+  skip,
+  take,
+}: {
+  postId: number
+  skip: number
+  take: number
+}) {
+  try {
     const data = await fetchGraphql(print(GET_POST_COMMENTS), {
-        postId,
-        take,
-        skip,
+      postId,
+      take,
+      skip,
     })
-    if (!data) throw new Error("No data received from backend");
-
+    if (!data) throw new Error("No data received from backend")
     return {
       comments: data.getPostComments ?? [],
       count: data.postCommentCount ?? 0,
-    };
+    }
+  } catch (err) {
+    return handleError("getPostComments", err)
+  }
 }
 
 export async function saveComments(
-    state: CreateCommentFormState,
-    formData: FormData
-): Promise<CreateCommentFormState>{
+  state: CreateCommentFormState,
+  formData: FormData
+): Promise<CreateCommentFormState> {
+  try {
     const validatedFields = CommentFormSchema.safeParse(
-        Object.fromEntries(formData.entries())
-    );
+      Object.fromEntries(formData.entries())
+    )
 
-
-    if(!validatedFields.success) return{
+    if (!validatedFields.success)
+      return {
         data: {
-            content: String(formData.get("content") ?? ""),
-            postId: Number(formData.get("postId") ?? 0),
+          content: String(formData.get("content") ?? ""),
+          postId: Number(formData.get("postId") ?? 0),
         },
         errors: {
-            content: validatedFields.error.flatten().fieldErrors.content ?? [],
+          content: validatedFields.error.flatten().fieldErrors.content ?? [],
         },
-    }
+      }
 
-    const data = await authfetchGraphql(print(CREATE_COMMENT_MUTATION),{
-        input:{
-            ...validatedFields.data
-        }
+    const data = await authfetchGraphql(print(CREATE_COMMENT_MUTATION), {
+      input: {
+        ...validatedFields.data,
+      },
     })
 
-
-    if(data) return{
-        message : "Success! Your comments saved!",
+    if (data)
+      return {
+        message: "Success! Your comment was saved!",
         ok: true,
         open: false,
-    }
+      }
 
     return {
-        message:"Oops! Something went wrong", 
-        ok: false,
-        open: true,
-        data: {
-            content: String(formData.get("content") ?? ""),
-            postId: Number(formData.get("postId") ?? 0),
-        },
+      message: "Oops! Something went wrong",
+      ok: false,
+      open: true,
+      data: {
+        content: String(formData.get("content") ?? ""),
+        postId: Number(formData.get("postId") ?? 0),
+      },
     }
+  } catch (err) {
+    return {
+      message: `❌ ${handleError("saveComments", err).error}`,
+      ok: false,
+      open: true,
+      data: {
+        content: String(formData.get("content") ?? ""),
+        postId: Number(formData.get("postId") ?? 0),
+      },
+    }
+  }
 }

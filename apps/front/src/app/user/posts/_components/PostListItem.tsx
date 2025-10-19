@@ -11,6 +11,7 @@ type Props = {
 const PostListItem = ({post}: Props) => {
     console.log(post.thumbnail);
   return (
+    
     <div className='grid grid-cols-8 m-2 rounded-md overflow-hidden border shadow hover:sacle-[101%] text-center'>
         <div className=' relative w-full max-w-48 h-32'>
             <Image alt='post-img' src={post.thumbnail || "/no-image.png"} fill/>

@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
+import {  Poppins } from "next/font/google";
 import "./globals.css";
-import DesktopNavbar from "./components/desktopNavbar";
+
 import Navbar from "./components/navbar";
 import NavbarContainer from "./components/NavbarContainer";
 import Providers from "./Providers";
 import { Toaster } from "sonner";
+import Footer from "./components/Footer";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: [ "500" ], // choose weights
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,17 +26,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${poppins.variable} bg-slate-100 antialiased`}>
         <Providers>
-
           <NavbarContainer>
             <Navbar />
           </NavbarContainer>
-          {children}
-          <Toaster/>
+        
 
+          {children}
+          <Footer/>
+          <Toaster />
         </Providers>
       </body>
     </html>

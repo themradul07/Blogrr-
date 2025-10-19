@@ -51,6 +51,13 @@ type Post {
   _count: Count!
 }
 
+type Like {
+  id: Int!
+  user: User!
+  post: Post!
+  createdAt: DateTime!
+}
+
 type AuthPayload {
   id: Int!
   name: String!
@@ -60,14 +67,23 @@ type AuthPayload {
 
 type Query {
   posts(skip: Float, take: Float): [Post!]!
+  getAllPosts(pagination: PaginationInput, search: String, tags: [String!]): [Post!]!
   postCount: Int!
   getPostbyId(id: Int!): Post!
   getUserPosts(skip: Float, take: Float): [Post!]!
   userPostCount: Int!
+  getReleatedPost(postId: Int!): [Post!]!
   getPostComments(postId: Int!, take: Int = 12, skip: Int = 0): [CommentEntity!]!
   postCommentCount(postId: Int!): Int!
+  getTopTags: [Tag!]!
   postLikesCount(postId: Int!): Int!
   userLikePost(postId: Int!): Boolean!
+  LikedPosts: [Like!]!
+}
+
+input PaginationInput {
+  skip: Int
+  take: Int
 }
 
 type Mutation {

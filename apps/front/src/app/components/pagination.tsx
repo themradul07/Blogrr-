@@ -19,7 +19,7 @@ const Pagination = ({totalPages, currentPage , pageNeighbors=1, className}: Prop
 
             {/* Left button */}
             {currentPage !== 1 && (
-                <button className={cn("rounded-md bg-slate-200 py-2 px-2")}>
+                <button className={cn("rounded-md py-2 px-2")}>
                     <Link href={`?page=${currentPage-1}`}>
                         <ChevronLeftIcon className="w-4"/>
                     </Link>
@@ -29,8 +29,8 @@ const Pagination = ({totalPages, currentPage , pageNeighbors=1, className}: Prop
             {pageNumbers.map((page, index)=>(
                 <button key={index}
                 className={cn("px-3 py-1 rounded-md transition hover:text-sky-600",{
-                    "bg-slate-200": currentPage !== page && page !=='...',
-                    "bg-blue-500 text-white" : currentPage=== page,
+                    "": currentPage !== page && page !=='...',
+                    "bg-blue-500 text-white rounded-full" : currentPage=== page,
                     "cursor-not-allowed":page==='...'
                 })}>
                     {page==='...'?'...':
@@ -39,7 +39,7 @@ const Pagination = ({totalPages, currentPage , pageNeighbors=1, className}: Prop
             ))}
 
             {/* next page icon */}
-            {currentPage !== totalPages && <button className="rounded-md bg-slate-200 py-2 px-2">
+            {currentPage !== totalPages && <button className="rounded-md  py-2 px-2">
                 <Link href={`?page=${currentPage+1}`}><ChevronRightIcon className="w-4"/></Link>
                 </button>}
 

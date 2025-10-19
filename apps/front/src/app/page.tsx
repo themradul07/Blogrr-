@@ -1,7 +1,7 @@
 import Hero from "./components/Hero";
 import Image from "next/image";
 import Posts from "./components/Posts";
-import { fetchPosts } from "@/lib/actions/postActions";
+import { fetchPosts, fetchPostsById } from "@/lib/actions/postActions";
 import { DEFAULT_PAGE_SIZE } from "@/lib/constants";
 import { getSession } from "@/lib/session";
 import TestDialog from "./components/TestDailog";
@@ -17,6 +17,8 @@ export default async function Home({searchParams}: Props) {
     page: page?+page:undefined,
   });
 
+  const featuredPost = await fetchPostsById(320)
+
   const session = await getSession();
 
 
@@ -24,7 +26,7 @@ export default async function Home({searchParams}: Props) {
     <main>
       <Hero/>
       
-      <Posts posts={posts} currentPage={page?+page:1} totalPages={Math.ceil(totalPosts/DEFAULT_PAGE_SIZE)}/>
+      <Posts featuredPost={featuredPost} posts={posts} currentPage={page?+page:1} totalPages={Math.ceil(totalPosts/DEFAULT_PAGE_SIZE)} />
     </main>
   );
 }

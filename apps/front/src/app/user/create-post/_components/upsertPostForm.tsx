@@ -28,20 +28,24 @@ const UpsertPostForm = ({state, formAction, postId}:Props) => {
   return (
     <form action={formAction} className="flex flex-col gap-3 [&>div>label]:text-slate-500 [&>div>input]:transition [&>div>textarea]:transition ">
         <input type="number" name="postId" defaultValue={state?.data?.postId}  hidden/>
-        <div>
-            <label htmlFor="title">Title</label>
-            <Input name="title" placeholder="Enter The Title of Your Post" defaultValue={state?.data?.title}/>
+         <div>
+            <label className="text-sm"  htmlFor="title">Title</label>
+            <Input className="mt-2 bg-gray-50" id="title" name="title"placeholder="Enter The Title of Your Post"  defaultValue={state?.data?.title}/>
         </div>
+       
         {!!state?.errors?.title && (
             <p className="text-red-500 animate-shake"> {state.errors.title}</p>
         )}
 
         <div>
-            <label htmlFor="content"> Content</label>
+            <label className="text-sm" htmlFor="content"> Content</label>
             <Textarea 
+            className="mt-2 bg-gray-50 h-62"
                 name="content" 
                 placeholder="Write Your Post Content here"
-                rows={6}  
+                rows={50}  
+
+                
                 defaultValue={state?.data?.content}  
             />
         </div>
@@ -50,8 +54,9 @@ const UpsertPostForm = ({state, formAction, postId}:Props) => {
         )}
 
         <div>
-            <label htmlFor="thumbnail">Content</label>
+            <label className="text-sm" htmlFor="thumbnail">Upload Cover Image - (Under 1MB)</label>
             <Input 
+                className="mt-2 bg-gray-50" 
                 type="file" 
                 name="thumbnail" 
                 accept="image/*"
@@ -69,16 +74,16 @@ const UpsertPostForm = ({state, formAction, postId}:Props) => {
         )}
 
         <div>
-            <label htmlFor="tags">Tags(comma-separted)</label>
-            <Input name="tags" placeholder="Enter tags (comma-separated)" defaultValue={state?.data?.tags}/>
+            <label className="text-sm" htmlFor="tags">Tags(comma-separted)</label>
+            <Input className="mt-2 bg-gray-50" name="tags" placeholder="Enter tags (comma-separated)" defaultValue={state?.data?.tags}/>
         </div>
         {!!state?.errors?.tags && (
             <p className="text-red-500 animate-shake"> {state.errors.tags}</p>
         )}
 
          <div className="flex items-center">
-            <input className="mx-2 w-4 h-4" type="checkbox" name="published" defaultChecked={state?.data?.published==="on"?true:false} />
-            <label htmlFor="checkbox">Publish Now</label>
+            <input  className="mx-2 w-4 h-4" type="checkbox" name="published" defaultChecked={state?.data?.published==="on"?true:false} />
+            <label className="text-sm" htmlFor="checkbox">Publish Now</label>
         </div>
         {!!state?.errors?.isPublished && (
             <p className="text-red-500 animate-shake"> {state.errors.isPublished}</p>

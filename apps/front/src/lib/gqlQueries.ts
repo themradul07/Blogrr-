@@ -132,3 +132,58 @@ export const DELETE_POST_MUTATION = gql`
         deletePost(postId: $postId)
     }
 `
+
+export const USER_LIKED_POSTS = gql`
+   query LikedPosts {
+    LikedPosts {
+        id
+        post{
+            id
+            title
+            thumbnail
+        }
+        createdAt
+    }
+}
+
+`
+
+export const GET_RELEATED_POSTS = gql`
+   query GetReleatedPost($postId: Int!) {
+    getReleatedPost(postId:$postId) {
+        id
+        slug
+        title        
+        thumbnail 
+     
+    }
+}
+`
+
+export const GET_ALL_POSTS = gql`
+query GetAllPosts($pagination: PaginationInput, $search: String, $tags: [String!]) {
+  getAllPosts(pagination: $pagination, search: $search, tags: $tags) {
+    id
+    title
+    thumbnail
+    slug
+    content
+    createdAt
+    author {
+      name
+    }
+    tags {
+      name
+    }
+  }
+}
+`
+
+export const GET_ALL_TAGS = gql`
+    query GetTopTags {
+        getTopTags {
+            id
+            name
+        }
+}
+`

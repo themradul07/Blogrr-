@@ -12,24 +12,32 @@ const PostCard = ({
     content,
     createdAt,
 }: Props) => {
-    
+
     return (
         <div className='bg-white rounded-lg shadow-md overflow-hidden flex flex-col'>
-            <div className='relative h-60 overflow-hidden bg-amber-200'>
-                <Image src={thumbnail||"/no-image.png"} alt="Post image" fill />
-            </div>
-            <div className='p-6 flex-grow flex flex-col'>
+                <Link
+                    href={`/blog/${slug}/${id}`}
+                    className='flex-grow'
+                >
+                <div className='relative h-50 overflow-hidden bg-slate-50'>
+                    <Image src={thumbnail===undefined || thumbnail===""?"/no-image.png": thumbnail} alt="Post image" fill />
+                </div>
+                <div className='px-4 py-2 flex-grow flex flex-col h-full '>
 
-            <h3 className='text-lg font-bold mt-4 break-words text-center text-gray-600'>{title}</h3>
-            <p className='mt-2 text-gray-500 text-sm'>{new Date(createdAt??"").toLocaleDateString()}</p>
-            <p>
+                    <h3 className='break-words font-semibold line-clamp-2'>{title}</h3>
+                    <div className='justify-self-end'>
+
+                    <p className='mt-2 text-gray-500 text-xs'>
+                        By Xyz Abcdef ||
+                        {new Date(createdAt ?? "").toLocaleDateString()}</p>
+                    </div>
+                    {/* <p>
                 {content?.slice(0,100)}...
-            </p>
-            <Link 
-            href={`/blog/${slug}/${id}`}
-            className='text-indigo-600 hover:underline mt-auto text-right block'>Read more</Link>
+            </p> */}
+
+                </div>
+        </Link>
             </div>
-        </div>
     )
 }
 

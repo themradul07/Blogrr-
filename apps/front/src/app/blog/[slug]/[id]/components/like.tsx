@@ -2,9 +2,10 @@
 import { getPostLikedData, likePost, unlikePost } from '@/lib/actions/like';
 import { SessionUser } from '@/lib/session';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import {HeartIcon} from '@heroicons/react/24/outline'
+import {HeartIcon} from '@heroicons/react/16/solid'
 
 import React from 'react'
+import { toast } from 'sonner';
 
 type Props = {
     postId: number;
@@ -19,13 +20,21 @@ const Like = (props: Props) => {
 
     const likeMutation = useMutation({
         mutationFn:()=>likePost(props.postId),
-        onSuccess: refetchPostLikeData
+        onSuccess: ()=>{         
+            toast.success("Liked Successfully")
+            refetchPostLikeData
+        },
+        onError: ()=>{
+            toast.error("Failed to Like")
+        }
         
     });
  
     const unlikeMutation = useMutation({
         mutationFn:()=>unlikePost(props.postId),
-        onSuccess: refetchPostLikeData
+           onError: ()=>{
+            toast.error("Failed to Unlike")
+        }
         
     });
   return (
@@ -36,7 +45,7 @@ const Like = (props: Props) => {
             </button>
         ):(
             <button className=' z-60 cursor-pointer' onClick={()=>likeMutation.mutate()}>
-                <HeartIcon className=' w-6'/>
+                <HeartIcon stroke='black' className=' w-6 text-white'/>
             </button>
         )}
         <p className='text-slate-600'>

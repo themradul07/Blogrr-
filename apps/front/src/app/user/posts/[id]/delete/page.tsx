@@ -21,6 +21,9 @@ const DeletePostPage = async (props: Props) => {
         await deletePost(+params.id);
     }
     return (
+        <div className='w-full flex justify-center'>
+
+
         <Card className='w-96 m-12 px-6 py-12'>
             <CardHeader>
                 <CardTitle className='flex justify-between items-center font-thin'>
@@ -55,6 +58,7 @@ const DeletePostPage = async (props: Props) => {
 
             </CardContent>
         </Card>
+        </div>
     )
 }
 

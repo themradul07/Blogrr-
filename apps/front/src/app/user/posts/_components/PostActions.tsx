@@ -1,3 +1,5 @@
+"use client"
+
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { PencilIcon, TrashIcon } from '@heroicons/react/16/solid'
 
@@ -12,7 +14,7 @@ type Props = {
 const PostActions = ({ postId }: Props) => {
   return (
     <>
-      <div className='w-full flex justify-center items-center gap-2'>
+      <div className='w-full flex  items-center gap-2'>
         <TooltipProvider>
           <Tooltip>
             < TooltipTrigger asChild>

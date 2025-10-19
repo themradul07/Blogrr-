@@ -8,5 +8,11 @@ import { UpdateTagInput } from './dto/update-tag.input';
 export class TagResolver {
   constructor(private readonly tagService: TagService) {}
 
+
+  @Query(()=>[Tag])
+  getTopTags(){
+    return this.tagService.getAllTags();
+  }
+
  
 }

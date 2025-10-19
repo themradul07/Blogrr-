@@ -28,12 +28,12 @@ const Comments = ({postId, user} : Props) => {
 
   const totalPages = Math.ceil((data?.count??0)/DEFAULT_PAGE_SIZE);
   return (
-    <div className='p-2 rounded-md shadow-md'>
-      <h6 className='text-lg text-slate-700'>
+    <div className='p-2 rounded-md '>
+      <h6 className='text-2xl'>
         Comments
       </h6>
     <div className='flex flex-col gap-4'>
-      {!!user && <AddComment user={user} postId={postId} refetch={refetch}/> }
+      {!!user && <AddComment className='ml-4 mt-4' user={user} postId={postId} refetch={refetch}/> }
       {isLoading?
         Array.from({ length:12 }).map((_, index)=>(<CommentCardSkeleton key={index}/>   )):
       data?.comments.map((comment)=><CommentsCard key={comment.id} comment={comment}/>)

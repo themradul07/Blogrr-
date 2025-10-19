@@ -12,20 +12,20 @@ const SignUpForm = ()=>{
         <p className="text-red-500 text-sm">{state?.message}</p>
         )}
         <div>
-            <label htmlFor="name">Name</label>
-            <Input id="name" name="name" placeholder="John Doe" defaultValue={state?.data.email} />
+            <label className="text-sm" htmlFor="name">Name</label>
+            <Input className="mt-2 bg-gray-50" id="name" name="name" placeholder="John Doe" defaultValue={state?.data.email} />
         </div>
         {!!state?.errors?.name && (<p className="text-red-500 text-sm">{state.errors.name}</p>)}
 
         <div>
-            <label htmlFor="email">Email</label>
-            <Input id="email" name="email" placeholder="john@example.com" defaultValue={state?.data.name}/>
+            <label className="text-sm" htmlFor="email">Email</label>
+            <Input className="mt-2 bg-gray-50" id="email" name="email" placeholder="john@example.com" defaultValue={state?.data.name}/>
         </div>
         {!!state?.errors?.email && (<p className="text-red-500 text-sm">{state.errors.email}</p>)}
 
         <div>
-            <label htmlFor="password">Password</label>
-            <Input id="password" name="password" type="password" defaultValue={state?.data.password}/>
+            <label className="text-sm" htmlFor="password">Password</label>
+            <Input className="mt-2 bg-gray-50" id="password" name="password" type="password" defaultValue={state?.data.password}/>
         </div>
         {!!state?.errors?.password && (
             <div className="text-red-500 text-sm">
@@ -38,7 +38,7 @@ const SignUpForm = ()=>{
                 </ul>
             </div>)}
 
-        <SubmitButton>Sign Up</SubmitButton>
+        <SubmitButton className="mt-4">Sign Up</SubmitButton>
 
         
 

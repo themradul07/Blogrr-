@@ -9,63 +9,80 @@ import { createSession } from "../session";
 import { LoginFormSchema } from "../zodSchema/loginFormSchema";
 import { revalidatePath } from "next/cache";
 
-export async function signUp(
-    state: SignUpFormState,
-    formData: FormData
-): Promise<SignUpFormState> {
+function handleError(context: string, error: unknown) {
+  console.error(`❌ Error in ${context}:`, error);
+  if (error instanceof Error) return { message: error.message };
+  return { message: "An unexpected error occurred." };
+}
 
-    const validatedFields = SignUpFormSchema.safeParse(Object.fromEntries(formData.entries()));
+export async function signUp(
+  state: SignUpFormState,
+  formData: FormData
+): Promise<SignUpFormState> {
+  try {
+    const validatedFields = SignUpFormSchema.safeParse(
+      Object.fromEntries(formData.entries())
+    );
+
     if (!validatedFields.success)
-        return {
-            data : Object.fromEntries(formData.entries()),
-            errors: validatedFields.error.flatten().fieldErrors,
-        }
+      return {
+        data: Object.fromEntries(formData.entries()),
+        errors: validatedFields.error.flatten().fieldErrors,
+      };
 
     const data = await fetchGraphql(print(CREATE_USER_MUTATION), {
-        input: {
-            ...validatedFields.data
-        }
+      input: { ...validatedFields.data },
     });
 
+    if (data?.errors)
+      return { errors: {}, message: "Something went wrong" };
 
-    if (data?.errors) return {   errors: {}, message: "Something went wrong" };
-    redirect("/auth/signin")
+    redirect("/auth/signin");
+  } catch (err) {
+    return { errors: {}, ...handleError("signUp", err) };
+  }
 }
 
 export async function signIn(
-    state: SignUpFormState,
-    formData: FormData
+  state: SignUpFormState,
+  formData: FormData
 ): Promise<SignUpFormState> {
-   
-    const validatedFields = LoginFormSchema.safeParse(Object.fromEntries(formData.entries()));
-    
+  try {
+    const validatedFields = LoginFormSchema.safeParse(
+      Object.fromEntries(formData.entries())
+    );
+
     if (!validatedFields.success)
-        return {
-            data : Object.fromEntries(formData.entries()),
-            errors: validatedFields.error.flatten().fieldErrors,
-        }
-   
+      return {
+        data: Object.fromEntries(formData.entries()),
+        errors: validatedFields.error.flatten().fieldErrors,
+      };
+
     const data = await fetchGraphql(print(SIGN_IN_MUTATION), {
-        input: {
-           ...validatedFields.data,
-        }
+      input: { ...validatedFields.data },
     });
 
+    if (!data?.signIn)
+      return {
+        data: Object.fromEntries(formData.entries()),
+        message: "Invalid Credentials",
+      };
 
     await createSession({
-        user:{
-            id: data.signIn.id,
-            name:data.signIn.name,
-            avatar: data.signIn.name,
-        },
-        accessToken: data.signIn.accessToken,
+      user: {
+        id: data.signIn.id,
+        name: data.signIn.name,
+        avatar: data.signIn.avatar ?? "",
+      },
+      accessToken: data.signIn.accessToken,
     });
 
-    if (data?.errors) 
-        return { 
-            data: Object.fromEntries(formData.entries()), 
-            message: "Invalid Credentials" 
-        };
     revalidatePath("/");
     redirect("/");
+  } catch (err) {
+    return {
+      data: Object.fromEntries(formData.entries()),
+      ...handleError("signIn", err),
+    };
+  }
 }

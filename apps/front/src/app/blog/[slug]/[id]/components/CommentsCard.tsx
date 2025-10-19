@@ -5,25 +5,37 @@ import { UserIcon } from '@heroicons/react/16/solid'
 import React from 'react'
 
 type Props = {
-    comment : CommentEntity
+    comment: CommentEntity
 }
-const CommentsCard = ({comment}:Props) => {
-  return (
-    <div className='p-2 shadow  rounded'>
-        <div className='flex gap-2 text-slate-500 items-center'>
+const CommentsCard = ({ comment }: Props) => {
+    return (
+        <div className='p-2  rounded'>
+            <div className='flex gap-4  '>
+                <div>
 
-            <Avatar className='border-2'>
-                <AvatarImage src={comment.author.avatar}/>
-                <AvatarFallback>
-                    <UserIcon className='w-8'/>
-                </AvatarFallback>
-            </Avatar>
-            <p>{comment.author.name}</p>
-            <p>{new Date(comment.createdAt).toLocaleDateString()}</p>
+
+                    <Avatar className='border-2 size-12'>
+                        <AvatarImage src={comment.author.avatar} />
+                        <AvatarFallback>
+                            <UserIcon className='w-8' />
+                        </AvatarFallback>
+                    </Avatar>
+                </div>
+                <div >
+
+                    <p>{comment.author.name}
+                        <span className='ml-2'>
+                            {new Date(comment.createdAt).toLocaleDateString()}
+                        </span>
+                    </p>
+                    <p className='mt-1 text-gray-700 text-sm'>{comment.content}</p>
+
+
+
+                </div>
+            </div>
         </div>
-        <p className='mt-4'>{comment.content}</p>
-    </div>
-  )
+    )
 }
 
 export default CommentsCard

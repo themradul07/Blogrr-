@@ -1,26 +1,33 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTagInput } from './dto/create-tag.input';
 import { UpdateTagInput } from './dto/update-tag.input';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class TagService {
-  create(createTagInput: CreateTagInput) {
-    return 'This action adds a new tag';
+
+
+  constructor(private readonly prisma: PrismaService){}
+
+  
+  async getAllTags(){
+
+    return this.prisma.tag.findMany({
+
+    })
   }
 
-  findAll() {
-    return `This action returns all tag`;
-  }
+async getPopularTags() {
+  return this.prisma.tag.findMany({
+    take: 15, // only top 15 tags
+    orderBy: {
+      posts: {
+        _count: 'desc', // sort by number of posts (descending)
+      },
+    },
+   
+  });
+}
 
-  findOne(id: number) {
-    return `This action returns a #${id} tag`;
-  }
-
-  update(id: number, updateTagInput: UpdateTagInput) {
-    return `This action updates a #${id} tag`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} tag`;
-  }
+  
 }

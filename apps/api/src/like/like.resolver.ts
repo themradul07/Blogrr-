@@ -5,6 +5,7 @@ import { CreateLikeInput } from './dto/create-like.input';
 import { UpdateLikeInput } from './dto/update-like.input';
 import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth/jwt-auth.guard';
+import { Post } from 'src/post/entities/post.entity';
 
 @Resolver(() => Like)
 export class LikeResolver {
@@ -44,5 +45,14 @@ export class LikeResolver {
     @Args("postId" , { type: ()=>Int}) postId: number, 
   ){
     return this.likeService.userLikedPost({postId , userId:context.req.user.id});
+  }
+
+   @UseGuards(JwtAuthGuard)
+  @Query(() => [Like])
+  LikedPosts(
+    @Context() context,  
+  ) {
+    const userId = context.req.user.id;
+    return this.likeService.likedPosts({userId});
   }
 }

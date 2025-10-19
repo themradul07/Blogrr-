@@ -63,4 +63,14 @@ async likePost({ postId, userId }: { postId: number; userId: number }) {
    
     return !!like;
   }
+
+  async likedPosts({ userId}: {userId: number}){    
+
+    return await this.prisma.like.findMany({
+      where:{ userId: userId},
+      include: {post: true}
+    })
+    
+
+  }
 }
