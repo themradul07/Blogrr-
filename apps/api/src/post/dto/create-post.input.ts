@@ -21,6 +21,6 @@ export class CreatePostInput {
   tags: string[];
 
   @IsBoolean()
-  @Field(()=>Boolean)
+  @Field(()=>Boolean , {defaultValue: false})  
   published: boolean;
 }

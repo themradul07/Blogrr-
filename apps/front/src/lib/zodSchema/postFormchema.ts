@@ -16,6 +16,6 @@ export const PostFormSchema = z.object({
   ),
 
   thumbnail: z.instanceof(File).optional(),
-  published: z.string().transform((value) => value === "on"),
+  published: z.string().transform((value) => value === "on").optional(),
 });
 

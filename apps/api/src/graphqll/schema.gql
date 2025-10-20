@@ -102,7 +102,7 @@ input CreatePostInput {
   content: String!
   thumbnail: String
   tags: [String!]!
-  published: Boolean!
+  published: Boolean! = false
 }
 
 input UpdatePostInput {

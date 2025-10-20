@@ -25,10 +25,22 @@ const BlogsView = () => {
   });
   console.log(TagList)
   return (
-    <div className="mt-16 flex flex-col md:flex-row gap-8 p-6 min-h-screen">
+    <div className="mt-2 md:mt-16 flex flex-col md:flex-row gap-8 p-6 min-h-screen">
       {/* Left Section */}
+
       <div className="w-full md:w-3/4 space-y-4">
         <h2 className="text-3xl font-semibold">All Blogs</h2>
+
+         <div className=" md:hidden w-full md:w-1/4">
+        <div className="space-y-6 sticky top-24 h-fit">
+          <BlogSearch search={search} setSearch={setSearch} />
+          {/* <BlogFilter
+            tagsList={TagList ?? []}
+            selectedTags={tags}
+            setSelectedTags={setTags}
+          /> */}
+        </div>
+      </div>
 
         {isLoading && (
           <p className="w-full text-center text-xl mt-32">Loading posts...</p>
@@ -48,7 +60,7 @@ const BlogsView = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className="w-full md:w-1/4">
+      <div className="hidden md:block w-full md:w-1/4">
         <div className="space-y-6 sticky top-24 h-fit">
           <BlogSearch search={search} setSearch={setSearch} />
           <BlogFilter

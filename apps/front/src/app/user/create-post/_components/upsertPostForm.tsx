@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { PostFormState } from "@/lib/types/formState";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -19,10 +20,12 @@ const UpsertPostForm = ({state, formAction, postId}:Props) => {
 
     useEffect(() => {
         console.log("this the value of the state", state);
-      if(state?.message)
+      if(state?.message){
         toast(state?.ok? "Succesfully Completed": "Oops Something went wrong" ,
           {description : state.message}
-        )      
+        )  
+        redirect('/user/posts')    
+    }
     }, [state])
 
   return (

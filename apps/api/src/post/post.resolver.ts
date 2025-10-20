@@ -23,19 +23,7 @@ export class PostResolver {
     return this.postService.findAll({ skip, take });
   }
 
-  // @Query(() => [Post])
-  // async etAllPosts(
-  //   @Args('pagination', { type: () => PaginationInput, nullable: true })
-  //   pagination?: PaginationInput,
-  //   @Args('search', { type: () => String, nullable: true })
-  //   search?: string,
-  //   @Args('tags', { type: () => [String], nullable: true })
-  //   tags?: string[],
-  // ) {
-  //   return this.postService.getAllPosts({ pagination, search, tags });
-  // }
-
-  @Query(()=>[Post])
+   @Query(()=>[Post])
   async getAllPosts(
     @Args('pagination' , {type: ()=>PaginationInput , nullable:true}) pagination?:PaginationInput,
     @Args('search', {type: ()=>String ,nullable:true} ) search?:string,

@@ -88,6 +88,7 @@ export async function saveNewPost(
 
     let thumbnailUrl = "";
     if (validated.data.thumbnail) {
+      
       thumbnailUrl = await uploadThumbnail(validated.data.thumbnail);
     }
 

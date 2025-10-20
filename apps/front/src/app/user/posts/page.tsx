@@ -30,7 +30,7 @@ const totalComments = posts.reduce((total, post) => total + (post._count.comment
 
   return (
     <div className='flex max-h-screen w-full'>
-      <div className=' max-h-screen'>
+      <div className=' max-h-screen hidden md:block'>
         <Sidebar />
 
       </div>
@@ -38,8 +38,8 @@ const totalComments = posts.reduce((total, post) => total + (post._count.comment
 
         <h1 className='text-3xl font-semibold mb-6 '>Dashboard</h1>
 
-        <div className='flex justify-around g-4 '>
-          <div className='bg-white p-4 rounded-md m-4  flex flex-col g-6 w-1/3'>
+        <div className='flex flex-col md:flex-row justify-around gap-4  '>
+          <div className='bg-white p-4 rounded-md   flex flex-col g-6 w-full md:w-1/3'>
             <p className='text-md font-semibold text-gray-700'>
               Total Posts
             </p>
@@ -47,7 +47,7 @@ const totalComments = posts.reduce((total, post) => total + (post._count.comment
               {totalPosts}
             </p>
           </div>
-          <div className='bg-white p-4 rounded-md m-4  flex flex-col g-6 w-1/3'>
+          <div className='bg-white p-4 rounded-md   flex flex-col g-6 w-full md:w-1/3'>
             <p className='text-md font-semibold text-gray-700'>
               Total Likes
             </p>
@@ -55,7 +55,7 @@ const totalComments = posts.reduce((total, post) => total + (post._count.comment
             {totalLikes}
             </p>
           </div>
-          <div className='bg-white p-4 rounded-md m-4  flex flex-col g-6 w-1/3'>
+          <div className='bg-white p-4 rounded-md   flex flex-col g-6 w-full md:w-1/3'>
             <p className='text-md font-semibold text-gray-700'>
               Total Comments
             </p>

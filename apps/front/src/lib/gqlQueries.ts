@@ -9,6 +9,13 @@ export const GET_POSTS = gql`
         content
         createdAt
         slug
+         author{
+                name
+            }
+            tags{
+                id
+                name
+            } 
         }
         postCount
     }

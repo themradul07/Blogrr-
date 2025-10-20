@@ -23,7 +23,7 @@ const Postpage = async ({ params }: Props) => {
   
 
   return (
-    <main className='container w-full px-4 py-8 mt-16 bg-gray-100 flex justify-center '>
+    <main className='container w-full px-4 py-8 mt-2 md:mt-16 bg-gray-100 flex justify-center '>
       <div className='w-5xl  flex flex-col gap-4 '>
 
         <div className='flex flex-col gap-4 bg-white p-4 rounded-md'>

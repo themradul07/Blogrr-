@@ -27,7 +27,7 @@ const DesktopNavbar =  (props: PropsWithChildren) => {
          {"bg-white text-gray-700 shadow:md":isScrollDown||!isHome,
 
          })}>
-        <div className='flex items-center px-4  py-2 w-full justify-center' >
+        <div className='flex items-center px-4   w-full justify-center' >
             {props.children}
         </div>
         {/* <hr className='border-b border-gray-100 opacity-50'/> */}

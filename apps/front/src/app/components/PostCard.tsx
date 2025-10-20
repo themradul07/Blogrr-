@@ -11,6 +11,7 @@ const PostCard = ({
     thumbnail,
     content,
     createdAt,
+    author,
 }: Props) => {
 
     return (
@@ -28,7 +29,7 @@ const PostCard = ({
                     <div className='justify-self-end'>
 
                     <p className='mt-2 text-gray-500 text-xs'>
-                        By Xyz Abcdef ||
+                        {author?.name} ||
                         {new Date(createdAt ?? "").toLocaleDateString()}</p>
                     </div>
                     {/* <p>

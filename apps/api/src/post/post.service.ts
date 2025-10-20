@@ -23,10 +23,14 @@ export class PostService {
   async findAll({ skip = 0, take = DEFAULT_PAGE_SIZE }: { skip?: number, take?: number }) {
     return await this.prisma.post.findMany({
       
-      
       skip,
       take,
-      orderBy: { createdAt: 'desc' }
+      orderBy: { createdAt: 'desc' },
+       include: {
+        author: true,
+        tags: true,
+      },
+
     });
   }
 

@@ -22,7 +22,7 @@ const Like = (props: Props) => {
         mutationFn:()=>likePost(props.postId),
         onSuccess: ()=>{         
             toast.success("Liked Successfully")
-            refetchPostLikeData
+            refetchPostLikeData()
         },
         onError: ()=>{
             toast.error("Failed to Like")
@@ -40,11 +40,11 @@ const Like = (props: Props) => {
   return (
     <div className='mt-3 flex items-center justify-start gap-2'>
         {data?.userLikedPost?(
-            <button className='z-60' onClick={()=>unlikeMutation.mutate()}>
+            <button className='z-5' onClick={()=>unlikeMutation.mutate()}>
                 <HeartIcon className='w-6 cursor-pointer text-rose-600'/>
             </button>
         ):(
-            <button className=' z-60 cursor-pointer' onClick={()=>likeMutation.mutate()}>
+            <button className=' z-5 cursor-pointer' onClick={()=>likeMutation.mutate()}>
                 <HeartIcon stroke='black' className=' w-6 text-white'/>
             </button>
         )}
