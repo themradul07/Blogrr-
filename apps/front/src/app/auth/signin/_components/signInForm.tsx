@@ -3,15 +3,20 @@
 import SubmitButton from "@/app/components/SubmitButton";
 import { Input } from "@/components/ui/input";
 import { signIn } from "@/lib/actions/auth";
+import { redirect } from "next/navigation";
 import { useActionState, useEffect } from "react";
 
 const SignInForm = ()=>{
-    const [state, action] =  useActionState(signIn, undefined);
+    const [state, action] =  useActionState(signIn, undefined)
+
 
     useEffect(() => {
-      console.log("The value of state" , state);
-      console.log("The value of state" , action);
-    }, [state, action])
+      if(state?.message==="NEXT_REDIRECT"){
+        redirect('/');
+      }
+    
+     
+    }, [state, action]);
     
     return  <form action={action} className="flex flex-col gap-2">
         {!!state?.message && (
