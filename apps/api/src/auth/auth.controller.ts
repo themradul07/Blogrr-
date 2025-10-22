@@ -19,6 +19,6 @@ export class AuthController {
         const userData = await this.authservice.login(req.user);
         
 
-        res.redirect(`http://localhost:3000/api/auth/google/callback?userId=${userData.id}&name=${userData.name}&avatar=${userData.avatar}&accessToken=${userData.accessToken}`)
+        res.redirect(`${process.env.REDIRECT_URI}/api/auth/google/callback?userId=${userData.id}&name=${userData.name}&avatar=${userData.avatar}&accessToken=${userData.accessToken}`)
     }
 }

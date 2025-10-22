@@ -1,0 +1,36 @@
+
+> front@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.182.197.213:3000
+   - Environments: .env
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in 954ms
+ ✓ Ready in 5.3s
+ ○ Compiling / ...
+ ✓ Compiled / in 10s
+ GET / 200 in 13011ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/1760953123389_undefined received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760885942963 received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760893268246 received null
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 1426ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 2024ms
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 1307ms
+ GET /auth/signin 200 in 1810ms
+ ○ Compiling /api/auth/google/callback ...
+ ✓ Compiled /api/auth/google/callback in 542ms
+ GET /api/auth/google/callback?userId=11&name=mradulgandhi18@gmail.com&avatar=null&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJpYXQiOjE3NjExNDc2MzAsImV4cCI6MTc2MTIzNDAzMH0.IRsA1d55jbDRvgB5ugePT1edagFSxm6vU_kw-LqVxGk 307 in 968ms
+ GET / 200 in 1003ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/1760953123389_undefined received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760893268246 received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760885942963 received null

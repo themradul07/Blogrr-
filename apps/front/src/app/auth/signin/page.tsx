@@ -5,6 +5,7 @@ import GoogleSignIn from '@/app/components/GoogleSignIn'
 import SignInForm from './_components/signInForm'
 
 const SignInPage = () => {
+  
   return (
     <div className='bg-white p-8 rounded-lg shadow-md w-[400px] flex flex-col justify-center items-center gap-4 '>
      
