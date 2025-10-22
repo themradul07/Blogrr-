@@ -5,11 +5,12 @@ import { authfetchGraphql, fetchGraphql } from "../fetchGraphQL"
 import { CREATE_COMMENT_MUTATION, GET_POST_COMMENTS } from "../gqlQueries"
 import { CreateCommentFormState } from "../types/formState"
 import { CommentFormSchema } from "../zodSchema/commentFormSchema"
+import { success } from "zod"
 
 function handleError(context: string, error: unknown) {
   console.error(`❌ Error in ${context}:`, error)
   if (error instanceof Error) return { error: error.message }
-  return { error: "An unexpected error occurred." }
+  return {   error: "An unexpected error occurred." }
 }
 
 export async function getPostComments({
@@ -29,11 +30,12 @@ export async function getPostComments({
     })
     if (!data) throw new Error("No data received from backend")
     return {
+  success:true,
       comments: data.getPostComments ?? [],
       count: data.postCommentCount ?? 0,
     }
   } catch (err) {
-    return handleError("getPostComments", err)
+    return {  success:false, count:0, error: "An unexpected error occurred." , comments:[]}
   }
 }
 

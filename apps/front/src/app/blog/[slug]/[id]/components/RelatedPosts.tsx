@@ -8,6 +8,7 @@ type Props = {
 
 const RelatedPosts = async ({ postId }: Props) => {
   const data = await getRelatedPosts(postId);
+  
 
   if (!data || data.length === 0)
     return (
@@ -21,7 +22,7 @@ const RelatedPosts = async ({ postId }: Props) => {
     <div className="p-2 rounded-md">
       <h6 className="text-2xl mb-4">Related Blogs</h6>
       <div className="grid gap-4 md:grid-cols-3">
-        {data.map((post) => (
+        {data?.posts.map((post:any) => (
           <PostCard key={post.id} {...post} />
         ))}
       </div>

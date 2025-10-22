@@ -35,11 +35,11 @@ export async function signUp(
     });
 
     if (data?.errors)
-      return { errors: {}, message: "Something went wrong" };
+      return {data:{}, errors: {}, message: "Something went wrong" };
 
     redirect("/auth/signin");
   } catch (err) {
-    return { errors: {}, ...handleError("signUp", err) };
+    return { data:{}, errors: {}, ...handleError("signUp", err) };
   }
 }
 
@@ -66,6 +66,7 @@ export async function signIn(
       return {
         data: Object.fromEntries(formData.entries()),
         message: "Invalid Credentials",
+        errors:{}
       };
 
     await createSession({
@@ -83,6 +84,7 @@ export async function signIn(
     return {
       data: Object.fromEntries(formData.entries()),
       ...handleError("signIn", err),
+      errors:{},
     };
   }
 }

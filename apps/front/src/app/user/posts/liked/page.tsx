@@ -1,4 +1,5 @@
-import { DEFAULT_PAGE_SIZE } from '@/lib/constants';
+
+export const dynamic = 'force-dynamic';
 import React from 'react';
 import { getUserLikedPosts } from '@/lib/actions/like';
 import Sidebar from '../../_components/Sidebar';
@@ -25,7 +26,7 @@ const UserLikedPosts = async () => {
           <NoPosts message="You haven’t liked any posts yet." />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {likedPost.map((post) => (
+            {likedPost.map((post:any) => (
               <PostCard key={post.id} {...post.post} />
             ))}
           </div>

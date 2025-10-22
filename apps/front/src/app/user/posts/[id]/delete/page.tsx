@@ -15,6 +15,9 @@ type Props = {
 const DeletePostPage = async (props: Props) => {
     const params = await props.params;
     const post = await fetchPostsById(+params.id);
+    if ("error" in post) {
+    return <p>Error occurred loading featured post</p>;
+  }
 
     const formAction = async (formData: FormData)=>{
         "use server";
@@ -45,7 +48,7 @@ const DeletePostPage = async (props: Props) => {
                         <Link href={"/user/posts"}>Cancel</Link>
                     </Button>
 
-                    <SubmitButton variant={"destructive"}>
+                    <SubmitButton >
                         <a href="/user/posts">
                         Delete
                         

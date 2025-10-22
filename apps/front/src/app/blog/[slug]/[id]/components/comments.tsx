@@ -11,7 +11,7 @@ import AddComment from '@/app/components/addComment'
 
 type Props = {
   postId : number,
-  user: SessionUser
+  user: SessionUser,
 }
 const Comments = ({postId, user} : Props) => {
 
@@ -26,7 +26,11 @@ const Comments = ({postId, user} : Props) => {
     })
   })
 
-  const totalPages = Math.ceil((data?.count??0)/DEFAULT_PAGE_SIZE);
+  if(data===undefined || !data.success) return <p>Loading...</p>
+
+  const  totalPages = Math.ceil((data.count ?? 0) / DEFAULT_PAGE_SIZE);
+
+
   return (
     <div className='p-2 rounded-md '>
       <h6 className='text-2xl'>
@@ -36,7 +40,7 @@ const Comments = ({postId, user} : Props) => {
       {!!user && <AddComment className='ml-4 mt-4' user={user} postId={postId} refetch={refetch}/> }
       {isLoading?
         Array.from({ length:12 }).map((_, index)=>(<CommentCardSkeleton key={index}/>   )):
-      data?.comments.map((comment)=><CommentsCard key={comment.id} comment={comment}/>)
+      data?.comments.map((comment:any)=><CommentsCard key={comment.id} comment={comment}/>)
     }
 
     </div>

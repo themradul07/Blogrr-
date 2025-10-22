@@ -14,11 +14,19 @@ type Props = {
 const UserPosts = async ({ searchParams }: Props) => {
   const { page } = await searchParams;  
 
-  const { totalPosts, posts } = await fetchUserPosts({
+  const result = await fetchUserPosts({
     page: page ? +page : 1,
     pageSize: DEFAULT_PAGE_SIZE,
 
-  })
+  });
+
+  if("error" in result){
+    return <p>
+      Failed To fetch please retry.....
+    </p>
+  }
+
+  const {totalPosts , posts} = result;
 
   const likedPost = await getUserLikedPosts();
   console.log(likedPost);

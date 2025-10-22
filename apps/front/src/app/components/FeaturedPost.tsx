@@ -16,7 +16,7 @@ const FeaturedPost = ({ post }: Props) => {
       {/* Left: Thumbnail */}
       <div className="w-2/5 relative">
         <Image
-          src={post.thumbnail}
+          src={!post.thumbnail || post.thumbnail===""?"no-image.png":post.thumbnail}
           alt={post.title}
           fill
           className="object-cover"

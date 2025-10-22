@@ -8,7 +8,7 @@ import { PlusCircleIcon } from "@heroicons/react/16/solid";
 type Props = {
   posts: Post[];
   totalPages: number;
-  page?: number;
+  page: number;
 };
 
 const PostList = ({ posts, totalPages, page }: Props) => {
@@ -78,7 +78,7 @@ const PostList = ({ posts, totalPages, page }: Props) => {
         {/* Pagination Centered */}
         {totalPages > 1 && (
           <div className="flex justify-center mt-6">
-            <Pagination page={page} totalPages={totalPages} />
+            <Pagination currentPage={page} totalPages={totalPages} />
           </div>
         )}
       </div>
