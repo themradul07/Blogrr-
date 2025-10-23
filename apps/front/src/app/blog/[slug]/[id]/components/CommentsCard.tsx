@@ -9,7 +9,7 @@ type Props = {
 }
 const CommentsCard = ({ comment }: Props) => {
     return (
-        <div className='p-2  rounded'>
+        <div className='p-2  rounded max-w-full'>
             <div className='flex gap-4  '>
                 <div>
 
@@ -21,9 +21,8 @@ const CommentsCard = ({ comment }: Props) => {
                         </AvatarFallback>
                     </Avatar>
                 </div>
-                <div >
-
-                    <p>{comment.author.name}
+                <div >   
+                    <p> {comment.author.name.slice(0,15)}
                         <span className='ml-2'>
                             {new Date(comment.createdAt).toLocaleDateString()}
                         </span>

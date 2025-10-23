@@ -1,3 +1,4 @@
+import { success } from "zod";
 import { BACKEND_URL } from "./constants"
 import { getSession } from "./session";
 
@@ -34,6 +35,10 @@ export const authfetchGraphql = async ( query: string, variables={})=>{
 
    try {
     const session = await getSession();
+    console.log("this is the value of the session", session);
+    if(!session){
+      return new Error("Please Login!!")
+    }
     const response= await fetch(`${BACKEND_URL}/graphql`, {
         method:"POST",
         headers:{

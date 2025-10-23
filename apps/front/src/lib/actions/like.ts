@@ -8,6 +8,7 @@ import {
   UNLIKE_POST_MUTATION,
   USER_LIKED_POSTS,
 } from "../gqlQueries";
+import { error } from "console";
 
 
 export async function getPostLikedData(postId: number) {
@@ -34,13 +35,18 @@ export async function likePost(postId: number) {
     });
 
     if (!data?.likePost) {
+      // Throw instead of returning, so React Query knows this is an error
       throw new Error("Failed to like post");
     }
 
+    // Return normally for success
     return { success: true, message: "Post liked successfully" };
   } catch (error: any) {
     console.error("❌ Error liking post:", error.message || error);
-    return { success: false, message: "Failed to like post" };
+
+    // Throw the error instead of returning it
+    // This allows TanStack Query to catch and forward it to `onError`
+    throw new Error(error.message || "Failed to like post");
   }
 }
 

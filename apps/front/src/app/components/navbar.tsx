@@ -5,7 +5,7 @@ import SignInPanel from './SignInPanel'
 import Profile from './Profile'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { UserIcon } from '@heroicons/react/16/solid'
-import {  ArrowRightEndOnRectangleIcon, ArrowRightOnRectangleIcon, HeartIcon, HomeIcon, NewspaperIcon, PencilSquareIcon, Squares2X2Icon } from '@heroicons/react/24/outline'
+import { ArrowRightEndOnRectangleIcon, ArrowRightOnRectangleIcon, HeartIcon, HomeIcon, NewspaperIcon, PencilSquareIcon, Squares2X2Icon } from '@heroicons/react/24/outline'
 
 const Navbar = async (props: PropsWithChildren) => {
     const session = await getSession()
@@ -32,62 +32,62 @@ const Navbar = async (props: PropsWithChildren) => {
                         </h1>
                     </div>
 
-                    <div className=" md:block flex flex-col md:flex-row gap-2 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
+                    <div className="hidden md:flex  flex-col md:flex-row gap-2 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
                         <Link href="/">Home</Link>
                         <Link href="/blog">Blogs</Link>
                         <Link href="/user/create-post">Create Blog</Link>
                         <Link href="/user/posts">Dashboard</Link>
                     </div>
                     <div className="md:hidden flex flex-col md:flex-row gap-2 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
-                      
-                            <Link
-                                href="/"
-                                className="flex items-center gap-2 hover:text-blue-600 transition"
-                            >
-                                <HomeIcon className="w-3 h-3" />
-                                Home
-                            </Link>
 
-                            <Link
-                                href="/blog"
-                                className="flex items-center gap-2 hover:text-blue-600 transition"
-                            >
-                                <NewspaperIcon className="w-3 h-3" />
-                                Blogs
-                            </Link>
+                        <Link
+                            href="/"
+                            className="flex items-center gap-2 hover:text-blue-600 transition"
+                        >
+                            <HomeIcon className="w-3 h-3" />
+                            Home
+                        </Link>
 
-{session?.user?
-<>
-                            <Link
-                                href="/user/posts/liked"
-                                className="flex items-center gap-2 hover:text-blue-600 transition"
-                            >
-                                <HeartIcon className="w-3 h-3" />
-                                Liked Posts
-                            </Link>
+                        <Link
+                            href="/blog"
+                            className="flex items-center gap-2 hover:text-blue-600 transition"
+                        >
+                            <NewspaperIcon className="w-3 h-3" />
+                            Blogs
+                        </Link>
 
-                            <Link
-                                href="/user/create-post"
-                                className="flex items-center gap-2 hover:text-blue-600 transition"
-                            >
-                                <PencilSquareIcon className="w-3 h-3" />
-                                Create Blog
-                            </Link>
+                        {session?.user ?
+                            <>
+                                <Link
+                                    href="/user/posts/liked"
+                                    className="flex items-center gap-2 hover:text-blue-600 transition"
+                                >
+                                    <HeartIcon className="w-3 h-3" />
+                                    Liked Posts
+                                </Link>
 
-                            <Link
-                                href="/user/posts"
-                                className="flex items-center gap-2 hover:text-blue-600 transition"
-                            >
-                                <Squares2X2Icon className="w-3 h-3" />
-                                Dashboard
-                            </Link>
-                <a
-                    href="/api/auth/signout"
-                    className="flex items-center gap-2 hover:text-red-600 transition"
-                >
-                    <ArrowRightEndOnRectangleIcon className="w-3 h-3" />
-                    Sign Out
-                </a></>:""}
+                                <Link
+                                    href="/user/create-post"
+                                    className="flex items-center gap-2 hover:text-blue-600 transition"
+                                >
+                                    <PencilSquareIcon className="w-3 h-3" />
+                                    Create Blog
+                                </Link>
+
+                                <Link
+                                    href="/user/posts"
+                                    className="flex items-center gap-2 hover:text-blue-600 transition"
+                                >
+                                    <Squares2X2Icon className="w-3 h-3" />
+                                    Dashboard
+                                </Link>
+                                <a
+                                    href="/api/auth/signout"
+                                    className="flex items-center gap-2 hover:text-red-600 transition"
+                                >
+                                    <ArrowRightEndOnRectangleIcon className="w-3 h-3" />
+                                    Sign Out
+                                </a></> : ""}
                     </div>
 
                     <div className=" p-4 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
