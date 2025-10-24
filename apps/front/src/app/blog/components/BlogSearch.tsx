@@ -6,14 +6,14 @@ import { User } from "@/lib/types/modelTypes";
 
 type Props = {
   users: User[];
-  search: string;
   setSearch: (val: string) => void;
 };
 
-export default function BlogSearch({ search, setSearch, users }: Props) {
+export default function BlogSearch({ setSearch, users }: Props) {
   const [suggestions, setSuggestions] = useState<User[]>([]);
   const [filtered, setFiltered] = useState<User[]>([]);
   const [loading, setLoading] = useState(false);
+  const [search, setsearch] = useState("");
 
   // Initialize filtered state from props (first render or prop change)
   useEffect(() => {
@@ -47,6 +47,7 @@ export default function BlogSearch({ search, setSearch, users }: Props) {
 
   // Handle user typing
   const handleInputChange = (value: string) => {
+    setsearch(value);
     
     debouncedFetch(value);
   };
@@ -54,7 +55,7 @@ export default function BlogSearch({ search, setSearch, users }: Props) {
   // Handle "Enter" press to finalize filter
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setSearch(e.target.value)
+      setSearch(search);
       e.preventDefault();
       setFiltered(suggestions);
       setSuggestions([]);
@@ -77,6 +78,7 @@ export default function BlogSearch({ search, setSearch, users }: Props) {
           type="text"
           placeholder="Search users..."
           className="ml-2 bg-transparent outline-none w-full text-sm"
+          value={search}
           
           onChange={(e) => handleInputChange(e.target.value)}
           onKeyDown={handleKeyDown}

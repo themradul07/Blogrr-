@@ -75,7 +75,9 @@ const BlogsView = () => {
         <div className="grid grid-cols-1 max-w-xl gap-6 grow">
 
           {isLoading ? <p className="w-full text-center text-xl mt-32">Loading posts...</p>
-            : data?.map((post: any) => (
+            : data?.length===0 ? <p>No Blogs Found</p>
+             :
+            data?.map((post: any) => (
               <BlogCard link="" key={post.id} post={post} />
             ))}
         </div>
