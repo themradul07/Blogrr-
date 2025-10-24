@@ -12,4 +12,12 @@ export class UserResolver {
   async createUser(@Args("createUserInput") createUserInput: CreateUserInput){
     return await this.userService.create(createUserInput);
   }
+
+  
+  @Query(()=>[User])
+  async suggestedUsers(
+    @Args("query" , {type : ()=>String , nullable:true}) query?: string ){
+    return await this.userService.suggestedUser(query);
+  }
+
 }

@@ -46,7 +46,7 @@ type Post {
   author: User!
   tags: [Tag!]!
   comments: [CommentEntity!]!
-  createdAt: String!
+  createdAt: DateTime!
   updatedAt: String!
   _count: Count!
 }
@@ -73,6 +73,7 @@ type Query {
   getUserPosts(skip: Float, take: Float): [Post!]!
   userPostCount: Int!
   getReleatedPost(postId: Int!): [Post!]!
+  suggestedUsers(query: String): [User!]!
   getPostComments(postId: Int!, take: Int = 12, skip: Int = 0): [CommentEntity!]!
   postCommentCount(postId: Int!): Int!
   getTopTags: [Tag!]!

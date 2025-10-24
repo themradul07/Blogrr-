@@ -44,7 +44,7 @@ export class Post {
   comments : CommentEntity[];
 
   @Field()
-  createdAt: string;
+  createdAt: Date;
 
   @Field()
   updatedAt: string;

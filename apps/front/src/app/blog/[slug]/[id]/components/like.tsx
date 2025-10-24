@@ -38,14 +38,13 @@ const Like = (props: Props) => {
         }
     });
 
-
     const unlikeMutation = useMutation({
         mutationFn: () => unlikePost(props.postId),
         onError: () => {
             toast.error("Failed to Unlike")
         }
-
     });
+    
     return (
         <div className='mt-3 flex items-center justify-start gap-2'>
             {data?.userLikedPost ? (

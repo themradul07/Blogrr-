@@ -10,19 +10,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-model User{
-  id Int @id @default(autoincrement())
-  name String
-  email String @unique
-  bio String?
-  avatar String?
-  password String 
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  bio       String?  // optional bio
+  avatar    String?  // optional avatar URL
+  password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  posts Post[]
-  comments Comment[]
-  likes Like[]
+
+  posts     Post[]
+  comments  Comment[]
+  likes     Like[] 
+  following User[]  @relation("UserFollowing")
+  followers User[]  @relation("UserFollowing")
 }
 
 model Post {

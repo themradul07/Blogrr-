@@ -179,6 +179,7 @@ query GetAllPosts($pagination: PaginationInput, $search: String, $tags: [String!
     createdAt
     author {
       name
+      avatar
     }
     tags {
       name
@@ -208,4 +209,16 @@ export const DELETE_COMMENT_MUTATION = gql`
 mutation deletePost($commentId: Int!) {    
     deleteComment(commentId: $commentId)
 }
+`
+
+export const SUGGESTED_USER_QUERY = gql`
+query SuggestedUsers($query: String) {
+    suggestedUsers(query :$query) {
+        id
+        name      
+        bio
+        avatar
+    }
+}
+
 `

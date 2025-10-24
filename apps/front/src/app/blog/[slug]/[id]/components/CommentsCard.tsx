@@ -29,8 +29,6 @@ const CommentsCard = ({ comment, currentUserId, onSave, ondelete }: Props) => {
   const handleDelete =async () => {
     setDropdownOpen(false)
     await ondelete(comment.id)
-  
-    console.log('Delete comment', comment.id)
   }
 
   const handleSave = async () => {

@@ -8,33 +8,29 @@ import { hash } from 'argon2';
 
 @Injectable()
 export class UserService {
-  
-  constructor(private  prisma : PrismaService) {}
+
+  constructor(private prisma: PrismaService) { }
 
   async create(createUserInput: CreateUserInput) {
-    
-    createUserInput.password = await hash(createUserInput.password);
-   
 
-    return await this.prisma.user.create({ 
+    createUserInput.password = await hash(createUserInput.password);
+
+
+    return await this.prisma.user.create({
       data: createUserInput
     });
 
   }
 
-  findAll() {
-    return `This action returns all user`;
-  }
+  async suggestedUser(query?: string) {
+  return await this.prisma.user.findMany({
+    where: query
+      ? {
+          OR: [{ name: { contains: query } }],
+        }
+      : {},
+    take: 3,
+  });
+}
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
-  }
-
-  update(id: number, updateUserInput: UpdateUserInput) {
-    return `This action updates a #${id} user`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
-  }
 }
