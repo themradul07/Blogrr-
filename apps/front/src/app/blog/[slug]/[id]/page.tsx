@@ -11,6 +11,7 @@ const Postpage = async ({ params }: { params: any }) => {
   const postId = params.id;
   const post = await fetchPostsById(+postId);
   const session = await getSession();
+  console.log("This is the seesion", session)
 
   // handle API error case
   if ('error' in post) {
@@ -49,7 +50,7 @@ const Postpage = async ({ params }: { params: any }) => {
           <Like postId={postId} user={session?.user} />
         </div>
         
-        {session?.user && <div className='flex flex-col gap-4 bg-white p-4 rounded-md'>
+        {<div className='flex flex-col gap-4 bg-white p-4 rounded-md'>
           <Comments user={session?.user} postId={+postId} />
         </div>}
 

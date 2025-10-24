@@ -9,7 +9,7 @@ type Props = {
 }
 
 const PostListItem = ({post}: Props) => {
-    console.log(post.thumbnail);
+
   return (
     
     <div className='grid grid-cols-8 m-2 rounded-md overflow-hidden border shadow hover:sacle-[101%] text-center'>

@@ -8,53 +8,77 @@ import { connect } from 'http2';
 @Injectable()
 export class CommentService {
 
-  constructor(private readonly prisma : PrismaService){}
-  
-  async findOneByPost({postId , take , skip}:{
-    postId : number,
+  constructor(private readonly prisma: PrismaService) { }
+
+  async findOneByPost({ postId, take, skip }: {
+    postId: number,
     take?: number,
     skip?: number
-  }){
+  }) {
 
     return await this.prisma.comment.findMany({
-      where:{
+      where: {
         postId: postId
       },
-      include:{
-        author:true
+      include: {
+        author: true
       },
-      orderBy:{
-        createdAt:"desc"
+      orderBy: {
+        createdAt: "desc"
       },
-      skip:skip??0,
-      take:take??DEFAULT_PAGE_SIZE
+      skip: skip ?? 0,
+      take: take ?? DEFAULT_PAGE_SIZE
     })
 
   }
 
-  async count(postId:number){
+  async count(postId: number) {
     return await this.prisma.comment.count({
-      where:{
+      where: {
         postId: postId,
       }
     });
   }
 
-  async create (createCommentInput: CreateCommentInput , authorId: number){
-      return await this.prisma.comment.create({
-        data:{
-          content: createCommentInput.content,
-          post:{
-            connect:{
-              id: createCommentInput.postId
-            }
-          },
-          author:{
-            connect:{
-              id: authorId
-            }
+  async create(createCommentInput: CreateCommentInput, authorId: number) {
+    return await this.prisma.comment.create({
+      data: {
+        content: createCommentInput.content,
+        post: {
+          connect: {
+            id: createCommentInput.postId
+          }
+        },
+        author: {
+          connect: {
+            id: authorId
           }
         }
-      })
+      }
+    })
+  }
+
+
+  async update(updateCommentInput: UpdateCommentInput, authorId: number) {
+    const { id, ...restdata } = updateCommentInput;
+
+    return await this.prisma.comment.update({
+      where: {
+        id: updateCommentInput.id
+      },
+
+      data: {
+        ...restdata
+      }
+    })
+  }
+
+  async delete(commentId: number) {  
+
+    return !!await this.prisma.comment.delete({
+      where: {
+        id: commentId,
+      },    
+    })
   }
 }

@@ -9,8 +9,9 @@ type Props = {
 const RelatedPosts = async ({ postId }: Props) => {
   const data = await getRelatedPosts(postId);
   
+  
 
-  if (!data || data.length === 0)
+  if (data.error )
     return (
       <div className="p-2 rounded-md">
         <h6 className="text-2xl mb-2">Related Blogs</h6>

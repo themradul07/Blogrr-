@@ -92,6 +92,8 @@ type Mutation {
   deletePost(postId: Int!): Boolean!
   createUser(createUserInput: CreateUserInput!): User!
   createComment(createCommentInput: CreateCommentInput!): CommentEntity!
+  updateComment(updateCommentInput: UpdateCommentInput!): CommentEntity!
+  deleteComment(commentId: Int!): Boolean!
   likePost(postId: Int!): Boolean!
   unlikePost(postId: Int!): Boolean!
   signIn(signInInput: SignInInput!): AuthPayload!
@@ -125,6 +127,12 @@ input CreateUserInput {
 input CreateCommentInput {
   postId: Int!
   content: String!
+}
+
+input UpdateCommentInput {
+  postId: Int
+  content: String
+  id: Int!
 }
 
 input SignInInput {

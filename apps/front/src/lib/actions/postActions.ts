@@ -149,14 +149,18 @@ export async function deletePost(postId: number) {
 export async function getRelatedPosts(postId: number) {
   try {
     const data = await fetchGraphql(print(GET_RELEATED_POSTS), { postId });
+    
+ 
+
+
     return { posts : data.getReleatedPost,
-        length: data.getRelatedPosts.length,
+        
      }
   } catch (err) {
     return {
       posts:[],
       error : err,
-        length: 0,
+       
     }
   }
 }

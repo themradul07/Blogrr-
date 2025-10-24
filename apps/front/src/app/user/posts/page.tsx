@@ -29,7 +29,7 @@ const UserPosts = async ({ searchParams }: Props) => {
   const {totalPosts , posts} = result;
 
   const likedPost = await getUserLikedPosts();
-  console.log(likedPost);
+
 
   const totalPages = Math.ceil(totalPosts / DEFAULT_PAGE_SIZE);
   const totalLikes = posts.reduce((total, post) => total + (post._count.likes || 0), 0);

@@ -19,7 +19,7 @@ const UpsertPostForm = ({state, formAction, postId}:Props) => {
     const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
-        console.log("this the value of the state", state);
+  
       if(state?.message){
         toast(state?.ok? "Succesfully Completed": "Oops Something went wrong" ,
           {description : state.message}

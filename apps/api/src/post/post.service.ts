@@ -176,7 +176,7 @@ export class PostService {
     if (!authorIdMatched) throw new UnauthorizedException();
 
     const data = await this.prisma.post.delete({ where: { id: postId } });
-    console.log("After deleting the result is", data);
+    
     return !!data;
 
   }

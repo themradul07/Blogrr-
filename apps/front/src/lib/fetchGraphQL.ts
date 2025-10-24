@@ -35,7 +35,7 @@ export const authfetchGraphql = async ( query: string, variables={})=>{
 
    try {
     const session = await getSession();
-    console.log("this is the value of the session", session);
+   
     if(!session){
       return new Error("Please Login!!")
     }

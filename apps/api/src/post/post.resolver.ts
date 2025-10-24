@@ -75,7 +75,7 @@ export class PostResolver {
     @Context() context,
     @Args('createPostInput') createPostInput: CreatePostInput
   ) {
-    console.log("hitted the create successfully");
+   
     const authorId = context.req.user.id;
     return this.postService.create({ createPostInput, authorId })
 
@@ -87,7 +87,7 @@ export class PostResolver {
     @Context() context,
     @Args('updatePostInput') updatePostInput: UpdatePostInput
   ) {
-    console.log("hitted the update successfully");
+
     const userId = context.req.user.id;
     return this.postService.update({ userId, updatePostInput });
   }

@@ -46,5 +46,24 @@ export class CommentResolver {
     return this.commentService.create(createCommmentInput, Context.req.user.id);
 
   }
- 
+  
+  @UseGuards(JwtAuthGuard)
+  @Mutation(()=>CommentEntity)
+  updateComment(
+    @Context() Context,
+    @Args("updateCommentInput") updateCommmentInput : UpdateCommentInput    
+  ){
+    return this.commentService.update(updateCommmentInput, Context.req.user.id);
+
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Mutation(()=>Boolean)
+  deleteComment(
+   
+    @Args("commentId" , {type : ()=>Int}) commentId: number    
+  ){
+    return this.commentService.delete(commentId);
+
+  }
 }

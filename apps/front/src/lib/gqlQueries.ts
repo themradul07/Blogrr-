@@ -68,6 +68,7 @@ export const GET_POST_COMMENTS = gql`
             content
             createdAt
             author{
+                id
                 name
                 avatar
             }
@@ -192,5 +193,19 @@ export const GET_ALL_TAGS = gql`
             id
             name
         }
+}
+`
+
+export const UPDATE_COMMENT_MUTATION = gql`
+  mutation updateComment($input: UpdateCommentInput!){
+    updateComment(updateCommentInput: $input){
+        id        
+    }
+} 
+`
+
+export const DELETE_COMMENT_MUTATION = gql`
+mutation deletePost($commentId: Int!) {    
+    deleteComment(commentId: $commentId)
 }
 `

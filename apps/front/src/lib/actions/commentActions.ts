@@ -2,15 +2,16 @@
 
 import { print } from "graphql"
 import { authfetchGraphql, fetchGraphql } from "../fetchGraphQL"
-import { CREATE_COMMENT_MUTATION, GET_POST_COMMENTS } from "../gqlQueries"
+import { CREATE_COMMENT_MUTATION, DELETE_COMMENT_MUTATION, GET_POST_COMMENTS, UPDATE_COMMENT_MUTATION } from "../gqlQueries"
 import { CreateCommentFormState } from "../types/formState"
 import { CommentFormSchema } from "../zodSchema/commentFormSchema"
-import { success } from "zod"
+import { string, success } from "zod"
+import { error } from "console"
 
 function handleError(context: string, error: unknown) {
   console.error(`❌ Error in ${context}:`, error)
   if (error instanceof Error) return { error: error.message }
-  return {   error: "An unexpected error occurred." }
+  return { error: "An unexpected error occurred." }
 }
 
 export async function getPostComments({
@@ -29,13 +30,14 @@ export async function getPostComments({
       skip,
     })
     if (!data) throw new Error("No data received from backend")
+
     return {
-  success:true,
+      success: true,
       comments: data.getPostComments ?? [],
       count: data.postCommentCount ?? 0,
     }
   } catch (err) {
-    return {  success:false, count:0, error: "An unexpected error occurred." , comments:[]}
+    return { success: false, count: 0, error: "An unexpected error occurred.", comments: [] }
   }
 }
 
@@ -93,3 +95,42 @@ export async function saveComments(
     }
   }
 }
+
+
+export async function updateComment({
+  commentId,
+  content,
+}: {
+  commentId: number,
+  content: string
+}) {
+  try {
+    const data = await authfetchGraphql(print(UPDATE_COMMENT_MUTATION), {
+ input : {
+      id: commentId, content: content
+    }})
+    if (!data) throw new Error("No data received from backend");
+    return {  success: true }
+  } catch (err) {
+    return { success: false , error : err }
+  }
+
+}
+
+export async function deleteComment({
+  commentId, 
+}: {
+  commentId: number,  
+}) {
+  try {
+    const data = await authfetchGraphql(print(DELETE_COMMENT_MUTATION), {
+      commentId: commentId  
+    })
+    if (!data) throw new Error("No data received from backend");
+    return {  success: true }
+  } catch (err) {
+    return { success: false , error : err }
+  }
+
+}
+

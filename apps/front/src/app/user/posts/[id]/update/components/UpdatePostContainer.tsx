@@ -9,7 +9,7 @@ type Props = {
   post: Post;
 };
 const UpdatePostContainer = ({ post }: Props) => {
-  console.log({ post });
+
   const [state, action] = useActionState(updatePost, {
     data: {
       postId: post.id,
