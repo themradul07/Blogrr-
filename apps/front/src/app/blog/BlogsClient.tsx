@@ -68,7 +68,7 @@ const BlogsView = () => {
 
         <div className="md:hidden w-full md:w-3/12">
           <div className="space-y-6 sticky top-24 h-fit">
-            <BlogSearch users={UsersList??[]} search={search} setSearch={setSearch} />
+            <BlogSearch users={UsersList??[]}  setSearch={setSearch} />
           </div>
         </div>
 
@@ -88,7 +88,7 @@ const BlogsView = () => {
 
       <div className="hidden md:block w-full md:w-3/12">
         <div className="space-y-6 sticky top-24 h-fit">
-          <BlogSearch users={UsersList} search={search} setSearch={setSearch} />
+          <BlogSearch users={UsersList} setSearch={setSearch} />
 
         </div>
       </div>
