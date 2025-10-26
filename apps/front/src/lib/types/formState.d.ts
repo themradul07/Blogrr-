@@ -50,3 +50,22 @@ export type PostFormState =
     }
   | undefined;
 
+export type UpdateUserFormState = {
+    data?: {
+        name?: string;
+        bio?: string;
+        avatar?: File | null;
+        previousAvatarUrl?: string;
+    };
+
+    errors?: {
+        name?: string[];
+        bio?: string[];
+        avatar?: string[];
+    };
+    message?: string;
+    ok?: boolean;
+  }
+| undefined;
+
+

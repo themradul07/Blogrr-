@@ -6,12 +6,13 @@ import Comments from './components/comments';
 import { getSession } from '@/lib/session';
 import Like from './components/like';
 import RelatedPosts from './components/RelatedPosts';
+import Link from 'next/link';
 
 const Postpage = async ({ params }: { params: any }) => {
   const postId = params.id;
   const post = await fetchPostsById(+postId);
   const session = await getSession();
- 
+
 
   // handle API error case
   if ('error' in post) {
@@ -40,16 +41,31 @@ const Postpage = async ({ params }: { params: any }) => {
           </div>
 
           <div>
-            <h1 className='text-3xl font-semibold mb-2'>{post.title}</h1>
-            <p className='text-gray-600 text-sm'>
-              By {post.author.name} | {new Date(post.createdAt).toLocaleString()}
-            </p>
+            <h1 className="text-3xl font-semibold mb-2">{post.title}</h1>
+            <Link href={`/user/profile/${post.author.id}`}>
+
+            <div className="flex items-center text-gray-600 text-sm space-x-2">
+              {/* Avatar */}
+              <img
+                src={post.author.avatar || "/default-avatar.png"}
+                alt={post.author.name}
+                className="w-8 h-8 rounded-full object-cover border border-gray-200"
+              />
+
+              {/* Author name and date */}
+              <p>
+                By <span className="font-medium text-gray-800">{post.author.name}</span> |{" "}
+                {new Date(post.createdAt).toLocaleString()}
+              </p>
+            </div>
+            </Link>
           </div>
+
 
           <SanitizedContent content={post.content ?? ''} className='text-gray-700' />
           <Like postId={postId} user={session?.user} />
         </div>
-        
+
         {<div className='flex flex-col gap-4 bg-white p-4 rounded-md' id='comment'>
           <Comments user={session?.user} postId={+postId} />
         </div>}

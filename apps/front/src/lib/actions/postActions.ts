@@ -4,6 +4,7 @@ import { authfetchGraphql, fetchGraphql } from "../fetchGraphQL";
 import {
   CREATE_POST_MUTATION,
   DELETE_POST_MUTATION,
+  FOLLOWING_POSTS_QUERY,
   GET_ALL_POSTS,
   GET_POST_BY_ID,
   GET_POSTS,
@@ -190,5 +191,19 @@ export async function getAllPosts({
     return data.getAllPosts as Post[];
   } catch (err) {
     return handleError("getAllPosts", err);
+  }
+}
+
+export async function getFollowingPosts(page: number, skip?: number) {
+  try {
+    const data = await authfetchGraphql(print(FOLLOWING_POSTS_QUERY), {       
+        skip: (page - 1) * 6,
+        take: 12,
+      },
+    );
+    if (!data) throw new Error("No data received from backend");
+    return data.followingPosts as Post[];
+  } catch (err) {
+    return handleError("getFollowingPosts", err);
   }
 }

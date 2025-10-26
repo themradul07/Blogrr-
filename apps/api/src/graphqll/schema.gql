@@ -10,6 +10,8 @@ type User {
   avatar: String
   posts: [Post!]!
   comments: [CommentEntity!]!
+  followers: [User!]!
+  following: [User!]!
 }
 
 type CommentEntity {
@@ -74,6 +76,9 @@ type Query {
   userPostCount: Int!
   getReleatedPost(postId: Int!): [Post!]!
   suggestedUsers(query: String): [User!]!
+  getUserDetails(UserId: Int!): User!
+  isFollowing(followerId: Int!): Boolean!
+  followingPosts(skip: Float, take: Float): [Post!]!
   getPostComments(postId: Int!, take: Int = 12, skip: Int = 0): [CommentEntity!]!
   postCommentCount(postId: Int!): Int!
   getTopTags: [Tag!]!
@@ -92,6 +97,9 @@ type Mutation {
   updatePost(updatePostInput: UpdatePostInput!): Post!
   deletePost(postId: Int!): Boolean!
   createUser(createUserInput: CreateUserInput!): User!
+  addFollower(followerId: Int!): Boolean!
+  removeFollower(followerId: Int!): Boolean!
+  UpdateUser(updateUserInput: UpdateUserInput!): User!
   createComment(createCommentInput: CreateCommentInput!): CommentEntity!
   updateComment(updateCommentInput: UpdateCommentInput!): CommentEntity!
   deleteComment(commentId: Int!): Boolean!
@@ -122,6 +130,14 @@ input CreateUserInput {
   password: String!
   bio: String
   email: String!
+  avatar: String
+}
+
+input UpdateUserInput {
+  name: String
+  password: String
+  bio: String
+  email: String
   avatar: String
 }
 

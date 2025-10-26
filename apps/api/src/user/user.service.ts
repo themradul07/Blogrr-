@@ -23,14 +23,107 @@ export class UserService {
   }
 
   async suggestedUser(query?: string) {
-  return await this.prisma.user.findMany({
-    where: query
-      ? {
+    return await this.prisma.user.findMany({
+      where: query
+        ? {
           OR: [{ name: { contains: query } }],
         }
-      : {},
-    take: 3,
-  });
-}
+        : {},
+      take: 3,
+    });
+  }
+
+  async findOne(id: number) {
+    return await this.prisma.user.findUnique({
+      where: { id: id },
+      include: {
+        posts: {
+          include: {
+            author: true,
+          },
+        },
+      }
+    });
+  }
+
+
+
+  async addFollower(userId: number, followerId: number) {
+    const data = await this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        following: {
+          connect: { id: followerId }
+        }
+      }
+    });
+    return !!data;
+  }
+
+  async removeFollower(userId: number, followerId: number) {
+    const data = await this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        following: {
+          disconnect: { id: followerId }
+        }
+      }
+    });
+    return !!data;
+  }
+
+  async isFollowing(userId: number, followerId: number) {
+    const data = await this.prisma.user.findFirst({
+      where: {
+        id: userId,
+        following: {
+          some: { id: followerId }
+        }
+      }
+    });
+    return !!data;
+  }
+
+  async followingPosts(userId: number, skip?: number, take?: number) {
+
+    const followedUsers = await this.prisma.user.findUnique({
+      where: { id: userId },
+      select: { following: { select: { id: true } } },
+    });
+
+    const followingIds = followedUsers?.following.map(u => u.id) || [];
+
+
+    const posts = await this.prisma.post.findMany({
+      where: {
+        authorId: { in: followingIds },
+      },
+      include: {
+        author: {
+          select: {
+            id: true,
+            name: true,
+            avatar: true,
+          },
+        },
+      },
+      orderBy: { createdAt: "desc" },
+      skip: skip??0 ,
+      take: take??12,
+    });
+
+    return posts;
+  }
+
+  async updateUser(userId: number, updateUserInput: UpdateUserInput) {
+     
+    
+    return await this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        ...updateUserInput,
+      },
+    });
+  }
 
 }

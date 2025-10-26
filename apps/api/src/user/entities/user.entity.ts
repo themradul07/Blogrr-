@@ -26,6 +26,12 @@ export class User {
   @Field(()=>[CommentEntity])
   comments : CommentEntity;
 
+  @Field(()=>[User])
+  followers : User[];
+
+  @Field(()=>[User])
+  following : User[];
+
 
 
 }

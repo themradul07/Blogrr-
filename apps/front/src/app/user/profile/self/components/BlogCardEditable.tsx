@@ -1,4 +1,5 @@
 "use client"
+import PostActions from '@/app/user/posts/_components/PostActions';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { getPostLikedData, likePost, unlikePost } from '@/lib/actions/like';
 import { Post } from '@/lib/types/modelTypes';
@@ -16,7 +17,7 @@ type Props = {
     link : string;
 };
 
-const BlogCard = ({ post , link }: Props) => {
+const BlogCardEditable = ({ post , link }: Props) => {
     const thumbnail =
         post.thumbnail === '' || post.thumbnail === undefined
             ? '/no-image.png'
@@ -67,7 +68,7 @@ const BlogCard = ({ post , link }: Props) => {
         <div className="border bg-white rounded-lg shadow-sm hover:shadow-md transition cursor-pointer flex flex-col h-full w-full">
 
             {/* Top: Author Info */}
-            <div className="flex items-center gap-3 px-4 py-2 border-b">
+            <div className="flex w-full items-center gap-3 px-4 py-2 border-b">
                 <Avatar>
                     <AvatarImage
                         className="w-10 h-10 rounded-full object-cover"
@@ -84,6 +85,10 @@ const BlogCard = ({ post , link }: Props) => {
                     <p className="text-xs text-gray-500">
                         {timeAgo(`${post.createdAt}`)}
                     </p>
+                </div>
+
+                <div className='justify-end'>
+                    <PostActions postId={post.id} />
                 </div>
             </div>
 
@@ -126,4 +131,4 @@ const BlogCard = ({ post , link }: Props) => {
     );
 };
 
-export default BlogCard;
+export default BlogCardEditable;

@@ -31,7 +31,9 @@ export const GET_POST_BY_ID = gql`
             createdAt
             published
             author{
+                id
                 name
+                avatar
             }
             tags{
                 id
@@ -222,3 +224,73 @@ query SuggestedUsers($query: String) {
 }
 
 `
+
+export const GET_USER_QUERY = gql`
+query getUserDetails($UserId : Int!) {
+    getUserDetails(UserId: $UserId) {
+        id
+        name
+        email
+        bio
+        avatar
+        posts{
+            id
+            title
+            createdAt
+            thumbnail
+            slug
+            author{
+                id
+                name
+                avatar
+            }
+        }
+    }    
+}
+`
+
+export const ADD_FOLLOWER_MUTATION = gql`
+mutation addFollower($followerId: Int!) {
+    addFollower(followerId: $followerId)
+}
+`
+
+export const REMOVE_FOLLOWER_MUTATION = gql`
+mutation removeFollower($followerId: Int!) {
+    removeFollower(followerId: $followerId)
+}
+`
+export const IS_FOLLOWING_QUERY = gql`
+query isFollowing($followerId: Int!) {
+    isFollowing(followerId: $followerId)
+}
+`
+
+export const FOLLOWING_POSTS_QUERY = gql`
+query FollowingPosts($skip: Float, $take: Float) {
+    followingPosts( skip: $skip , take: $take) {
+        id
+        slug
+        title
+              thumbnail
+        
+        createdAt
+        author{
+            name
+        }        
+    }
+}
+`
+
+export const UPDATE_USER_MUTATION = gql`
+mutation UpdateUser($input : UpdateUserInput!) {
+    UpdateUser(updateUserInput: $input) {
+        id
+        name
+        email
+        bio
+        avatar
+    }
+}
+`
+

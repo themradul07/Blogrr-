@@ -3,6 +3,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import debounce from "lodash.debounce";
 import { suggestedUsers } from "@/lib/actions/userActions";
 import { User } from "@/lib/types/modelTypes";
+import Link from "next/link";
 
 type Props = {
   users: User[];
@@ -121,10 +122,12 @@ export default function BlogSearch({ setSearch, users }: Props) {
         ) : (
           <div className="flex flex-col gap-4">
             {filtered.map((user) => (
-              <div
+              <Link 
                 key={user.id}
+              href={`/user/profile/${user.id}`}>
+              <div
                 className="flex items-center justify-between bg-gray-50 rounded-lg p-3 hover:shadow transition"
-              >
+                >
                 <div className="flex items-center gap-3">
                   <img
                     src={user.avatar}
@@ -140,10 +143,11 @@ export default function BlogSearch({ setSearch, users }: Props) {
                     </p>
                   </div>
                 </div>
-                <button className="text-sm bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-700 transition">
+                {/* <button className="text-sm bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-700 transition">
                   Follow
-                </button>
+                </button> */}
               </div>
+                </Link>
             ))}
           </div>
         )}
