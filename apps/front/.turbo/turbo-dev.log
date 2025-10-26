@@ -1267,3 +1267,8 @@ Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited be
   13 |   const post = await fetchPostsById(+postId);
   14 |   const session = await getSession();
   15 |
+ GET /blog/lets-create-the-another-blog/332 200 in 391ms
+ POST /blog/lets-create-the-another-blog/332 200 in 213ms
+ POST /blog/lets-create-the-another-blog/332 200 in 247ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/1760953123389_undefined received null
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null

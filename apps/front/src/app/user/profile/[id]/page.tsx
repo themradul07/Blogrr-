@@ -4,9 +4,9 @@ import ProfilePage from './components/profileComponent';
 import { addFollower, getUserDetails } from '@/lib/actions/userActions';
 
 type Props = {
-    params: {
-        id: string
-    }
+    params: Promise<{
+        id: string;
+    }>;
 }
 
 const page = async ({ params }: Props) => {
