@@ -1,10 +1,13 @@
+
 import SubmitButton from '@/app/components/SubmitButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { deletePost, fetchPostsById } from '@/lib/actions/postActions';
 import { ExclamationCircleIcon } from '@heroicons/react/16/solid';
 import Link from 'next/link';
-import React from 'react'
+import { redirect } from 'next/navigation';
+import React, { use } from 'react'
+import { toast } from 'sonner';
 
 type Props = {
     params: Promise<{
@@ -15,13 +18,19 @@ type Props = {
 const DeletePostPage = async (props: Props) => {
     const params = await props.params;
     const post = await fetchPostsById(+params.id);
+   
     if ("error" in post) {
     return <p>Error occurred loading featured post</p>;
   }
 
     const formAction = async (formData: FormData)=>{
         "use server";
-        await deletePost(+params.id);
+        const data =  await deletePost(+params.id);
+        console.log("Delete Post Result:", data);
+        "use client";
+   
+        redirect('/user/profile/self');
+
     }
     return (
         <div className='w-full flex justify-center'>
@@ -45,14 +54,14 @@ const DeletePostPage = async (props: Props) => {
             <CardContent>
                 <form action={formAction} className='flex justify-end gap-2'>
                     <Button variant={"secondary"} >
-                        <Link href={"/user/posts"}>Cancel</Link>
+                        <Link href={"/user/profile/self"}>Cancel</Link>
                     </Button>
 
                     <SubmitButton >
-                        <a href="/user/posts">
+                        
                         Delete
                         
-                        </a>
+                       
 
                         
                     </SubmitButton>

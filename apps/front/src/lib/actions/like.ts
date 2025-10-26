@@ -20,7 +20,7 @@ export async function getPostLikedData(postId: number) {
       userLikedPost: data?.userLikePost ?? false,
     };
   } catch (error: any) {
-    console.error("❌ Error fetching post likes:", error.message || error);
+    console.log("❌ Error fetching post likes:", error.message || error);
     return {
       likeCount: 0,
       userLikedPost: false,
@@ -42,7 +42,7 @@ export async function likePost(postId: number) {
     // Return normally for success
     return { success: true, message: "Post liked successfully" };
   } catch (error: any) {
-    console.error("❌ Error liking post:", error.message || error);
+    console.log("❌ Error liking post:", error.message || error);
 
     // Throw the error instead of returning it
     // This allows TanStack Query to catch and forward it to `onError`

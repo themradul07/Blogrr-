@@ -37,7 +37,7 @@ export default function BlogSearch({ setSearch, users }: Props) {
       const res = await suggestedUsers(query); // Your backend call
       setSuggestions(res || []); // ensure fallback to []
     } catch (error) {
-      console.error("Error fetching suggestions:", error);
+      console.log("Error fetching suggestions:", error);
     } finally {
       setLoading(false);
     }

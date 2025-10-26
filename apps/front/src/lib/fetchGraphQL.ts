@@ -18,7 +18,7 @@ export const fetchGraphql = async ( query: string, variables={})=>{
 
     const result = await response.json();
     if(result.errors){
-        console.error("Graphql errors:", result.errors);
+        
         throw new Error("Failed to fetch the data from Graphql");
    
     }
@@ -53,7 +53,7 @@ export const authfetchGraphql = async ( query: string, variables={})=>{
 
     const result = await response.json();
     if(result.errors){
-        console.error("Graphql errors:", result.errors);
+        console.log("Graphql errors:", result.errors);
         throw new Error("Failed to fetch the data from Graphql");
    
     }

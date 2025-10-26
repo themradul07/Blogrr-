@@ -24,7 +24,7 @@ const UpsertPostForm = ({state, formAction, postId}:Props) => {
         toast(state?.ok? "Succesfully Completed": "Oops Something went wrong" ,
           {description : state.message}
         )  
-        redirect('/user/posts')    
+        redirect('/user/profile/self');    
     }
     }, [state])
 

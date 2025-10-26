@@ -26,13 +26,13 @@ export default function ProfilePage({
 }: UserProfileProps) {
   const queryClient = useQueryClient();
 
-  // Fetch follow status
+  // Query: get current follow state
   const { data: following, isLoading } = useQuery({
     queryKey: ["isFollowing", id],
     queryFn: async () => await isFollowing(id),
   });
 
-  // Follow user mutation
+  // Follow mutation
   const followMutation = useMutation({
     mutationFn: async () => await addFollower(id),
     onSuccess: () => {
@@ -42,7 +42,7 @@ export default function ProfilePage({
     onError: () => toast.error("Failed to follow"),
   });
 
-  // Unfollow user mutation
+  // Unfollow mutation
   const unfollowMutation = useMutation({
     mutationFn: async () => await removeFollower(id),
     onSuccess: () => {
@@ -58,14 +58,14 @@ export default function ProfilePage({
   };
 
   return (
-    <div className="w-3xl mx-auto bg-white shadow rounded-lg overflow-hidden mt-6 transition-all">
+    <div className="max-w-screen-lg mx-auto bg-white shadow rounded-lg overflow-hidden mt-6 sm:mt-10 transition-all">
       {/* Cover Image */}
       <div
-        className="relative h-64 bg-center bg-cover"
+        className="relative h-40 sm:h-56 md:h-64 lg:h-80 bg-center bg-cover"
         style={{ backgroundImage: `url(${coverImageUrl})` }}
       >
-        {/* Profile Picture */}
-        <div className="absolute -bottom-16 left-10 w-32 h-32 rounded-full border-4 border-white overflow-hidden bg-gray-100 shadow-lg">
+        {/* Profile Image */}
+        <div className="absolute -bottom-12 sm:-bottom-16 left-1/2 sm:left-10 transform -translate-x-1/2 sm:translate-x-0 w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-white overflow-hidden bg-gray-100 shadow-lg">
           <img
             src={profileImageUrl}
             alt={`${name} profile`}
@@ -74,20 +74,29 @@ export default function ProfilePage({
         </div>
       </div>
 
-      {/* User info */}
-      <div className="pt-20 px-10 pb-6 flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl font-semibold">{name}</h1>
-          <p className="mt-2 text-gray-600 max-w-xl">{bio}</p>
+      {/* User Info Section */}
+      <div className="pt-16 sm:pt-20 px-6 sm:px-10 pb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <div className="text-center sm:text-left">
+          <h1 className="text-2xl sm:text-3xl font-bold">{name}</h1>
+          <p className="mt-2 text-gray-600 text-sm sm:text-base max-w-xl">
+            {bio || "No bio provided"}
+          </p>
         </div>
 
         <button
           onClick={handleFollowToggle}
-          disabled={isLoading || followMutation.isPending || unfollowMutation.isPending}
-          className={`mt-6 py-2 px-5 rounded-full transition font-medium ${
+          disabled={
+            isLoading ||
+            followMutation.isPending ||
+            unfollowMutation.isPending
+          }
+          className={`w-full sm:w-auto py-2 px-4 sm:px-6 rounded-full transition font-medium text-sm sm:text-base ${
             following
               ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
               : "bg-blue-600 text-white hover:bg-blue-700"
+          } ${
+            (followMutation.isPending || unfollowMutation.isPending) &&
+            "opacity-70 cursor-not-allowed"
           }`}
         >
           {isLoading
@@ -101,14 +110,22 @@ export default function ProfilePage({
       </div>
 
       {/* Posts Section */}
-      <div className="border-t px-10 py-6">
-        <h2 className="text-2xl font-semibold mb-4">Posts</h2>
+      <div className="border-t px-6 sm:px-10 py-6">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-center sm:text-left">
+          Posts
+        </h2>
         {posts.length === 0 ? (
-          <p className="text-gray-500">No posts to display.</p>
+          <p className="text-gray-500 text-center sm:text-left">
+            No posts to display.
+          </p>
         ) : (
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post: Post) => (
-              <BlogCard key={post.id} link={`/posts/${post.id}`} post={post} />
+              <BlogCard
+                key={post.id}
+                link={`/posts/${post.id}`}
+                post={post}
+              />
             ))}
           </div>
         )}
