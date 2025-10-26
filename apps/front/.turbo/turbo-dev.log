@@ -4,98 +4,171 @@
 
    ▲ Next.js 15.5.4 (Turbopack)
    - Local:        http://localhost:3000
-   - Network:      http://10.154.42.213:3000
+   - Network:      http://10.81.110.213:3000
    - Environments: .env
    - Experiments (use with caution):
      · serverActions
 
  ✓ Starting...
  ○ Compiling middleware ...
- ✓ Compiled middleware in 1211ms
- ✓ Ready in 4.8s
- ○ Compiling /blog/[slug]/[id] ...
- GET /api/auth/signout 307 in 6924ms
- ✓ Compiled /blog/[slug]/[id] in 18s
- POST /blog/checking-the-date/331 200 in 23931ms
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
- GET / 200 in 16916ms
- ⨯ [Error: aborted] { code: 'ECONNRESET', digest: '3485663598' }
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/1760953123389_undefined received null
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760893268246 received null
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760885942963 received null
-Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
-  10 |
-  11 | const Postpage = async ({ params }: { params: any }) => {
-> 12 |   const postId = params.id;
-     |                         ^
-  13 |   const post = await fetchPostsById(+postId);
-  14 |   const session = await getSession();
-  15 |
- GET /blog/undefined/320 200 in 1198ms
- ○ Compiling /_not-found/page ...
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
- POST /blog/undefined/320 200 in 1452ms
- POST /blog/undefined/320 200 in 912ms
- ✓ Compiled /_not-found/page in 3.5s
- GET /default-avatar.png 404 in 4123ms
-❌ Error liking post: Failed to like post
- ⨯ Error: Failed to like post
-    at likePost (src\lib\actions\like.ts:49:11)
-  47 |     // Throw the error instead of returning it
-  48 |     // This allows TanStack Query to catch and forward it to `onError`
-> 49 |     throw new Error(error.message || "Failed to like post");
- POST /blog/undefined/320 500 in 1334ms
-     |           ^
-  50 |   }
-  51 | }
-  52 | {
-  digest: '1456042329'
-}
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 1050ms
- GET /auth/signin 200 in 1303ms
-❌ Error in signIn: Error: NEXT_REDIRECT
-    at signIn (src\lib\actions\auth.ts:82:13)
-  80 |
-  81 |     revalidatePath("/");
-> 82 |     redirect("/");
-     |             ^
-  83 |   } catch (err) {
-  84 |     return {
-  85 |       data: Object.fromEntries(formData.entries()), {
-  digest: 'NEXT_REDIRECT;push;/;307;'
-}
- POST /auth/signin 200 in 822ms
- GET / 200 in 684ms
- GET / 200 in 636ms
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/1760953123389_undefined received null
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760893268246 received null
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760885942963 received null
-Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
-  10 |
-  11 | const Postpage = async ({ params }: { params: any }) => {
-> 12 |   const postId = params.id;
-     |                         ^
-  13 |   const post = await fetchPostsById(+postId);
-  14 |   const session = await getSession();
-  15 |
- GET /blog/undefined/320 200 in 352ms
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
- GET /default-avatar.png 404 in 1015ms
- POST /blog/undefined/320 200 in 1045ms
- POST /blog/undefined/320 200 in 641ms
- POST /blog/undefined/320 200 in 192ms
- POST /blog/undefined/320 200 in 541ms
- POST /blog/undefined/320 200 in 188ms
- POST /blog/undefined/320 200 in 360ms
+ ✓ Compiled middleware in 1999ms
+ ✓ Ready in 8s
+ ○ Compiling /user/following ...
+ ✓ Compiled /user/following in 13.4s
+ GET /user/following 200 in 15932ms
+ POST /user/following 200 in 534ms
+ POST /user/following 200 in 320ms
+ POST /user/following 200 in 309ms
+ POST /user/following 200 in 356ms
+ POST /user/following 200 in 380ms
+ POST /user/following 200 in 495ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 1035ms
+ POST /user/following 200 in 356ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1617ms
+ POST /user/following 200 in 501ms
+ POST /user/following 200 in 327ms
+ POST /user/following 200 in 309ms
+ POST /user/following 200 in 482ms
+ POST /user/following 200 in 245ms
+ POST /user/following 200 in 454ms
+ POST /user/following 200 in 163ms
+ POST /user/following 200 in 166ms
+ POST /user/following 200 in 139ms
+ POST /user/following 200 in 198ms
+ POST /user/following 200 in 138ms
+ POST /user/following 200 in 185ms
+ POST /user/following 200 in 132ms
+ POST /user/following 200 in 131ms
+ POST /user/following 200 in 147ms
+ POST /user/following 200 in 150ms
+ POST /user/following 200 in 155ms
+ POST /user/following 200 in 131ms
+ POST /user/following 200 in 149ms
+ ✓ Compiled in 781ms
+ POST /user/following 200 in 726ms
+ POST /user/following 200 in 317ms
+ POST /user/following 200 in 292ms
+ POST /user/following 200 in 277ms
+ POST /user/following 200 in 184ms
+ POST /user/following 200 in 208ms
+ POST /user/following 200 in 247ms
+ POST /user/following 200 in 183ms
+ POST /user/following 200 in 235ms
+ POST /user/following 200 in 416ms
+ POST /user/following 200 in 284ms
+ POST /user/following 200 in 226ms
+ POST /user/following 200 in 300ms
+ ✓ Compiled in 754ms
+ POST /user/following 200 in 406ms
+ ✓ Compiled in 212ms
+ POST /user/following 200 in 492ms
+ POST /user/following 200 in 157ms
+ POST /user/following 200 in 134ms
+ POST /user/following 200 in 164ms
+ POST /user/following 200 in 326ms
+ POST /user/following 200 in 364ms
+ POST /user/following 200 in 183ms
+ POST /user/following 200 in 192ms
+ POST /user/following 200 in 216ms
+ POST /user/following 200 in 140ms
+ POST /user/following 200 in 198ms
+ POST /user/following 200 in 184ms
+ POST /user/following 200 in 131ms
+ ✓ Compiled in 178ms
+ POST /user/following 200 in 383ms
+ POST /user/following 200 in 165ms
+ POST /user/following 200 in 165ms
+ POST /user/following 200 in 170ms
+ POST /user/following 200 in 157ms
+ POST /user/following 200 in 150ms
+ POST /user/following 200 in 244ms
+ POST /user/following 200 in 165ms
+ POST /user/following 200 in 165ms
+ POST /user/following 200 in 141ms
+ POST /user/following 200 in 132ms
+ POST /user/following 200 in 211ms
+ POST /user/following 200 in 179ms
+ ✓ Compiled in 135ms
+ POST /user/following 200 in 400ms
+ ✓ Compiled in 203ms
+ POST /user/following 200 in 328ms
+ ✓ Compiled in 171ms
+ POST /user/following 200 in 379ms
+ POST /user/following 200 in 143ms
+ POST /user/following 200 in 169ms
+ POST /user/following 200 in 213ms
+ POST /user/following 200 in 199ms
+ POST /user/following 200 in 147ms
+ POST /user/following 200 in 149ms
+ POST /user/following 200 in 132ms
+ POST /user/following 200 in 205ms
+ POST /user/following 200 in 136ms
+ POST /user/following 200 in 167ms
+ POST /user/following 200 in 242ms
+ POST /user/following 200 in 190ms
+ ✓ Compiled in 325ms
+ POST /user/following 200 in 446ms
+ ✓ Compiled in 196ms
+ POST /user/following 200 in 277ms
+ ✓ Compiled in 162ms
+ POST /user/following 200 in 249ms
+ ✓ Compiled in 251ms
+ POST /user/following 200 in 436ms
+ ✓ Compiled in 164ms
+ POST /user/following 200 in 320ms
+ ✓ Compiled in 170ms
+ POST /user/following 200 in 409ms
+ ✓ Compiled in 148ms
+ POST /user/following 200 in 431ms
+ POST /user/following 200 in 137ms
+ POST /user/following 200 in 163ms
+ POST /user/following 200 in 155ms
+ POST /user/following 200 in 172ms
+ POST /user/following 200 in 181ms
+ POST /user/following 200 in 163ms
+ POST /user/following 200 in 153ms
+ POST /user/following 200 in 164ms
+ POST /user/following 200 in 265ms
+ POST /user/following 200 in 381ms
+ POST /user/following 200 in 180ms
+ POST /user/following 200 in 153ms
+ ✓ Compiled in 202ms
+ POST /user/following 200 in 356ms
+ ✓ Compiled in 243ms
+ POST /user/following 200 in 300ms
+ POST /user/following 200 in 154ms
+ POST /user/following 200 in 182ms
+ POST /user/following 200 in 147ms
+ POST /user/following 200 in 284ms
+ POST /user/following 200 in 176ms
+ POST /user/following 200 in 154ms
+ POST /user/following 200 in 141ms
+ POST /user/following 200 in 155ms
+ POST /user/following 200 in 261ms
+ POST /user/following 200 in 189ms
+ POST /user/following 200 in 129ms
+ POST /user/following 200 in 126ms
+ POST /user/following 200 in 164ms
+ POST /user/following 200 in 189ms
+ POST /user/following 200 in 222ms
+ POST /user/following 200 in 199ms
+ POST /user/following 200 in 207ms
+ POST /user/following 200 in 171ms
+ POST /user/following 200 in 246ms
+ POST /user/following 200 in 214ms
+ POST /user/following 200 in 388ms
+ POST /user/following 200 in 294ms
+ POST /user/following 200 in 211ms
+ POST /user/following 200 in 214ms
+ POST /user/following 200 in 200ms
+ POST /user/following 200 in 215ms
+ POST /user/following 200 in 199ms
  ○ Compiling /blog ...
- ✓ Compiled /blog in 767ms
- GET /blog 200 in 1052ms
- POST /blog 200 in 476ms
- POST /blog 200 in 439ms
+ ✓ Compiled /blog in 2.1s
+ GET /blog 200 in 2377ms
+ POST /blog 200 in 235ms
+ POST /blog 200 in 401ms
 data recieved from the backend  {
   suggestedUsers: [
     {
@@ -118,164 +191,21 @@ data recieved from the backend  {
     }
   ]
 }
- POST /blog 200 in 304ms
- POST /blog 200 in 333ms
- POST /blog 200 in 369ms
- POST /blog 200 in 214ms
- POST /blog 200 in 226ms
- POST /blog 200 in 315ms
- POST /blog 200 in 227ms
- POST /blog 200 in 213ms
- POST /blog 200 in 203ms
- POST /blog 200 in 237ms
- POST /blog 200 in 201ms
- POST /blog 200 in 176ms
- POST /blog 200 in 265ms
- POST /blog 200 in 205ms
- POST /blog 200 in 227ms
-Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
-  10 |
-  11 | const Postpage = async ({ params }: { params: any }) => {
-> 12 |   const postId = params.id;
-     |                         ^
-  13 |   const post = await fetchPostsById(+postId);
-  14 |   const session = await getSession();
-  15 |
- GET /blog/create-a-new-postcreate-a-new-postcreate-a-new-post/314 200 in 468ms
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
- GET /default-avatar.png 404 in 1277ms
- POST /blog/create-a-new-postcreate-a-new-postcreate-a-new-post/314 200 in 1294ms
- POST /blog/create-a-new-postcreate-a-new-postcreate-a-new-post/314 200 in 303ms
- ○ Compiling /user/profile/[id] ...
- ✓ Compiled /user/profile/[id] in 547ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 12,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir90@gmail.com',
-    bio: null,
-    avatar: null,
-    posts: [ [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/12 200 in 1855ms
- POST /user/profile/12 200 in 301ms
- POST /user/profile/12 200 in 451ms
- POST /user/profile/12 200 in 240ms
- POST /user/profile/12 200 in 257ms
- POST /user/profile/12 200 in 334ms
-recieved the follower id  12
-data recieved from the backend  { isFollowing: true }
- POST /user/profile/12 200 in 494ms
- ✓ Compiled in 765ms
-recieved the follower id  12
-data recieved from the backend  { isFollowing: true }
- POST /user/profile/12 200 in 883ms
- POST /user/profile/12 200 in 924ms
- POST /user/profile/12 200 in 897ms
- POST /user/profile/12 200 in 459ms
-recieved the follower id  12
-data recieved from the backend  { isFollowing: true }
- POST /user/profile/12 200 in 495ms
- POST /user/profile/12 200 in 536ms
- POST /user/profile/12 200 in 460ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 12,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir90@gmail.com',
-    bio: null,
-    avatar: null,
-    posts: [ [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/12 200 in 870ms
- POST /user/profile/12 200 in 1302ms
- POST /user/profile/12 200 in 922ms
- POST /user/profile/12 200 in 408ms
- POST /user/profile/12 200 in 332ms
- POST /user/profile/12 200 in 700ms
- ○ Compiling /favicon.ico ...
-recieved the follower id  12
-data recieved from the backend  { isFollowing: true }
- POST /user/profile/12 200 in 833ms
- ✓ Compiled /favicon.ico in 2.3s
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 2946ms
- POST /user/profile/12 200 in 211ms
-recieved the follower id  12
-❌ Error adding follower: Error Occured
- POST /user/profile/12 200 in 604ms
- ○ Compiling /user/posts/liked ...
- ✓ Compiled /user/posts/liked in 1014ms
- GET /user/posts/liked 200 in 1622ms
-Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
-  10 |
-  11 | const Postpage = async ({ params }: { params: any }) => {
-> 12 |   const postId = params.id;
-     |                         ^
-  13 |   const post = await fetchPostsById(+postId);
-  14 |   const session = await getSession();
-  15 |
- GET /blog/undefined/48 200 in 765ms
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
- POST /blog/undefined/48 200 in 1007ms
- POST /blog/undefined/48 200 in 471ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 3,
-    name: 'Gilberto Ondricka',
-    email: 'Giovani_Reilly@hotmail.com',
-    bio: 'Contego tersus trado denuncio deduco ipsam.',
-    avatar: 'https://avatars.githubusercontent.com/u/34498319',
-    posts: [
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object]
-    ]
-  }
-}
- GET /user/profile/3 200 in 330ms
- POST /user/profile/3 200 in 625ms
- POST /user/profile/3 200 in 395ms
- POST /user/profile/3 200 in 225ms
- POST /user/profile/3 200 in 278ms
- POST /user/profile/3 200 in 349ms
- POST /user/profile/3 200 in 276ms
- POST /user/profile/3 200 in 319ms
- POST /user/profile/3 200 in 355ms
- POST /user/profile/3 200 in 422ms
- POST /user/profile/3 200 in 1228ms
- POST /user/profile/3 200 in 767ms
- POST /user/profile/3 200 in 299ms
- POST /user/profile/3 200 in 477ms
- POST /user/profile/3 200 in 569ms
- POST /user/profile/3 200 in 754ms
- POST /user/profile/3 200 in 435ms
- POST /user/profile/3 200 in 360ms
- POST /user/profile/3 200 in 450ms
- POST /user/profile/3 200 in 395ms
- POST /user/profile/3 200 in 443ms
- POST /user/profile/3 200 in 330ms
- POST /user/profile/3 200 in 402ms
- POST /user/profile/3 200 in 531ms
- POST /user/profile/3 200 in 584ms
-recieved the follower id  3
-data recieved from the backend  { isFollowing: true }
- POST /user/profile/3 200 in 404ms
- POST /user/profile/3 200 in 627ms
- POST /user/profile/3 200 in 567ms
- ○ Compiling /user/create-post ...
- ✓ Compiled /user/create-post in 649ms
- GET /user/create-post 200 in 796ms
+ POST /blog 200 in 182ms
+ POST /blog 200 in 183ms
+ POST /blog 200 in 251ms
+ POST /blog 200 in 208ms
+ POST /blog 200 in 192ms
+ POST /blog 200 in 200ms
+ POST /blog 200 in 193ms
+ POST /blog 200 in 253ms
+ POST /blog 200 in 218ms
+ POST /blog 200 in 244ms
+ POST /blog 200 in 267ms
+ POST /blog 200 in 363ms
+ POST /blog 200 in 278ms
  ○ Compiling /user/profile/self ...
- ✓ Compiled /user/profile/self in 663ms
+ ✓ Compiled /user/profile/self in 817ms
 data recieved from the backend  {
   getUserDetails: {
     id: 16,
@@ -286,989 +216,140 @@ data recieved from the backend  {
     posts: [ [Object] ]
   }
 }
- GET /user/profile/self 200 in 988ms
- POST /user/profile/self 200 in 270ms
- ○ Compiling /user/posts/[id]/delete ...
- ✓ Compiled /user/posts/[id]/delete in 625ms
- GET /user/posts/331/delete 200 in 3056ms
- ○ Compiling /user/posts ...
- ✓ Compiled /user/posts in 1092ms
- GET /user/posts 200 in 1556ms
- GET /user/posts/331/delete 200 in 432ms
- ✓ Compiled in 315ms
- GET /user/posts 200 in 428ms
- ✓ Compiled /user/posts/[id]/delete in 185ms
- GET /user/posts/331/delete 200 in 1029ms
- ✓ Compiled in 151ms
- GET /user/posts 200 in 320ms
- ✓ Compiled /user/posts/[id]/delete in 120ms
- GET /user/posts/331/delete 200 in 727ms
- ✓ Compiled in 229ms
- ✓ Compiled /user/posts/[id]/delete in 180ms
- GET /user/posts 200 in 970ms
- GET /user/posts/331/delete 200 in 954ms
- ✓ Compiled in 160ms
- GET /user/posts 404 in 403ms
- ✓ Compiled /user/posts/[id]/delete in 207ms
- GET /user/posts/331/delete 200 in 1326ms
- GET /user/posts 200 in 1857ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
+ GET /user/profile/self 200 in 1096ms
+ POST /user/profile/self 200 in 217ms
+ ○ Compiling /user/posts/liked ...
+ ✓ Compiled /user/posts/liked in 936ms
+ GET /user/posts/liked 200 in 1328ms
+ ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760885942963 received null
+ ⨯ upstream image response timed out for https://loremflickr.com/320/240?lock=8174803565813881
+ ⨯ upstream image response timed out for https://loremflickr.com/320/240?lock=6074651854383926
+[Error [TimeoutError]: The operation was aborted due to timeout] {
+  code: 23,
+  INDEX_SIZE_ERR: 1,
+  DOMSTRING_SIZE_ERR: 2,
+  HIERARCHY_REQUEST_ERR: 3,
+  WRONG_DOCUMENT_ERR: 4,
+  INVALID_CHARACTER_ERR: 5,
+  NO_DATA_ALLOWED_ERR: 6,
+  NO_MODIFICATION_ALLOWED_ERR: 7,
+  NOT_FOUND_ERR: 8,
+  NOT_SUPPORTED_ERR: 9,
+  INUSE_ATTRIBUTE_ERR: 10,
+  INVALID_STATE_ERR: 11,
+  SYNTAX_ERR: 12,
+  INVALID_MODIFICATION_ERR: 13,
+  NAMESPACE_ERR: 14,
+  INVALID_ACCESS_ERR: 15,
+  VALIDATION_ERR: 16,
+  TYPE_MISMATCH_ERR: 17,
+  SECURITY_ERR: 18,
+  NETWORK_ERR: 19,
+  ABORT_ERR: 20,
+  URL_MISMATCH_ERR: 21,
+  QUOTA_EXCEEDED_ERR: 22,
+  TIMEOUT_ERR: 23,
+  INVALID_NODE_TYPE_ERR: 24,
+  DATA_CLONE_ERR: 25
 }
- GET /user/profile/self 200 in 326ms
- POST /user/profile/self 200 in 212ms
- GET /user/posts/331/delete 200 in 553ms
-TypeError: fetch failed
-    at async authfetchGraphql (src\lib\fetchGraphQL.ts:42:21)
-    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
-    at async page (src\app\user\profile\self\page.tsx:16:18)
-  40 |       return new Error("Please Login!!")
-  41 |     }
-> 42 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
-     |                     ^
-  43 |         method:"POST",
-  44 |         headers:{
-  45 |             "Content-Type":"application/json", {
-  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+[Error [TimeoutError]: The operation was aborted due to timeout] {
+  code: 23,
+  INDEX_SIZE_ERR: 1,
+  DOMSTRING_SIZE_ERR: 2,
+  HIERARCHY_REQUEST_ERR: 3,
+  WRONG_DOCUMENT_ERR: 4,
+  INVALID_CHARACTER_ERR: 5,
+  NO_DATA_ALLOWED_ERR: 6,
+  NO_MODIFICATION_ALLOWED_ERR: 7,
+  NOT_FOUND_ERR: 8,
+  NOT_SUPPORTED_ERR: 9,
+  INUSE_ATTRIBUTE_ERR: 10,
+  INVALID_STATE_ERR: 11,
+  SYNTAX_ERR: 12,
+  INVALID_MODIFICATION_ERR: 13,
+  NAMESPACE_ERR: 14,
+  INVALID_ACCESS_ERR: 15,
+  VALIDATION_ERR: 16,
+  TYPE_MISMATCH_ERR: 17,
+  SECURITY_ERR: 18,
+  NETWORK_ERR: 19,
+  ABORT_ERR: 20,
+  URL_MISMATCH_ERR: 21,
+  QUOTA_EXCEEDED_ERR: 22,
+  TIMEOUT_ERR: 23,
+  INVALID_NODE_TYPE_ERR: 24,
+  DATA_CLONE_ERR: 25
 }
-❌ Error fetching Suggested User: Error Occured
-data recieved from the backend  undefined
- ⨯ TypeError: Cannot read properties of undefined (reading 'length')
-    at ProfilePage (src\app\user\profile\self\components\ProfilePageSelf.tsx:174:16)
-  172 |       <div className="border-t px-6 sm:px-10 py-6">
-  173 |         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Posts</h2>
-> 174 |         {posts.length === 0 ? (
-      |                ^
-  175 |           <p className="text-gray-500 text-sm sm:text-base">No posts to display.</p>
-  176 |         ) : (
-  177 |           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {
-  digest: '401916231'
+[Error [TimeoutError]: The operation was aborted due to timeout] {
+  code: 23,
+  INDEX_SIZE_ERR: 1,
+  DOMSTRING_SIZE_ERR: 2,
+  HIERARCHY_REQUEST_ERR: 3,
+  WRONG_DOCUMENT_ERR: 4,
+  INVALID_CHARACTER_ERR: 5,
+  NO_DATA_ALLOWED_ERR: 6,
+  NO_MODIFICATION_ALLOWED_ERR: 7,
+  NOT_FOUND_ERR: 8,
+  NOT_SUPPORTED_ERR: 9,
+  INUSE_ATTRIBUTE_ERR: 10,
+  INVALID_STATE_ERR: 11,
+  SYNTAX_ERR: 12,
+  INVALID_MODIFICATION_ERR: 13,
+  NAMESPACE_ERR: 14,
+  INVALID_ACCESS_ERR: 15,
+  VALIDATION_ERR: 16,
+  TYPE_MISMATCH_ERR: 17,
+  SECURITY_ERR: 18,
+  NETWORK_ERR: 19,
+  ABORT_ERR: 20,
+  URL_MISMATCH_ERR: 21,
+  QUOTA_EXCEEDED_ERR: 22,
+  TIMEOUT_ERR: 23,
+  INVALID_NODE_TYPE_ERR: 24,
+  DATA_CLONE_ERR: 25
 }
- GET /user/profile/self 500 in 1391ms
- GET /favicon.ico 200 in 5325ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
+[Error [TimeoutError]: The operation was aborted due to timeout] {
+  code: 23,
+  INDEX_SIZE_ERR: 1,
+  DOMSTRING_SIZE_ERR: 2,
+  HIERARCHY_REQUEST_ERR: 3,
+  WRONG_DOCUMENT_ERR: 4,
+  INVALID_CHARACTER_ERR: 5,
+  NO_DATA_ALLOWED_ERR: 6,
+  NO_MODIFICATION_ALLOWED_ERR: 7,
+  NOT_FOUND_ERR: 8,
+  NOT_SUPPORTED_ERR: 9,
+  INUSE_ATTRIBUTE_ERR: 10,
+  INVALID_STATE_ERR: 11,
+  SYNTAX_ERR: 12,
+  INVALID_MODIFICATION_ERR: 13,
+  NAMESPACE_ERR: 14,
+  INVALID_ACCESS_ERR: 15,
+  VALIDATION_ERR: 16,
+  TYPE_MISMATCH_ERR: 17,
+  SECURITY_ERR: 18,
+  NETWORK_ERR: 19,
+  ABORT_ERR: 20,
+  URL_MISMATCH_ERR: 21,
+  QUOTA_EXCEEDED_ERR: 22,
+  TIMEOUT_ERR: 23,
+  INVALID_NODE_TYPE_ERR: 24,
+  DATA_CLONE_ERR: 25
 }
- GET /user/profile/self 200 in 1289ms
- POST /user/profile/self 200 in 1537ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 373ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 781ms
- POST /user/profile/self 200 in 990ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 544ms
- GET /user/posts/331/delete 200 in 1894ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1822ms
- POST /user/profile/self 200 in 1228ms
- GET /user/posts/331/delete 200 in 1029ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1851ms
- POST /user/profile/self 200 in 1505ms
- ✓ Compiled in 313ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 387ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 290ms
- ✓ Compiled in 400ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 406ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 335ms
- ✓ Compiled in 247ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 361ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 327ms
- ✓ Compiled in 152ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 544ms
- GET /user/profile/self 200 in 545ms
- ✓ Compiled in 145ms
- GET /user/profile/self 404 in 774ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 534ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1129ms
- ✓ Compiled in 168ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 253ms
- ✓ Compiled in 838ms
- ✓ Compiled in 251ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 361ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1055ms
- POST /user/profile/self 200 in 849ms
- POST /user/profile/self 200 in 252ms
- ✓ Compiled in 919ms
- POST /user/profile/self 200 in 255ms
- ✓ Compiled in 565ms
- POST /user/profile/self 200 in 222ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1268ms
- POST /user/profile/self 200 in 753ms
- ✓ Compiled in 244ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 696ms
- POST /user/profile/self 200 in 255ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 410ms
- ✓ Compiled /user/posts/[id]/delete in 255ms
- GET /user/posts/331/delete 200 in 2880ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 493ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:9)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:9)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
- ⨯ Error: Attempted to call toast() from the server but toast is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
-    at formAction (src\app\user\posts\[id]\delete\page.tsx:29:14)
-  27 |         "use server";
-  28 |         await deletePost(+params.id);
-> 29 |         toast("✅ Post deleted successfully!");
-     |              ^
-  30 |         redirect('/user/profile/self');
-  31 |     }
-  32 |     return ( {
-  digest: '4210157911'
-}
- POST /user/posts/331/delete 500 in 2925ms
- ✓ Compiled in 272ms
- ✓ Compiled /user/posts/[id]/delete in 203ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1665ms
- GET /user/posts/331/delete 200 in 1669ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 352ms
- ✓ Compiled in 191ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 261ms
- ✓ Compiled in 180ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1288ms
- ✓ Compiled /user/posts/[id]/delete in 192ms
- GET /user/posts/331/delete 200 in 1287ms
- ✓ Compiled in 241ms
- ✓ Compiled in 382ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 317ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 331ms
- ✓ Compiled /user/posts/[id]/delete in 170ms
- GET /user/posts/331/delete 200 in 1129ms
- GET /user/posts/331/delete 200 in 369ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:9)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:9)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
- ⨯ Error: Attempted to call toast() from the server but toast is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
-    at formAction (src\app\user\posts\[id]\delete\page.tsx:30:14)
-  28 |         await deletePost(+params.id);
-  29 |         "use client";
-> 30 |         toast("✅ Post deleted successfully!");
-     |              ^
-  31 |         redirect('/user/profile/self');
-  32 |
-  33 |     } {
-  digest: '2208593232'
-}
- POST /user/posts/331/delete 500 in 2053ms
- ✓ Compiled in 483ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 329ms
- ✓ Compiled /user/posts/[id]/delete in 223ms
- GET /user/posts/331/delete 200 in 2460ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 370ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:9)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:9)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 314ms
- POST /user/posts/331/delete 303 in 1392ms
- POST /user/profile/self 200 in 185ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 396ms
- POST /user/profile/self 200 in 236ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 349ms
- ✓ Compiled in 2s
- ✓ Compiled in 316ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 399ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 219ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 307ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 346ms
- ✓ Compiled in 136ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 538ms
- GET /user/profile/self 200 in 539ms
- POST /user/profile/self 200 in 411ms
- ✓ Compiled /user/posts/[id]/delete in 215ms
- GET /user/posts/331/delete 200 in 2779ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-Delete Post Result: { error: "Cannot read properties of undefined (reading 'deletePost')" }
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 447ms
- POST /user/posts/331/delete 303 in 3064ms
- POST /user/profile/self 200 in 368ms
- POST /user/profile/self 200 in 637ms
- GET /user/posts/331/delete 200 in 977ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-Delete Post Result: { error: "Cannot read properties of undefined (reading 'deletePost')" }
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1829ms
- POST /user/posts/331/delete 303 in 3244ms
- POST /user/profile/self 200 in 233ms
- POST /user/profile/self 200 in 212ms
- GET /user/posts/331/delete 200 in 439ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-Delete Post Result: { error: "Cannot read properties of undefined (reading 'deletePost')" }
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 782ms
- POST /user/posts/331/delete 303 in 2103ms
- POST /user/profile/self 200 in 143ms
-TypeError: fetch failed
-    at async authfetchGraphql (src\lib\fetchGraphQL.ts:42:21)
-    at async getPostLikedData (src\lib\actions\like.ts:16:18)
-  40 |       return new Error("Please Login!!")
-  41 |     }
-> 42 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
-     |                     ^
-  43 |         method:"POST",
-  44 |         headers:{
-  45 |             "Content-Type":"application/json", {
-  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
-}
- POST /user/profile/self 200 in 859ms
- GET /user/posts/331/delete 200 in 463ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 // if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
-Delete Post Result: { error: "Cannot read properties of undefined (reading 'deletePost')" }
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 336ms
- POST /user/posts/331/delete 303 in 2470ms
- POST /user/profile/self 200 in 180ms
- POST /user/profile/self 200 in 178ms
- GET /user/posts/331/delete 200 in 489ms
-Graphql errors: [
-  {
-    message: '\n' +
-      'Invalid `this.prisma.post.delete()` invocation in\n' +
-      'D:\\Projects\\BlogProject\\apps\\api\\src\\post\\post.service.ts:178:47\n' +
-      '\n' +
-      '  175 });\n' +
-      '  176 // if (!authorIdMatched) throw new UnauthorizedException();\n' +
-      '  177 \n' +
-      '→ 178 const data = await this.prisma.post.delete(\n' +
-      'Foreign key constraint violated on the foreign key',
-    locations: [ [Object] ],
-    path: [ 'deletePost' ],
-    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
-  }
-]
-Error: Failed to fetch the data from Graphql
-    at authfetchGraphql (src\lib\fetchGraphQL.ts:57:15)
-    at async deletePost (src\lib\actions\postActions.ts:142:18)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  55 |     if(result.errors){
-  56 |         console.log("Graphql errors:", result.errors);
-> 57 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  58 |    
-  59 |     }
-  60 |     
-❌ Error in deletePost: TypeError: Cannot read properties of undefined (reading 'deletePost')
-Delete Post Result: { error: "Cannot read properties of undefined (reading 'deletePost')" }
-    at deletePost (src\lib\actions\postActions.ts:143:17)
-    at async formAction (src\app\user\posts\[id]\delete\page.tsx:28:23)
-  141 |   try {
-  142 |     const data = await authfetchGraphql(print(DELETE_POST_MUTATION), { postId });
-> 143 |     return data.deletePost;
-      |                 ^
-  144 |   } catch (err) {
-  145 |     return handleError("deletePost", err);
-  146 |   }
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 897ms
- POST /user/posts/331/delete 303 in 2037ms
- POST /user/profile/self 200 in 211ms
- POST /user/profile/self 200 in 162ms
- POST /user/profile/self 200 in 253ms
- GET /user/posts/331/delete 200 in 544ms
-Delete Post Result: true
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: []
-  }
-}
- GET /user/profile/self 200 in 452ms
- POST /user/posts/331/delete 303 in 676ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: []
-  }
-}
- GET /user/profile/self 200 in 457ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 348ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: []
-  }
-}
- GET /user/profile/self 200 in 409ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 361ms
- GET /user/create-post 200 in 741ms
- POST /user/create-post 200 in 5069ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 280ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 16,
-    name: 'Narendra Modi primed',
-    email: 'john@example.com',
-    bio: 'Prime Minister Of India',
-    avatar: 'https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/____.png_1761487164415',
-    posts: [ [Object] ]
-  }
-}
- GET /user/profile/self 200 in 276ms
- POST /user/profile/self 200 in 194ms
-Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
-  10 |
-  11 | const Postpage = async ({ params }: { params: any }) => {
-> 12 |   const postId = params.id;
-     |                         ^
-  13 |   const post = await fetchPostsById(+postId);
-  14 |   const session = await getSession();
-  15 |
- GET /blog/lets-create-the-another-blog/332 200 in 391ms
- POST /blog/lets-create-the-another-blog/332 200 in 213ms
- POST /blog/lets-create-the-another-blog/332 200 in 247ms
  ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/1760953123389_undefined received null
- ⨯ The requested resource isn't a valid image for https://gylfmipoifgusmmbxqre.supabase.co/storage/v1/object/public/thumbnail/undefined_1760954465230 received null
+[TypeError: fetch failed] {
+  [cause]: [Error: read ECONNRESET] {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: [Error: read ECONNRESET] {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 2.3s

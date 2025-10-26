@@ -5,7 +5,7 @@ import SignInPanel from './SignInPanel'
 import Profile from './Profile'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { UserIcon } from '@heroicons/react/16/solid'
-import { ArrowRightEndOnRectangleIcon, ArrowRightOnRectangleIcon, HeartIcon, HomeIcon, NewspaperIcon, PencilSquareIcon, Squares2X2Icon } from '@heroicons/react/24/outline'
+import { ArrowRightEndOnRectangleIcon, ArrowRightOnRectangleIcon, FolderPlusIcon, HeartIcon, HomeIcon, NewspaperIcon, PencilSquareIcon, Squares2X2Icon } from '@heroicons/react/24/outline'
 
 const Navbar = async (props: PropsWithChildren) => {
     const session = await getSession()
@@ -65,6 +65,14 @@ const Navbar = async (props: PropsWithChildren) => {
                                 >
                                     <HeartIcon className="w-3 h-3" />
                                     Liked Posts
+                                </Link>
+
+                                <Link
+                                    href="/user/following"
+                                    className="flex items-center gap-2 hover:text-blue-600 transition"
+                                >
+                                    <FolderPlusIcon className="w-3 h-3" />
+                                    Following
                                 </Link>
 
                                 <Link
