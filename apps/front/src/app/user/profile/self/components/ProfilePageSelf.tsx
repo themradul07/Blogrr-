@@ -170,9 +170,9 @@ export default function ProfilePage({
 
       {/* Posts Section */}
       <div className="border-t px-6 sm:px-10 py-6">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Posts</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Blogs</h2>
         {posts.length === 0 ? (
-          <p className="text-gray-500 text-sm sm:text-base">No posts to display.</p>
+          <p className="text-gray-500 text-sm sm:text-base">No blogs to display.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post: Post) => (

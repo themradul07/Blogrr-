@@ -8,6 +8,7 @@ import NoPosts from '../_components/NoPosts';
 
 const UserLikedPosts = async () => {
   const likedPost = await getUserLikedPosts();
+  console.log("Liked Posts:", likedPost);
 
   return (
     <div className="flex w-full min-h-screen">

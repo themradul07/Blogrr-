@@ -226,40 +226,6 @@ export class PostService {
     return relatedPosts;
   }
 
-  // async getAllPosts({ pagination, search, tags }) {
-  //   const { skip = 0, take = 12 } = pagination || {};
-
-  //   return this.prisma.post.findMany({
-  //     where: {
-  //       AND: [
-  //         search
-  //           ? {
-  //               OR: [
-  //                 { title: { contains: search } },
-  //                 { content: { contains: search } },
-  //               ],
-  //             }
-  //           : {},
-  //         tags && tags.length > 0
-  //           ? {
-  //               tags: {
-  //                 some: {
-  //                   name: { in: tags },
-  //                 },
-  //               },
-  //             }
-  //           : {},
-  //       ],
-  //     },
-  //     include: {
-  //       author: true,
-  //       tags: true,
-  //     },
-  //     skip,
-  //     take,
-  //     orderBy: { createdAt: 'desc' },
-  //   });
-  // }
 
   async getAllPosts({ pagination, search, tags }) {
     const { skip = 0, take = 12 } = pagination || {};

@@ -67,7 +67,7 @@ export default function ProfilePage({
         {/* Profile Image */}
         <div className="absolute -bottom-12 sm:-bottom-16 left-1/2 sm:left-10 transform -translate-x-1/2 sm:translate-x-0 w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-white overflow-hidden bg-gray-100 shadow-lg">
           <img
-            src={profileImageUrl}
+            src={profileImageUrl??"/avatar-default.jpg"}
             alt={`${name} profile`}
             className="w-full h-full object-cover"
           />
@@ -112,14 +112,14 @@ export default function ProfilePage({
       {/* Posts Section */}
       <div className="border-t px-6 sm:px-10 py-6">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-center sm:text-left">
-          Posts
+          Blogs
         </h2>
         {posts.length === 0 ? (
           <p className="text-gray-500 text-center sm:text-left">
-            No posts to display.
+            No blogs to display.
           </p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2  gap-6">
             {posts.map((post: Post) => (
               <BlogCard
                 key={post.id}

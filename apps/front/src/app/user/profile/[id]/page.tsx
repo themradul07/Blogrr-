@@ -16,13 +16,13 @@ const page = async ({ params }: Props) => {
 
 
     return (
-        <div className='mx-auto'>
+        <div className='mx-auto max-w-3xl '>
 
 
             <ProfilePage
                 name={user.name}
                 bio={user.bio}
-                profileImageUrl={user.avatar}
+                profileImageUrl={user.avatar?? "/avatar-default.jpg"}
                 coverImageUrl={user?.coverImageUrl}
                 posts={user.posts}
                 // onFollow={handleFollow}

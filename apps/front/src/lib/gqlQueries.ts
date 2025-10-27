@@ -86,10 +86,11 @@ export const CREATE_COMMENT_MUTATION = gql`
         }
     }
 `
-export const POST_LIKES = gql`
+export const POST_LIKES_AND_COMMENTS = gql`
     query PostLikeData($postId: Int!){
         postLikesCount(postId: $postId)
         userLikePost(postId: $postId)
+        postCommentCount(postId: $postId)
     }
 `
 export const LIKE_POST_MUTATION = gql`
@@ -151,8 +152,14 @@ export const USER_LIKED_POSTS = gql`
             id
             title
             thumbnail
-        }
+            author{
+                name
+                avatar
+
+            }
+            slug
         createdAt
+        }
     }
 }
 
@@ -180,6 +187,7 @@ query GetAllPosts($pagination: PaginationInput, $search: String, $tags: [String!
     content
     createdAt
     author {
+        id
       name
       avatar
     }

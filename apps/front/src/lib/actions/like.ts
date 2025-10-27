@@ -5,6 +5,7 @@ import { authfetchGraphql } from "../fetchGraphQL";
 import {
   LIKE_POST_MUTATION,
   POST_LIKES,
+  POST_LIKES_AND_COMMENTS,
   UNLIKE_POST_MUTATION,
   USER_LIKED_POSTS,
 } from "../gqlQueries";
@@ -13,11 +14,13 @@ import { error } from "console";
 
 export async function getPostLikedData(postId: number) {
   try {
-    const data = await authfetchGraphql(print(POST_LIKES), { postId: +postId });
+    const data = await authfetchGraphql(print(POST_LIKES_AND_COMMENTS), { postId: +postId });
+    console.log("Post Likes Data:", data);
 
     return {
       likeCount: data?.postLikesCount ?? 0,
       userLikedPost: data?.userLikePost ?? false,
+      postCommentCount: data?.postCommentCount ?? 0,
     };
   } catch (error: any) {
     console.log("❌ Error fetching post likes:", error.message || error);
@@ -33,7 +36,7 @@ export async function likePost(postId: number) {
     const data = await authfetchGraphql(print(LIKE_POST_MUTATION), {
       postId: +postId,
     });
-
+    
     if (!data?.likePost) {
       // Throw instead of returning, so React Query knows this is an error
       throw new Error("Failed to like post");

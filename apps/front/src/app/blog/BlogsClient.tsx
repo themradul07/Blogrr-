@@ -53,7 +53,7 @@ const BlogsView = () => {
 
 
   return (
-    <div className="mt-2 md:mt-16 flex flex-col md:flex-row gap-8 p-6 min-h-screen">
+    <div className="mt-2 md:mt-16 flex flex-col md:flex-row gap-8 p-6 min-h-screen max-w-6xl mx-auto">
       <div className="hidden md:block space-y-6 sticky top-24 h-fit max-w-2/12 ">
 
         <BlogFilter

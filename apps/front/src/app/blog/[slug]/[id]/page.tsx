@@ -47,7 +47,7 @@ const Postpage = async ({ params }: { params: any }) => {
             <div className="flex items-center text-gray-600 text-sm space-x-2">
               {/* Avatar */}
               <img
-                src={post.author.avatar || "/default-avatar.png"}
+                src={post.author.avatar===undefined || post.author.avatar===""? "/avatar-default.jpg": post.author.avatar}
                 alt={post.author.name}
                 className="w-8 h-8 rounded-full object-cover border border-gray-200"
               />

@@ -8,18 +8,18 @@ export class LikeService {
 
   constructor(private readonly prisma: PrismaService) { }
 
-async likePost({ postId, userId }: { postId: number; userId: number }) {
-  try {
-     await this.prisma.like.create({
+  async likePost({ postId, userId }: { postId: number; userId: number }) {
+    try {
+      await this.prisma.like.create({
         data: { userId, postId },
       });
       return true;
-  } catch (e) {
-    console.error(e);
-    throw new BadRequestException("An error occurred while liking the post");
-    return false;
+    } catch (e) {
+      console.error(e);
+      throw new BadRequestException("An error occurred while liking the post");
+      return false;
+    }
   }
-}
 
 
   async unlikePost({ postId, userId }: {
@@ -29,8 +29,8 @@ async likePost({ postId, userId }: { postId: number; userId: number }) {
 
     try {
       return !!await this.prisma.like.delete({
-        where:{
-          userId_postId:{
+        where: {
+          userId_postId: {
             userId,
             postId
           }
@@ -38,39 +38,45 @@ async likePost({ postId, userId }: { postId: number; userId: number }) {
       })
 
     } catch (e) {
-      
+
       throw new BadRequestException("Like Not found")
 
     }
 
   }
 
-  async getPostLikesCount(postId:number){
+  async getPostLikesCount(postId: number) {
     return this.prisma.like.count({
-      where:{
+      where: {
         postId,
       }
     })
   }
-  
-  async userLikedPost({postId, userId}:{postId:number , userId:number}){
+
+  async userLikedPost({ postId, userId }: { postId: number, userId: number }) {
     const like = await this.prisma.like.findFirst({
-      where:{
+      where: {
         postId,
         userId
       }
     })
-   
+
     return !!like;
   }
 
-  async likedPosts({ userId}: {userId: number}){    
+  async likedPosts({ userId }: { userId: number }) {
 
     return await this.prisma.like.findMany({
-      where:{ userId: userId},
-      include: {post: true}
-    })
-    
+      where: { userId: userId },
+      include: {
+        post: {
+          include: {
+            author: true,
+          }
+
+        }
+      }});
+
 
   }
 }

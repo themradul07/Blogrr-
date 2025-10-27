@@ -130,7 +130,7 @@ export default function BlogSearch({ setSearch, users }: Props) {
                 >
                 <div className="flex items-center gap-3">
                   <img
-                    src={user.avatar}
+                    src={user.avatar??"/avatar-default.jpg"}
                     alt={user.name}
                     className="w-10 h-10 rounded-full object-cover"
                   />
