@@ -30,7 +30,7 @@ const Sidebar = () => {
               className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-800 transition"
             >
               <HeartIcon className="h-5 w-5 text-gray-300" />
-              <span>Liked Posts</span>
+              <span>Liked blogs</span>
             </Link>
           </li>
 

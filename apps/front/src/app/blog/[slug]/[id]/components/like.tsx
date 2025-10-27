@@ -40,6 +40,10 @@ const Like = (props: Props) => {
 
     const unlikeMutation = useMutation({
         mutationFn: () => unlikePost(props.postId),
+          onSuccess: () => {
+            toast.success("Unliked Successfully");
+            refetchPostLikeData();
+        },
         onError: () => {
             toast.error("Failed to Unlike")
         }

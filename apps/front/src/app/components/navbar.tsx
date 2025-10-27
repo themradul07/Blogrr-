@@ -35,9 +35,11 @@ const Navbar = async (props: PropsWithChildren) => {
                     <div className="hidden md:flex  flex-col md:flex-row gap-2 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
                         <Link href="/">Home</Link>
                         <Link href="/blog">Blogs</Link>
-                        <Link href="/user/following">Following</Link>
-                        <Link href="/user/create-post">Create Blog</Link>                    
-                        <Link href={`/user/profile/self`}>Profile</Link>
+                        {session?.user ? <>
+                            <Link href="/user/following">Following</Link>
+                            <Link href="/user/create-post">Create Blog</Link>
+                            <Link href={`/user/profile/self`}>Profile</Link>
+                        </> : ""}
                     </div>
                     <div className="md:hidden flex flex-col md:flex-row gap-2 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
 
@@ -64,7 +66,7 @@ const Navbar = async (props: PropsWithChildren) => {
                                     className="flex items-center gap-2 hover:text-blue-600 transition"
                                 >
                                     <HeartIcon className="w-3 h-3" />
-                                    Liked Posts
+                                    Liked Blogs
                                 </Link>
 
                                 <Link

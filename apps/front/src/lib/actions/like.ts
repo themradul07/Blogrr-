@@ -4,7 +4,7 @@ import { print } from "graphql";
 import { authfetchGraphql } from "../fetchGraphQL";
 import {
   LIKE_POST_MUTATION,
-  POST_LIKES,
+ 
   POST_LIKES_AND_COMMENTS,
   UNLIKE_POST_MUTATION,
   USER_LIKED_POSTS,
@@ -49,7 +49,7 @@ export async function likePost(postId: number) {
 
     // Throw the error instead of returning it
     // This allows TanStack Query to catch and forward it to `onError`
-    throw new Error(error.message || "Failed to like post");
+    throw new Error(error.message || "Failed to like post Please Login");
   }
 }
 

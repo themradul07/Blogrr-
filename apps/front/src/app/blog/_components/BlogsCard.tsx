@@ -33,7 +33,7 @@ const BlogCard = ({ post }: Props) => {
   const likeMutation = useMutation({
     mutationFn: async () => await likePost(post.id),
     onSuccess: () => refetchPostLikeData(),
-    onError: () => toast.error("Failed to like post"),
+    onError: () => toast.error("Failed to like post. Please Login"),
   });
 
   const unlikeMutation = useMutation({
@@ -70,7 +70,7 @@ const BlogCard = ({ post }: Props) => {
             <span className="text-xs text-gray-500">
               {post.author?.bio || "Blogger • Writer"}
             </span>
-            <span className="text-xs text-gray-400">{timeAgo(`post.createdAt`)}</span>
+            <span className="text-xs text-gray-400">{timeAgo(post.createdAt)}</span>
           </div>
         </div>
       </Link>
@@ -79,7 +79,7 @@ const BlogCard = ({ post }: Props) => {
       <Link href={`/blog/${post.slug}/${post.id}`} className="block">
         <div className="px-5 pb-4">
           <p className="text-gray-800 text-sm sm:text-base leading-relaxed mb-3">
-            {post.content?.slice(0, 140) || "No description provided."}
+            {post.title?.slice(0, 140) || "No description provided."}
           </p>
           {thumbnail && (
             <div className="w-full rounded-lg h-100 bg-gray-200 overflow-hidden border flex items-center justify-center">

@@ -1,6 +1,7 @@
 import { success } from "zod";
 import { BACKEND_URL } from "./constants"
 import { getSession } from "./session";
+import { redirect } from "next/navigation";
 
 export const fetchGraphql = async ( query: string, variables={})=>{
 
@@ -37,6 +38,7 @@ export const authfetchGraphql = async ( query: string, variables={})=>{
     const session = await getSession();
    
     if(!session){
+        redirect("/auth/signin");
       return new Error("Please Login!!")
     }
     const response= await fetch(`${BACKEND_URL}/graphql`, {

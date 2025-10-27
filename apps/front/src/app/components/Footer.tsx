@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="flex gap-5 text-gray-400">
           {/* GitHub */}
           <a
-            href="https://github.com/"
+            href="https://github.com/themradul07"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/mradul-gandhi-744067299/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
