@@ -51,11 +51,11 @@ const CommentsCard = ({ comment, currentUserId, onSave, ondelete }: Props) => {
           </AvatarFallback>
         </Avatar>
         <div className="flex-1">
-          <p className="flex items-center">
+          <div className="flex items-center">
             {comment.author.name.slice(0, 15)}
-            <span className="ml-2 text-gray-500 text-xs">
+            <p className="ml-2 text-gray-500 text-xs">
               {new Date(comment.createdAt).toLocaleDateString()}
-            </span>
+            </p>
 
             {isUserComment && !isEditing && (
               <div className="relative ml-auto">
@@ -85,7 +85,7 @@ const CommentsCard = ({ comment, currentUserId, onSave, ondelete }: Props) => {
                 )}
               </div>
             )}
-          </p>
+          </div>
 
           {isEditing ? (
             <div className="mt-1 flex-col items-center gap-2">
