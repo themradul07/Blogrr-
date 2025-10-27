@@ -19,18 +19,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex gap-6 text-sm">
-          <a href="/about" className="flex items-center gap-1 hover:text-white transition">
-            <InformationCircleIcon className="w-4 h-4" />
-            About
-          </a>
-          <a href="/contact" className="flex items-center gap-1 hover:text-white transition">
-            <EnvelopeIcon className="w-4 h-4" />
-            Contact
-          </a>
-          <a href="/privacy" className="flex items-center gap-1 hover:text-white transition">
-            <LockClosedIcon className="w-4 h-4" />
-            Privacy
-          </a>
+          Made with ❤️ by Mradul Gandhi
         </div>
 
         {/* Social Icons */}
