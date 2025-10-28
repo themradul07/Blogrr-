@@ -37,6 +37,9 @@ export const fetchPosts = async ({
   try {
     const { skip, take } = transformTakeSkip({ page, pageSize });
     const data = await fetchGraphql(print(GET_POSTS), { skip, take });
+    if(!data?.posts){
+      return { posts: [], totalPosts: 0 };
+    }
     return { posts: data.posts as Post[], totalPosts: data.postCount };
   } catch (err) {
     return handleError("fetchPosts", err);
@@ -47,6 +50,9 @@ export const fetchPosts = async ({
 export const fetchPostsById = async (id: number) => {
   try {
     const data = await fetchGraphql(print(GET_POST_BY_ID), { id });
+    if(!data?.getPostbyId){
+      return { error: "Post not found" };
+    }
     return data.getPostbyId as Post;
   } catch (err) {
     return handleError("fetchPostsById", err);
