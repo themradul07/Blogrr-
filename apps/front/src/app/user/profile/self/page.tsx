@@ -1,5 +1,5 @@
 
-"use server"
+
 import React from 'react'
 
 import { getUserDetails } from '@/lib/actions/userActions';
