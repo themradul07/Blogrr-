@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { PrismaClient } from "../generated/prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { hash } from "argon2";
 
 const prisma = new PrismaClient();
@@ -28,7 +28,7 @@ async function main() {
   console.log("✅ Users created.");
 
   // ✅ Generate 400 posts
-  const posts = Array.from({ length: 200 }).map(() => ({
+  const posts = Array.from({ length: 50 }).map(() => ({
     title: faker.lorem.sentence(),
     slug: generateSlug(faker.lorem.sentence()),
     content: faker.lorem.paragraphs(3),

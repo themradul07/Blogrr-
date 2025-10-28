@@ -6,7 +6,7 @@ import { DEFAULT_PAGE_SIZE } from 'src/constants';
 import { Post } from './entities/post.entity';
 import { User } from 'src/user/entities/user.entity';
 import { Tag } from 'src/tag/entities/tag.entity';
-import { Prisma } from 'generated/prisma';
+import { Prisma } from '@prisma/client';
 import { contains } from 'class-validator';
 
 @Injectable()

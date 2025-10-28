@@ -48,7 +48,7 @@ export async function getSession(){
     return  payload as Session;
         
     } catch (e) {
-        await (await cookies() ).delete("session");
+        // await (await cookies() ).delete("session");
         console.error(" Failed to fetch the Session : ",e);
         redirect("/auth/signIn");
         
