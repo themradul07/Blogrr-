@@ -7,8 +7,10 @@ import {
   UserIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
+  const router = useRouter();
   return (
     <div className="h-screen w-64 bg-gray-900 text-white flex flex-col justify-between">
       {/* Top Section */}
@@ -35,13 +37,14 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <Link
-              href="/api/auth/"
+            <button
+              onClick={()=>{router.push("/api/auth/signout")}}
+              
               className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-800 transition"
             >
                <ArrowRightOnRectangleIcon className="h-5 w-5 text-gray-300" />
           <span>Sign Out</span>
-            </Link>
+            </button>
           </li>
         </ul>
       </div>
