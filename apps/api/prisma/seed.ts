@@ -28,7 +28,7 @@ async function main() {
   console.log("✅ Users created.");
 
   // ✅ Generate 400 posts
-  const posts = Array.from({ length: 400 }).map(() => ({
+  const posts = Array.from({ length: 200 }).map(() => ({
     title: faker.lorem.sentence(),
     slug: generateSlug(faker.lorem.sentence()),
     content: faker.lorem.paragraphs(3),
