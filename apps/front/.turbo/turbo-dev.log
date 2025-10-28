@@ -11,10 +11,19 @@
 
  ✓ Starting...
  ○ Compiling middleware ...
- ✓ Compiled middleware in 566ms
- ✓ Ready in 2.7s
+ ✓ Compiled middleware in 585ms
+ ✓ Ready in 3.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 6.7s
+ GET / 200 in 16893ms
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 831ms
+ GET /auth/signin 200 in 1073ms
+ ✓ Compiled /api/auth/google/callback in 401ms
+ GET /api/auth/google/callback?userId=1&name=Mradul%20Gandhi&avatar=https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc2MTY1MDY3NiwiZXhwIjoxNzYxNzM3MDc2fQ.XlIq04yemC--DYoeYtbBOs-nYpdNckopOOOirXrb5Tk 307 in 867ms
+ GET / 200 in 5101ms
  ○ Compiling /user/profile/self ...
- ✓ Compiled /user/profile/self in 6.5s
+ ✓ Compiled /user/profile/self in 815ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -25,24 +34,54 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 9585ms
+ GET /user/profile/self 200 in 5240ms
+ ✓ Compiled /api/auth/signout in 177ms
+ GET /api/auth/signout 307 in 530ms
+ POST / 200 in 209ms
+ POST / 200 in 164ms
+ POST / 200 in 158ms
+ POST / 200 in 153ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 3706ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1112ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 804ms
- ○ Compiling /_not-found/page ...
- ✓ Compiled /_not-found/page in 633ms
- GET /api/auth 404 in 871ms
- POST /api/auth 404 in 886ms
- GET /api/auth 404 in 1026ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1154ms
- ✓ Compiled in 167ms
- GET /api/auth 404 in 272ms
- GET /api/auth 404 in 662ms
- ✓ Compiled /user/profile/self in 56ms
+ POST /user/profile/self 200 in 3711ms
+ POST / 200 in 286ms
+ GET /api/auth/signout 307 in 354ms
+ POST / 200 in 215ms
+ POST / 200 in 196ms
+ POST / 200 in 210ms
+ GET / 200 in 2735ms
+ POST / 200 in 211ms
+ POST / 200 in 166ms
+ POST / 200 in 161ms
+ POST / 200 in 215ms
+ POST / 200 in 141ms
+ POST / 200 in 126ms
+ POST / 200 in 127ms
+ GET / 200 in 6425ms
+ POST / 200 in 183ms
+ POST / 200 in 155ms
+ POST / 200 in 177ms
+ POST / 200 in 164ms
+ POST / 200 in 171ms
+ GET / 200 in 8129ms
+ POST /auth/signin 200 in 399ms
+ GET /auth/signin 200 in 203ms
+ GET /api/auth/google/callback?userId=1&name=Mradul%20Gandhi&avatar=https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc2MTY1MTA3NiwiZXhwIjoxNzYxNzM3NDc2fQ.r6erpD6wIMNf7tzhMdY1ONq0COYa9O1jw66JQHa7Gwg 307 in 387ms
+Error: Failed to fetch the data from Graphql
+    at fetchGraphql (src\lib\fetchGraphQL.ts:23:15)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+  21 |     if(result.errors){
+  22 |         
+> 23 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  24 |    
+  25 |     }
+  26 |     return result.data;
+ GET / 200 in 5406ms
+ ○ Compiling /user/create-post ...
+ ✓ Compiled /user/create-post in 623ms
+ GET /user/create-post 200 in 801ms
+ POST /user/create-post 200 in 29231ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -50,87 +89,1256 @@ data recieved from the backend  {
     email: 'gandhisir80@gmail.com',
     bio: null,
     avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
-    posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
   }
 }
- GET /user/profile/self 200 in 1542ms
+ GET /user/profile/self 200 in 4624ms
+data recieved from the backend  {
+  getUserDetails: {
+    id: 1,
+    name: 'Mradul Gandhi',
+    email: 'gandhisir80@gmail.com',
+    bio: null,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
+ GET /user/profile/self 200 in 4774ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 997ms
+ POST /user/profile/self 200 in 4283ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 666ms
+ POST /user/profile/self 200 in 1895ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 971ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1050ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 985ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1268ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 0 }
+ POST /user/profile/self 200 in 1265ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 1120ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1262ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 2146ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 947ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1120ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 993ms
+ GET /blog 200 in 1229ms
+ POST /blog 200 in 5514ms
+ POST /blog 200 in 3102ms
+data recieved from the backend  {
+  suggestedUsers: [
+    {
+      id: 1,
+      name: 'Mradul Gandhi',
+      bio: null,
+      avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c'
+    },
+    {
+      id: 2,
+      name: 'Shirley Brown',
+      bio: 'Abscido caterva terror crastinus magni totam cruciamentum conatus voluptatibus conculco.',
+      avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/39.jpg'
+    },
+    {
+      id: 3,
+      name: 'Salvador Zboncak I',
+      bio: 'Ullam eos adeo provident sortitus timidus dicta.',
+      avatar: 'https://avatars.githubusercontent.com/u/97532903'
+    }
+  ]
+}
+ POST /blog 200 in 1114ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 0 }
+ POST /blog 200 in 1056ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 1896ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 1428ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 1330ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 1199ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 841ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 934ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 903ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 862ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 836ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 1669ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 794ms
+ POST /blog 200 in 1154ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 0 }
+ POST /blog 200 in 804ms
+ ○ Compiling /blog/[slug]/[id] ...
+ ✓ Compiled /blog/[slug]/[id] in 1226ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 8793ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 3745ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 0 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 4676ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 3036ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 4305ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1674ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Postpage (src\app\blog\[slug]\[id]\page.tsx:13:16)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [Error [HeadersTimeoutError]: Headers Timeout Error] {
+    code: 'UND_ERR_HEADERS_TIMEOUT'
+  }
+}
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 309989ms
+data recieved from the backend  {
+  getUserDetails: {
+    id: 1,
+    name: 'Mradul Gandhi',
+    email: 'gandhisir80@gmail.com',
+    bio: null,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
+ GET /user/profile/self 200 in 4791ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 3299ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1092ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 818ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 779ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 697ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 665ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1067ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 871ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 1172ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 3154ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 2850ms
+data recieved from the backend  {
+  getUserDetails: {
+    id: 1,
+    name: 'Mradul Gandhi',
+    email: 'gandhisir80@gmail.com',
+    bio: null,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
+ GET /user/profile/self 200 in 1422ms
+data recieved from the backend  {
+  getUserDetails: {
+    id: 1,
+    name: 'Mradul Gandhi',
+    email: 'gandhisir80@gmail.com',
+    bio: null,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
+ GET /user/profile/self 200 in 4281ms
+data recieved from the backend  {
+  getUserDetails: {
+    id: 1,
+    name: 'Mradul Gandhi',
+    email: 'gandhisir80@gmail.com',
+    bio: null,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
+ GET /user/profile/self 200 in 1393ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
  POST /user/profile/self 200 in 940ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 811ms
- ✓ Compiled /api/auth/signout in 472ms
- GET /api/auth/signout 307 in 886ms
- ○ Compiling / ...
- ✓ Compiled / in 871ms
- POST / 200 in 215ms
- POST / 200 in 152ms
- GET /api/auth/signout 307 in 377ms
- POST / 200 in 142ms
- POST / 200 in 155ms
- POST / 200 in 121ms
- POST / 200 in 119ms
- GET / 200 in 5103ms
- GET / 200 in 7239ms
- GET / 200 in 6716ms
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 717ms
- GET /auth/signin 200 in 882ms
- ✓ Compiled /api/auth/google/callback in 204ms
- GET /api/auth/google/callback?userId=1&name=Mradul%20Gandhi&avatar=https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc2MTY1MDI4OSwiZXhwIjoxNzYxNzM2Njg5fQ.LIr8fg32W5F2mfpHTqg9Uy_PeOMeAr9MXPacPbuLyEY 307 in 596ms
- GET / 200 in 4681ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 1,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir80@gmail.com',
-    bio: null,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
-    posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1460ms
+ POST /user/profile/self 200 in 993ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 727ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 693ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 743ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 677ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 1015ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 892ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 767ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 712ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 842ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1114ms
- ○ Compiling /user/create-post ...
- ✓ Compiled /user/create-post in 624ms
- GET /user/create-post 200 in 767ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 1,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir80@gmail.com',
-    bio: null,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
-    posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1031ms
+ POST /user/profile/self 200 in 702ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 745ms
+ POST /user/profile/self 200 in 1180ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 974ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 957ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 793ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
  POST /user/profile/self 200 in 914ms
- GET /api/auth/signout 307 in 357ms
- POST / 200 in 145ms
- POST / 200 in 160ms
- POST / 200 in 164ms
- POST / 200 in 152ms
- GET /api/auth/signout 307 in 356ms
- POST / 200 in 210ms
- POST / 200 in 184ms
- POST / 200 in 172ms
- POST / 200 in 294ms
- GET / 200 in 2392ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1140ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 713ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 1020ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 904ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 924ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 738ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 782ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 829ms
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [Error: read ECONNRESET] {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+Post Likes Data: undefined
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Postpage (src\app\blog\[slug]\[id]\page.tsx:13:16)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [Error: read ECONNRESET] {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1402ms
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 4277ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Postpage (src\app\blog\[slug]\[id]\page.tsx:13:16)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1199ms
+ GET /blog 200 in 175ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async getAllPosts (src\lib\actions\postActions.ts:186:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+❌ Error in getAllPosts: Error: No data received from backend
+    at getAllPosts (src\lib\actions\postActions.ts:195:22)
+  193 |     });
+  194 |
+> 195 |     if (!data) throw new Error("No data received from backend");
+      |                      ^
+  196 |
+  197 |     return data.getAllPosts as Post[];
+  198 |   } catch (err) {
+ POST /blog 200 in 1410ms
+TypeError: fetch failed
+❌ Error fetching liked posts: No liked posts found
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getAllTags (src\lib\actions\tags.ts:11:22)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ POST /blog 200 in 718ms
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async suggestedUsers (src\lib\actions\userActions.ts:14:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+❌ Error fetching Suggested User: No liked posts found
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ POST /blog 200 in 659ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async getAllPosts (src\lib\actions\postActions.ts:186:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+❌ Error in getAllPosts: Error: No data received from backend
+    at getAllPosts (src\lib\actions\postActions.ts:195:22)
+  193 |     });
+  194 |
+> 195 |     if (!data) throw new Error("No data received from backend");
+      |                      ^
+  196 |
+  197 |     return data.getAllPosts as Post[];
+  198 |   } catch (err) {
+ POST /blog 200 in 953ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async getAllPosts (src\lib\actions\postActions.ts:186:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+❌ Error in getAllPosts: Error: No data received from backend
+    at getAllPosts (src\lib\actions\postActions.ts:195:22)
+  193 |     });
+  194 |
+> 195 |     if (!data) throw new Error("No data received from backend");
+      |                      ^
+  196 |
+  197 |     return data.getAllPosts as Post[];
+  198 |   } catch (err) {
+ POST /blog 200 in 804ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async getAllPosts (src\lib\actions\postActions.ts:186:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+❌ Error in getAllPosts: Error: No data received from backend
+    at getAllPosts (src\lib\actions\postActions.ts:195:22)
+  193 |     });
+  194 |
+> 195 |     if (!data) throw new Error("No data received from backend");
+      |                      ^
+  196 |
+  197 |     return data.getAllPosts as Post[];
+  198 |   } catch (err) {
+ POST /blog 200 in 862ms
+ GET /blog 200 in 512ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 565ms
+ POST /blog 200 in 3552ms
+ POST /blog 200 in 1170ms
+data recieved from the backend  {
+  suggestedUsers: [
+    {
+      id: 1,
+      name: 'Mradul Gandhi',
+      bio: null,
+      avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c'
+    },
+    {
+      id: 2,
+      name: 'Shirley Brown',
+      bio: 'Abscido caterva terror crastinus magni totam cruciamentum conatus voluptatibus conculco.',
+      avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/39.jpg'
+    },
+    {
+      id: 3,
+      name: 'Salvador Zboncak I',
+      bio: 'Ullam eos adeo provident sortitus timidus dicta.',
+      avatar: 'https://avatars.githubusercontent.com/u/97532903'
+    }
+  ]
+}
+ POST /blog 200 in 1168ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 3937ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1138ms
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 5485ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1566ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 780ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 949ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 776ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 817ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 946ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1004ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 938ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 804ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1321ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1176ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 3029ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1120ms
+Error: Route "/blog/[slug]/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Postpage (src\app\blog\[slug]\[id]\page.tsx:12:25)
+  10 |
+  11 | const Postpage = async ({ params }: { params: any }) => {
+> 12 |   const postId = params.id;
+     |                         ^
+  13 |   const post = await fetchPostsById(+postId);
+  14 |   const session = await getSession();
+  15 |
+ GET /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 3997ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1082ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 1429ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 779ms
+ POST /blog/crypto-long--short-stablecoins-will-be-bigger-than-bitcoin/52 200 in 826ms
+data recieved from the backend  {
+  getUserDetails: {
+    id: 1,
+    name: 'Mradul Gandhi',
+    email: 'gandhisir80@gmail.com',
+    bio: null,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+    posts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ]
+  }
+}
+ GET /user/profile/self 200 in 2210ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 1281ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 732ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1159ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 731ms
+ ○ Compiling /user/posts/[id]/update ...
+ ✓ Compiled /user/posts/[id]/update in 1654ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/[slug]/[id] 200 in 837ms
+ POST /user/posts/52/update 200 in 1011ms
+ GET /user/posts/52/update 200 in 4193ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog/[slug]/[id] 200 in 1416ms
+ POST /user/posts/52/update 200 in 1950ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /blog/[slug]/[id] 200 in 908ms
+ POST /user/posts/52/update 200 in 1322ms
+ GET /user/posts/52/update 200 in 1603ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 1426ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 782ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 496ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 538ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 623ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 620ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.comment.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\comment\\comment.service.ts:36:38\n' +
+      '\n' +
+      '  33 }\n' +
+      '  34 \n' +
+      '  35 async count(postId: number) {\n' +
+      '→ 36   return await this.prisma.comment.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postCommentCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 545ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 1457ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.comment.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\comment\\comment.service.ts:36:38\n' +
+      '\n' +
+      '  33 }\n' +
+      '  34 \n' +
+      '  35 async count(postId: number) {\n' +
+      '→ 36   return await this.prisma.comment.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postCommentCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 5844ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 577ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 724ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 618ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.comment.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\comment\\comment.service.ts:36:38\n' +
+      '\n' +
+      '  33 }\n' +
+      '  34 \n' +
+      '  35 async count(postId: number) {\n' +
+      '→ 36   return await this.prisma.comment.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postCommentCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 605ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 528ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 463ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 540ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 501ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.user.findUnique()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\auth\\auth.service.ts:51:45\n' +
+      '\n' +
+      '  48 }\n' +
+      '  49 \n' +
+      '  50 async validateJwtUser(userid:number){\n' +
+      '→ 51     const user = await this.prisma.user.findUnique(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'userLikePost' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 889ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.like.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\like\\like.service.ts:49:29\n' +
+      '\n' +
+      '  46 }\n' +
+      '  47 \n' +
+      '  48 async getPostLikesCount(postId: number) {\n' +
+      '→ 49   return this.prisma.like.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postLikesCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 510ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.comment.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\comment\\comment.service.ts:36:38\n' +
+      '\n' +
+      '  33 }\n' +
+      '  34 \n' +
+      '  35 async count(postId: number) {\n' +
+      '→ 36   return await this.prisma.comment.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postCommentCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 488ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 4105ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 787ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 787ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 788ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 770ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 789ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 788ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 8729ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1860ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1690ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1285ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 2430ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1605ms
+Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
+ POST /user/profile/self 200 in 2014ms
+Graphql errors: [
+  {
+    message: '\n' +
+      'Invalid `this.prisma.comment.count()` invocation in\n' +
+      'D:\\Projects\\Blogrr-Postgres\\Blogrr-\\apps\\api\\src\\comment\\comment.service.ts:36:38\n' +
+      '\n' +
+      '  33 }\n' +
+      '  34 \n' +
+      '  35 async count(postId: number) {\n' +
+      '→ 36   return await this.prisma.comment.count(\n' +
+      "Can't reach database server at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`\n" +
+      '\n' +
+      'Please make sure your database server is running at `ep-long-dust-a4y76qx0-pooler.us-east-1.aws.neon.tech:5432`.',
+    locations: [ [Object] ],
+    path: [ 'postCommentCount' ],
+    extensions: { code: 'INTERNAL_SERVER_ERROR', stacktrace: [Array] }
+  }
+]
+Error: Failed to fetch the data from Graphql
+    at authfetchGraphql (src\lib\fetchGraphQL.ts:59:15)
+    at async getPostLikedData (src\lib\actions\like.ts:17:18)
+  57 |     if(result.errors){
+  58 |         console.log("Graphql errors:", result.errors);
+> 59 |         throw new Error("Failed to fetch the data from Graphql");
+     |               ^
+  60 |    
+  61 |     }
+  62 |     
+Post Likes Data: undefined
+ POST /user/profile/self 200 in 3312ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 5866ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1282ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 969ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1171ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1315ms

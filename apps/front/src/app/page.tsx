@@ -18,7 +18,7 @@ export default async function Home({ searchParams }: Props) {
 
   const { posts, totalPosts } = result;
 
-  const featuredPost = await fetchPostsById(3);
+  const featuredPost = await fetchPostsById(16);
   if ("error" in featuredPost) {
     return <p>Error occurred loading featured post</p>;
   }
