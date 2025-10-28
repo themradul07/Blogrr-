@@ -1,0 +1,11 @@
+{
+  "builds": [
+    {
+      "src": "apps/front/next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "apps/front/$1" }
+  ]
+}
