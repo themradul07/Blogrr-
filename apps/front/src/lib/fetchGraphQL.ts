@@ -38,7 +38,7 @@ export const authfetchGraphql = async ( query: string, variables={})=>{
     const session = await getSession();
    
     if(!session){
-        redirect("/auth/signin");
+        // redirect("/auth/signin");
       return new Error("Please Login!!")
     }
     const response= await fetch(`${BACKEND_URL}/graphql`, {

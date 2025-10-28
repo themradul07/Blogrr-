@@ -37,7 +37,7 @@ export async function signUp(
     if (data?.errors)
       return {data:{}, errors: {}, message: "Something went wrong" };
 
-    redirect("/auth/signin");
+    // redirect("/auth/signin");
   } catch (err) {
     return { data:{}, errors: {}, ...handleError("signUp", err) };
   }
