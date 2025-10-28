@@ -31,9 +31,9 @@ const Like = (props: Props) => {
             refetchPostLikeData();
         },
         onError: (error) => {
-            // Handle Axios-style or Fetch errors
+            
             if (error) {
-                toast.error( "Failed to like post");
+                toast.error( "Failed to like post!! Please Login");
             } 
         }
     });

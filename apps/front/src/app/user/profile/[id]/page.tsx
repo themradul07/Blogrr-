@@ -16,7 +16,7 @@ const page = async ({ params }: Props) => {
 
 
     return (
-        <div className='mx-auto max-w-3xl '>
+        <div className='mx-auto max-w-3xl w-full '>
 
 
             <ProfilePage

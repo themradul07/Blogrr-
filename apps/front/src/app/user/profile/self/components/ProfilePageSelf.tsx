@@ -62,10 +62,10 @@ export default function ProfilePage({
       const res = await updateProfile({ data: {}, errors: {}, ok: false }, formData);
 
       if (res?.ok) {
-        toast.success(res.message || "Profile updated successfully!");
+        toast.success( "Profile updated successfully!");
         router.refresh();
       } else {
-        toast.error(res?.message || "Failed to update profile.");
+        toast.error("Failed to update profile.");
       }
     });
   };

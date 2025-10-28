@@ -58,7 +58,7 @@ export default function ProfilePage({
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto bg-white shadow rounded-lg overflow-hidden mt-6 sm:mt-10 transition-all">
+    <div className="max-w-screen-lg w-full mx-auto bg-white shadow rounded-lg overflow-hidden mt-6 sm:mt-10 transition-all">
       {/* Cover Image */}
       <div
         className="relative h-40 sm:h-56 md:h-64 lg:h-80 bg-center bg-cover"
