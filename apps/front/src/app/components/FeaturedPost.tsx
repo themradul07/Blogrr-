@@ -28,7 +28,7 @@ const FeaturedPost = ({ post }: Props) => {
       <div className="w-3/5 p-6 flex flex-col justify-between">
         <div>
           <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-          <p className="text-gray-600 line-clamp-3">{post.content}</p>
+          <p className="text-gray-600">{post.content}</p>
         </div>
 
         <div className="text-sm text-gray-500">
