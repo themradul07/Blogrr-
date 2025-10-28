@@ -12,16 +12,25 @@
  ✓ Starting...
  ○ Compiling middleware ...
  ✓ Compiled middleware in 1135ms
- ✓ Ready in 5.5s
- ○ Compiling / ...
- ✓ Compiled / in 10s
- GET / 200 in 19735ms
- GET / 200 in 5368ms
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 2.1s
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 3408ms
+ ✓ Ready in 6.7s
  ○ Compiling /user/profile/self ...
- ✓ Compiled /user/profile/self in 1281ms
+ ✓ Compiled /user/profile/self in 21.5s
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+❌ Error fetching Suggested User: Error Occured
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ GET /user/profile/self 200 in 23607ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -32,22 +41,23 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 4650ms
+ GET /user/profile/self 200 in 3916ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 583ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1206ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 2011ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 991ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 981ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1013ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1033ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1055ms
+ POST /user/profile/self 200 in 2153ms
  ○ Compiling /user/create-post ...
- ✓ Compiled /user/create-post in 737ms
- GET /user/create-post 200 in 948ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1064ms
+ ✓ Compiled /user/create-post in 1399ms
+ GET /user/create-post 200 in 1702ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 770ms
+ POST /user/create-post 200 in 1020ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 881ms
+ POST /user/create-post 200 in 1130ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -58,20 +68,16 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 1604ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 770ms
+ GET /user/profile/self 200 in 1210ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1017ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 1153ms
+ POST /user/profile/self 200 in 901ms
+ GET /user/create-post 200 in 284ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 915ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 971ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 762ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 903ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 849ms
- GET /user/create-post 200 in 280ms
+ POST /user/profile/self 200 in 897ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -82,22 +88,20 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 1534ms
+ GET /user/profile/self 200 in 1271ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 3400ms
+ POST /user/create-post 200 in 3613ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 3684ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1278ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 1429ms
- GET /user/create-post 200 in 453ms
+ POST /user/profile/self 200 in 1322ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1066ms
- POST /user/create-post 200 in 1479ms
+ POST /user/profile/self 200 in 862ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1458ms
- POST /user/create-post 200 in 1868ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1205ms
- POST /user/create-post 200 in 1641ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1203ms
- POST /user/create-post 200 in 1691ms
+ POST /user/profile/self 200 in 889ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -108,19 +112,19 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 1593ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1356ms
+ GET /user/profile/self 200 in 1637ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 1298ms
+ POST /user/profile/self 200 in 1154ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 983ms
+ POST /user/profile/self 200 in 901ms
+ GET /user/create-post 200 in 473ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 948ms
+ POST /user/profile/self 200 in 982ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1047ms
+ POST /user/profile/self 200 in 1483ms
+ POST /user/create-post 200 in 2164ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1245ms
+ POST /user/profile/self 200 in 1058ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -131,52 +135,19 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 1792ms
-Error: Failed to fetch the data from Graphql
-    at fetchGraphql (src\lib\fetchGraphQL.ts:23:15)
-    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
-    at async Home (src\app\page.tsx:13:18)
-  21 |     if(result.errors){
-  22 |         
-> 23 |         throw new Error("Failed to fetch the data from Graphql");
-     |               ^
-  24 |    
-  25 |     }
-  26 |     return result.data;
- GET / 200 in 13524ms
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 6.4s
- GET /auth/signin 200 in 7485ms
- ○ Compiling /api/auth/google/callback ...
- ✓ Compiled /api/auth/google/callback in 1501ms
- GET /api/auth/google/callback?userId=1&name=Mradul%20Gandhi&avatar=https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc2MTY0MzE3MiwiZXhwIjoxNzYxNzI5NTcyfQ.LcwzqUpbACVqB936PvwxQ8gUGs7_m01z4iZtaLqH8dE 307 in 2670ms
- GET / 200 in 9389ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 1,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir80@gmail.com',
-    bio: null,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
-    posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/self 200 in 6320ms
+ GET /user/profile/self 200 in 1746ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 1107ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 4971ms
+ POST /user/profile/self 200 in 1119ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1432ms
+ POST /user/profile/self 200 in 1058ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1353ms
+ POST /user/profile/self 200 in 1107ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1282ms
- GET /user/create-post 200 in 839ms
+ POST /user/profile/self 200 in 1183ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1486ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1252ms
- POST /user/create-post 200 in 1703ms
- GET /user/create-post 200 in 588ms
+ POST /user/profile/self 200 in 1382ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -187,31 +158,10 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 1867ms
-Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 1701ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1184ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1393ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1371ms
- GET /user/create-post 200 in 581ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1823ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 2115ms
- POST /user/create-post 200 in 2747ms
- GET /user/create-post 200 in 884ms
- ✓ Compiled in 921ms
- ✓ Compiled /user/create-post in 356ms
- GET /user/create-post 200 in 1697ms
- GET /user/create-post 200 in 398ms
- GET /user/create-post 200 in 308ms
- GET /user/create-post 200 in 316ms
- ✓ Compiled / in 217ms
- GET / 200 in 8243ms
- ✓ Compiled /user/profile/self in 147ms
+ GET /user/profile/self 200 in 1959ms
+ ✓ Compiled middleware in 16ms
+ ✓ Compiled in 446ms
+ ✓ Compiled /user/profile/self in 136ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -222,8 +172,7 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 5079ms
- GET /user/create-post 200 in 489ms
+ GET /user/profile/self 200 in 695ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -234,34 +183,4 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 1525ms
-Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 6269ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1419ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 3761ms
- POST /user/create-post 200 in 4255ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1195ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1394ms
- GET /user/create-post 200 in 786ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1266ms
- POST /user/create-post 200 in 1725ms
- GET /user/create-post 200 in 530ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 1,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir80@gmail.com',
-    bio: null,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
-    posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/self 200 in 2588ms
-Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 1578ms
-Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ GET /user/profile/self 200 in 481ms

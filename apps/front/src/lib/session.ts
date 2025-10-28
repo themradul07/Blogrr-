@@ -39,7 +39,7 @@ export async function createSession(payload :Session){
 }
 
 export async function getSession(){
-    const cookie = (await cookies()).get("session")?.value;
+    const cookie =await (await cookies()).get("session")?.value;
     if(!cookie) return null;
     try {
            const {payload} = await jwtVerify(cookie , encodedKey, {
@@ -48,9 +48,9 @@ export async function getSession(){
     return  payload as Session;
         
     } catch (e) {
-        // await (await cookies() ).delete("session");
+        await (await cookies() ).delete("session");
         console.error(" Failed to fetch the Session : ",e);
-        // redirect("/auth/signIn");
+        redirect("/auth/signIn");
         
     }
  
