@@ -38,7 +38,7 @@ const Navbar = async (props: PropsWithChildren) => {
                         {session?.user ? <>
                             <Link href="/user/following">Following</Link>
                             <Link href="/user/create-post">Create Blog</Link>
-                            <Link href={`/user/profile/self`}>Profile</Link>
+                            <Link href="/user/profile/self">Profile</Link>
                         </> : ""}
                     </div>
                     <div className="md:hidden flex flex-col md:flex-row gap-2 [&>a]:py-2 [&>a]:px-4 [&>a]:transition [&>a]:rounded-md [&>a:hover]:text-sky-500 [&>a:hover]:bg-sky-50">
