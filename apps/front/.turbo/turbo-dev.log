@@ -11,22 +11,71 @@
 
  ✓ Starting...
  ○ Compiling middleware ...
- ✓ Compiled middleware in 764ms
- ✓ Ready in 3.4s
+ ✓ Compiled middleware in 523ms
+ ✓ Ready in 3s
  ○ Compiling / ...
- ✓ Compiled / in 7.3s
- GET / 200 in 13821ms
- ✓ Compiled /api/auth/signout in 475ms
- GET /api/auth/signout 307 in 909ms
- GET / 200 in 4815ms
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 733ms
- GET /auth/signin 200 in 990ms
- ✓ Compiled /api/auth/google/callback in 209ms
- GET /api/auth/google/callback?userId=1&name=Mradul%20Gandhi&avatar=https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc2MTY0ODQ3NiwiZXhwIjoxNzYxNzM0ODc2fQ.AgDA3eCYjzK6NkGk1fiLrHT46EwjoCGNBDJ8T-AerEk 307 in 557ms
- GET / 200 in 2838ms
+ ✓ Compiled / in 7s
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 8539ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 744ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 711ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1153ms
+ GET / 200 in 6950ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 381ms
  ○ Compiling /user/profile/self ...
- ✓ Compiled /user/profile/self in 757ms
+ ✓ Compiled /user/profile/self in 855ms
 data recieved from the backend  {
   getUserDetails: {
     id: 1,
@@ -37,57 +86,108 @@ data recieved from the backend  {
     posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
   }
 }
- GET /user/profile/self 200 in 2978ms
- ○ Compiling /user/create-post ...
- ✓ Compiled /user/create-post in 549ms
- GET /user/create-post 200 in 757ms
+ GET /user/profile/self 200 in 3485ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 3184ms
+ POST /user/profile/self 200 in 1664ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 2907ms
- POST /user/create-post 200 in 3195ms
+ POST /user/profile/self 200 in 1575ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 1063ms
- POST /user/create-post 200 in 1254ms
+ POST /user/profile/self 200 in 884ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 759ms
+ POST /user/profile/self 200 in 674ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 852ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /user/profile/self 200 in 840ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 666ms
+ GET /blog 200 in 849ms
+ POST /blog 200 in 2692ms
+ ○ Compiling /user/create-post ...
+ ✓ Compiled /user/create-post in 594ms
+ GET /user/create-post 200 in 780ms
+ POST /blog 200 in 1125ms
+data recieved from the backend  {
+  suggestedUsers: [
+    {
+      id: 1,
+      name: 'Mradul Gandhi',
+      bio: null,
+      avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c'
+    },
+    {
+      id: 2,
+      name: 'Shirley Brown',
+      bio: 'Abscido caterva terror crastinus magni totam cruciamentum conatus voluptatibus conculco.',
+      avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/39.jpg'
+    },
+    {
+      id: 3,
+      name: 'Salvador Zboncak I',
+      bio: 'Ullam eos adeo provident sortitus timidus dicta.',
+      avatar: 'https://avatars.githubusercontent.com/u/97532903'
+    }
+  ]
+}
+ POST /blog 200 in 727ms
+ POST /user/create-post 200 in 1017ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 754ms
+ POST /user/create-post 200 in 869ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 764ms
+ POST /user/create-post 200 in 919ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 821ms
+ POST /user/create-post 200 in 954ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 1410ms
+ POST /user/create-post 200 in 1580ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 741ms
+ POST /user/create-post 200 in 874ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 702ms
+ POST /user/create-post 200 in 826ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 803ms
  POST /user/create-post 200 in 936ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 689ms
- POST /user/create-post 200 in 838ms
+ POST /blog 200 in 3732ms
+ POST /user/create-post 200 in 3856ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 698ms
- POST /user/create-post 200 in 849ms
- GET /user/create-post 200 in 210ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 1,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir80@gmail.com',
-    bio: null,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
-    posts: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
-  }
-}
- GET /user/profile/self 200 in 1024ms
+ POST /blog 200 in 727ms
+ POST /user/create-post 200 in 855ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 741ms
+ POST /user/create-post 200 in 865ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 734ms
+ POST /user/create-post 200 in 883ms
+Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
+ POST /blog 200 in 799ms
+ POST /user/create-post 200 in 945ms
+ GET /user/create-post 200 in 236ms
 Post Likes Data: { postLikesCount: 1, userLikePost: true, postCommentCount: 1 }
- POST /user/profile/self 200 in 722ms
+ POST /user/profile/self 200 in 1084ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 681ms
+ POST /user/profile/self 200 in 732ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 634ms
+ POST /user/profile/self 200 in 853ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 670ms
+ POST /user/profile/self 200 in 742ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 673ms
+ POST /user/profile/self 200 in 773ms
 Post Likes Data: { postLikesCount: 0, userLikePost: false, postCommentCount: 20 }
- POST /user/profile/self 200 in 684ms
- ✓ Compiled in 399ms
- ✓ Compiled /user/profile/self in 167ms
-data recieved from the backend  {
-  getUserDetails: {
-    id: 1,
-    name: 'Mradul Gandhi',
-    email: 'gandhisir80@gmail.com',
-    bio: null,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIx7qB5aSAr0PiIbWcCKmGl6LRM7miEOO1Hd3vbTpPBSgT9_Z9S=s96-c',
+ POST /user/profile/self 200 in 758ms
+ ✓ Compiled in 451ms
+ ✓ Compiled in 204ms
+ ✓ Compiled /user/create-post in 168ms
+ GET /user/create-post 200 in 1095ms
+ GET /user/create-post 200 in 214ms
+ GET /user/create-post 200 in 243ms
+ GET /user/create-post 200 in 179ms
+ ✓ Compiled in 138ms
+ ✓ Compiled /user/create-post in 99ms
+ GET /user/create-post 200 in 444ms
+ GET /user/create-post 200 in 168ms

@@ -93,7 +93,7 @@ const Navbar = async (props: PropsWithChildren) => {
                                     Profile
                                 </Link>
                                 <a
-                                    href="/api/auth/signout"
+                                    href="/api/auth/"
                                     className="flex items-center gap-2 hover:text-red-600 transition"
                                 >
                                     <ArrowRightEndOnRectangleIcon className="w-3 h-3" />

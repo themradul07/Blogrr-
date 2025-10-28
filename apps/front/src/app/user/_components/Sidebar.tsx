@@ -36,7 +36,7 @@ const Sidebar = () => {
 
           <li>
             <Link
-              href="/api/auth/signout"
+              href="/api/auth/"
               className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-800 transition"
             >
                <ArrowRightOnRectangleIcon className="h-5 w-5 text-gray-300" />

@@ -59,7 +59,7 @@ const Profile = ({user}:Props) => {
         </Link>
 
         <a
-          href="/api/auth/signout"
+          href="/api/auth/"
           className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-red-500 hover:text-white transition"
           >
           <ArrowRightStartOnRectangleIcon className="w-5" />
