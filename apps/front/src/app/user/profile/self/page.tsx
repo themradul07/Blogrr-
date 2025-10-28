@@ -1,4 +1,5 @@
 
+"use server"
 import React from 'react'
 
 import { getUserDetails } from '@/lib/actions/userActions';
@@ -9,7 +10,7 @@ import Sidebar from '../../_components/Sidebar';
 
 
 const page = async () => {
-    const session = await getSession()
+    const session = await getSession();
     if (!session?.user?.id) {
         return <div className='mx-auto mt-32 text-center text-red-600 text-xl'>You need to be logged in to view this page.</div>
     }    
