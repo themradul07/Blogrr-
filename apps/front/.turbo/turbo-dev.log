@@ -1,0 +1,522 @@
+
+> front@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.154.42.213:3000
+   - Environments: .env
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in 761ms
+ ✓ Ready in 5.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 26.1s
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 29393ms
+ ○ Compiling /user/profile/self ...
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ETIMEDOUT' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 3831ms
+ ✓ Compiled /user/profile/self in 6.1s
+TypeError: fetch failed
+❌ Error fetching Suggested User: Error Occured
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ ⨯ TypeError: Cannot read properties of undefined (reading 'length')
+    at ProfilePage (src\app\user\profile\self\components\ProfilePageSelf.tsx:174:16)
+  172 |       <div className="border-t px-6 sm:px-10 py-6">
+  173 |         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Blogs</h2>
+> 174 |         {posts.length === 0 ? (
+      |                ^
+  175 |           <p className="text-gray-500 text-sm sm:text-base">No blogs to display.</p>
+  176 |         ) : (
+  177 |           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {
+  digest: '188725797'
+}
+ GET /user/profile/self 500 in 7514ms
+ ○ Compiling /_error ...
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 1750ms
+ ✓ Compiled /_error in 6.8s
+ ⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico?favicon.0b3bf435.ico 500 in 4715ms
+ ⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 7767ms
+ ✓ Compiled middleware in 22ms
+ ✓ Compiled /user/profile/self in 143ms
+ ✓ Compiled in 3.9s
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /user/profile/self 200 in 2519ms
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+❌ Error fetching Suggested User: Error Occured
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ GET /user/profile/self 200 in 2844ms
+TypeError: fetch failed
+❌ Error fetching Suggested User: Error Occured
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ ⨯ TypeError: Cannot read properties of undefined (reading 'length')
+    at ProfilePage (src\app\user\profile\self\components\ProfilePageSelf.tsx:174:16)
+  172 |       <div className="border-t px-6 sm:px-10 py-6">
+  173 |         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Blogs</h2>
+> 174 |         {posts.length === 0 ? (
+      |                ^
+  175 |           <p className="text-gray-500 text-sm sm:text-base">No blogs to display.</p>
+  176 |         ) : (
+  177 |           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {
+  digest: '2209674256'
+}
+ ○ Compiling / ...
+ ✓ Compiled / in 1450ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ETIMEDOUT' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+❌ Error fetching Suggested User: Error Occured
+ ⨯ TypeError: Cannot read properties of undefined (reading 'length')
+    at ProfilePage (src\app\user\profile\self\components\ProfilePageSelf.tsx:174:16)
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  172 |       <div className="border-t px-6 sm:px-10 py-6">
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+  173 |         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Blogs</h2>
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+> 174 |         {posts.length === 0 ? (
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+      |                ^
+  175 |           <p className="text-gray-500 text-sm sm:text-base">No blogs to display.</p>
+}
+  176 |         ) : (
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+  177 |           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {
+  digest: '2209674256'
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+}
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ GET / 200 in 11004ms
+ GET / 200 in 11094ms
+ GET / 200 in 11345ms
+ GET /user/profile/self 500 in 8694ms
+ ✓ Compiled in 7s
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 4268ms
+ ○ Compiling / ...
+ GET / 200 in 12212ms
+ GET / 200 in 12527ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+❌ Error fetching Suggested User: Error Occured
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ ⨯ TypeError: Cannot read properties of undefined (reading 'length')
+    at ProfilePage (src\app\user\profile\self\components\ProfilePageSelf.tsx:174:16)
+  172 |       <div className="border-t px-6 sm:px-10 py-6">
+  173 |         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Blogs</h2>
+> 174 |         {posts.length === 0 ? (
+      |                ^
+  175 |           <p className="text-gray-500 text-sm sm:text-base">No blogs to display.</p>
+  176 |         ) : (
+  177 |           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {
+  digest: '188725797'
+}
+TypeError: fetch failed
+    at async authfetchGraphql (src\lib\fetchGraphQL.ts:44:21)
+❌ Error fetching Suggested User: Error Occured
+    at async getUserDetails (src\lib\actions\userActions.ts:32:18)
+    at async page (src\app\user\profile\self\page.tsx:17:18)
+  42 |       return new Error("Please Login!!")
+  43 |     }
+> 44 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  45 |         method:"POST",
+  46 |         headers:{
+  47 |             "Content-Type":"application/json", {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+data recieved from the backend  undefined
+ ✓ Compiled / in 8s
+ GET /user/profile/self 200 in 7909ms
+ GET /user/profile/self 500 in 8430ms
+ GET /favicon.ico?favicon.7daddacc.ico 200 in 7180ms
+ GET /favicon.ico?favicon.7daddacc.ico 200 in 1288ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 956ms
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPosts (src\lib\actions\postActions.ts:39:18)
+    at async Home (src\app\page.tsx:13:18)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
+  12 |             "Content-Type":"application/json" {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+TypeError: fetch failed
+    at async fetchGraphql (src\lib\fetchGraphQL.ts:9:21)
+    at async fetchPostsById (src\lib\actions\postActions.ts:52:18)
+    at async Home (src\app\page.tsx:21:24)
+   7 |
+   8 |    try {
+>  9 |     const response= await fetch(`${BACKEND_URL}/graphql`, {
+     |                     ^
+  10 |         method:"POST",
+  11 |         headers:{
